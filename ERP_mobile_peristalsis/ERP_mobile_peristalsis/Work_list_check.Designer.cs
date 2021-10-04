@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_mobile_peristalsis
 {
-    partial class Main
+    partial class Work_list_check
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,11 @@ namespace ERP_mobile_peristalsis
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.Chatting = new System.Windows.Forms.Button();
-            this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Work_list_gridview = new System.Windows.Forms.DataGridView();
+            this.Search_button = new System.Windows.Forms.Button();
+            this.Search = new System.Windows.Forms.TextBox();
+            this.Work_list_check_datetimepicker = new System.Windows.Forms.DateTimePicker();
             this.Mainmenu = new System.Windows.Forms.MenuStrip();
             this.Menu_schedule = new System.Windows.Forms.ToolStripMenuItem();
             this.본인일정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,187 +59,53 @@ namespace ERP_mobile_peristalsis
             this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.채팅관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.Work_list_gridview)).BeginInit();
             this.Mainmenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // Chatting
             // 
             this.Chatting.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Chatting.Location = new System.Drawing.Point(831, 425);
+            this.Chatting.Location = new System.Drawing.Point(702, 407);
             this.Chatting.Name = "Chatting";
             this.Chatting.Size = new System.Drawing.Size(99, 43);
-            this.Chatting.TabIndex = 1;
+            this.Chatting.TabIndex = 8;
             this.Chatting.Text = "채팅";
             this.Chatting.UseVisualStyleBackColor = true;
             // 
-            // contentsToolStripMenuItem
+            // Work_list_gridview
             // 
-            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.contentsToolStripMenuItem.Text = "&Contents";
+            this.Work_list_gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Work_list_gridview.Location = new System.Drawing.Point(160, 107);
+            this.Work_list_gridview.Name = "Work_list_gridview";
+            this.Work_list_gridview.RowTemplate.Height = 25;
+            this.Work_list_gridview.Size = new System.Drawing.Size(476, 205);
+            this.Work_list_gridview.TabIndex = 15;
             // 
-            // indexToolStripMenuItem
+            // Search_button
             // 
-            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.indexToolStripMenuItem.Text = "&Index";
+            this.Search_button.Location = new System.Drawing.Point(561, 47);
+            this.Search_button.Name = "Search_button";
+            this.Search_button.Size = new System.Drawing.Size(75, 23);
+            this.Search_button.TabIndex = 14;
+            this.Search_button.Text = "검색";
+            this.Search_button.UseVisualStyleBackColor = true;
             // 
-            // searchToolStripMenuItem
+            // Search
             // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.searchToolStripMenuItem.Text = "&Search";
+            this.Search.Location = new System.Drawing.Point(395, 47);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(133, 23);
+            this.Search.TabIndex = 13;
+            this.Search.Text = "검색어를 입력하세요.";
+            this.Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // toolStripSeparator5
+            // Work_list_check_datetimepicker
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 6);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.aboutToolStripMenuItem.Text = "&About...";
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.customizeToolStripMenuItem.Text = "&Customize";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.optionsToolStripMenuItem.Text = "&Options";
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.undoToolStripMenuItem.Text = "&Undo";
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.redoToolStripMenuItem.Text = "&Redo";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 6);
-            // 
-            // cutToolStripMenuItem
-            // 
-            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
-            this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.cutToolStripMenuItem.Text = "Cu&t";
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
-            this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.copyToolStripMenuItem.Text = "&Copy";
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
-            this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.pasteToolStripMenuItem.Text = "&Paste";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 6);
-            // 
-            // selectAllToolStripMenuItem
-            // 
-            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.selectAllToolStripMenuItem.Text = "Select &All";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.newToolStripMenuItem.Text = "&New";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.saveAsToolStripMenuItem.Text = "Save &As";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 6);
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.Work_list_check_datetimepicker.Location = new System.Drawing.Point(160, 48);
+            this.Work_list_check_datetimepicker.Name = "Work_list_check_datetimepicker";
+            this.Work_list_check_datetimepicker.Size = new System.Drawing.Size(200, 23);
+            this.Work_list_check_datetimepicker.TabIndex = 12;
             // 
             // Mainmenu
             // 
@@ -273,8 +117,8 @@ namespace ERP_mobile_peristalsis
             this.Menu_manager});
             this.Mainmenu.Location = new System.Drawing.Point(0, 0);
             this.Mainmenu.Name = "Mainmenu";
-            this.Mainmenu.Size = new System.Drawing.Size(930, 24);
-            this.Mainmenu.TabIndex = 8;
+            this.Mainmenu.Size = new System.Drawing.Size(800, 24);
+            this.Mainmenu.TabIndex = 16;
             this.Mainmenu.Text = "menuStrip1";
             // 
             // Menu_schedule
@@ -322,7 +166,7 @@ namespace ERP_mobile_peristalsis
             this.업무등록ToolStripMenuItem,
             this.업무확인ToolStripMenuItem});
             this.업무ToolStripMenuItem.Name = "업무ToolStripMenuItem";
-            this.업무ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.업무ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.업무ToolStripMenuItem.Text = "업무";
             // 
             // 업무등록ToolStripMenuItem
@@ -343,31 +187,31 @@ namespace ERP_mobile_peristalsis
             this.결재등록ToolStripMenuItem,
             this.결재내역ToolStripMenuItem});
             this.결재ToolStripMenuItem.Name = "결재ToolStripMenuItem";
-            this.결재ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.결재ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결재ToolStripMenuItem.Text = "결재";
             // 
             // 결재등록ToolStripMenuItem
             // 
             this.결재등록ToolStripMenuItem.Name = "결재등록ToolStripMenuItem";
-            this.결재등록ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.결재등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결재등록ToolStripMenuItem.Text = "결재 등록";
             // 
             // 결재내역ToolStripMenuItem
             // 
             this.결재내역ToolStripMenuItem.Name = "결재내역ToolStripMenuItem";
-            this.결재내역ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.결재내역ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결재내역ToolStripMenuItem.Text = "결재 내역";
             // 
             // 월급ToolStripMenuItem
             // 
             this.월급ToolStripMenuItem.Name = "월급ToolStripMenuItem";
-            this.월급ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.월급ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.월급ToolStripMenuItem.Text = "월급";
             // 
             // 재고ToolStripMenuItem
             // 
             this.재고ToolStripMenuItem.Name = "재고ToolStripMenuItem";
-            this.재고ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.재고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.재고ToolStripMenuItem.Text = "재고";
             // 
             // Menu_organization
@@ -447,15 +291,20 @@ namespace ERP_mobile_peristalsis
             this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.채팅관리ToolStripMenuItem.Text = "채팅 관리";
             // 
-            // Main
+            // Work_list_check
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 469);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Mainmenu);
+            this.Controls.Add(this.Work_list_gridview);
+            this.Controls.Add(this.Search_button);
+            this.Controls.Add(this.Search);
+            this.Controls.Add(this.Work_list_check_datetimepicker);
             this.Controls.Add(this.Chatting);
-            this.Name = "Main";
-            this.Text = "Main";
+            this.Name = "Work_list_check";
+            this.Text = "Work_list_check";
+            ((System.ComponentModel.ISupportInitialize)(this.Work_list_gridview)).EndInit();
             this.Mainmenu.ResumeLayout(false);
             this.Mainmenu.PerformLayout();
             this.ResumeLayout(false);
@@ -465,31 +314,10 @@ namespace ERP_mobile_peristalsis
 
         #endregion
         private System.Windows.Forms.Button Chatting;
-        private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.DataGridView Work_list_gridview;
+        private System.Windows.Forms.Button Search_button;
+        private System.Windows.Forms.TextBox Search;
+        private System.Windows.Forms.DateTimePicker Work_list_check_datetimepicker;
         private System.Windows.Forms.MenuStrip Mainmenu;
         private System.Windows.Forms.ToolStripMenuItem Menu_schedule;
         private System.Windows.Forms.ToolStripMenuItem 본인일정ToolStripMenuItem;

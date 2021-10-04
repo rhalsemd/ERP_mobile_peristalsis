@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_mobile_peristalsis
 {
-    partial class Main
+    partial class Approval
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,15 @@ namespace ERP_mobile_peristalsis
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.Chatting = new System.Windows.Forms.Button();
-            this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sub_category_label = new System.Windows.Forms.Label();
+            this.Middle_category_label = new System.Windows.Forms.Label();
+            this.Main_category_label = new System.Windows.Forms.Label();
+            this.Sub_category = new System.Windows.Forms.ComboBox();
+            this.Middle_category = new System.Windows.Forms.ComboBox();
+            this.Main_category = new System.Windows.Forms.ComboBox();
+            this.remove_button = new System.Windows.Forms.Button();
+            this.edit_button = new System.Windows.Forms.Button();
+            this.Add_button = new System.Windows.Forms.Button();
             this.Mainmenu = new System.Windows.Forms.MenuStrip();
             this.Menu_schedule = new System.Windows.Forms.ToolStripMenuItem();
             this.본인일정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,187 +63,93 @@ namespace ERP_mobile_peristalsis
             this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.채팅관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Chatting = new System.Windows.Forms.Button();
+            this.Approval_add_dataGridView = new System.Windows.Forms.DataGridView();
+            this.Approval_textbox = new System.Windows.Forms.TextBox();
+            this.Approval_text_label = new System.Windows.Forms.Label();
+            this.upload_button = new System.Windows.Forms.Button();
+            this.Upload_label = new System.Windows.Forms.Label();
             this.Mainmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // Chatting
+            // Sub_category_label
             // 
-            this.Chatting.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Chatting.Location = new System.Drawing.Point(831, 425);
-            this.Chatting.Name = "Chatting";
-            this.Chatting.Size = new System.Drawing.Size(99, 43);
-            this.Chatting.TabIndex = 1;
-            this.Chatting.Text = "채팅";
-            this.Chatting.UseVisualStyleBackColor = true;
+            this.Sub_category_label.AutoSize = true;
+            this.Sub_category_label.Location = new System.Drawing.Point(358, 37);
+            this.Sub_category_label.Name = "Sub_category_label";
+            this.Sub_category_label.Size = new System.Drawing.Size(67, 15);
+            this.Sub_category_label.TabIndex = 20;
+            this.Sub_category_label.Text = "최고결재자";
             // 
-            // contentsToolStripMenuItem
+            // Middle_category_label
             // 
-            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.contentsToolStripMenuItem.Text = "&Contents";
+            this.Middle_category_label.AutoSize = true;
+            this.Middle_category_label.Location = new System.Drawing.Point(226, 37);
+            this.Middle_category_label.Name = "Middle_category_label";
+            this.Middle_category_label.Size = new System.Drawing.Size(43, 15);
+            this.Middle_category_label.TabIndex = 21;
+            this.Middle_category_label.Text = "부서장";
             // 
-            // indexToolStripMenuItem
+            // Main_category_label
             // 
-            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.indexToolStripMenuItem.Text = "&Index";
+            this.Main_category_label.AutoSize = true;
+            this.Main_category_label.Location = new System.Drawing.Point(66, 37);
+            this.Main_category_label.Name = "Main_category_label";
+            this.Main_category_label.Size = new System.Drawing.Size(43, 15);
+            this.Main_category_label.TabIndex = 22;
+            this.Main_category_label.Text = "기안자";
             // 
-            // searchToolStripMenuItem
+            // Sub_category
             // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.searchToolStripMenuItem.Text = "&Search";
+            this.Sub_category.FormattingEnabled = true;
+            this.Sub_category.Location = new System.Drawing.Point(325, 55);
+            this.Sub_category.Name = "Sub_category";
+            this.Sub_category.Size = new System.Drawing.Size(121, 23);
+            this.Sub_category.TabIndex = 17;
             // 
-            // toolStripSeparator5
+            // Middle_category
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 6);
+            this.Middle_category.FormattingEnabled = true;
+            this.Middle_category.Location = new System.Drawing.Point(183, 55);
+            this.Middle_category.Name = "Middle_category";
+            this.Middle_category.Size = new System.Drawing.Size(121, 23);
+            this.Middle_category.TabIndex = 18;
             // 
-            // aboutToolStripMenuItem
+            // Main_category
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.aboutToolStripMenuItem.Text = "&About...";
+            this.Main_category.FormattingEnabled = true;
+            this.Main_category.Location = new System.Drawing.Point(35, 55);
+            this.Main_category.Name = "Main_category";
+            this.Main_category.Size = new System.Drawing.Size(121, 23);
+            this.Main_category.TabIndex = 19;
             // 
-            // customizeToolStripMenuItem
+            // remove_button
             // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.customizeToolStripMenuItem.Text = "&Customize";
+            this.remove_button.Location = new System.Drawing.Point(702, 113);
+            this.remove_button.Name = "remove_button";
+            this.remove_button.Size = new System.Drawing.Size(75, 23);
+            this.remove_button.TabIndex = 14;
+            this.remove_button.Text = "삭제";
+            this.remove_button.UseVisualStyleBackColor = true;
             // 
-            // optionsToolStripMenuItem
+            // edit_button
             // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.optionsToolStripMenuItem.Text = "&Options";
+            this.edit_button.Location = new System.Drawing.Point(702, 84);
+            this.edit_button.Name = "edit_button";
+            this.edit_button.Size = new System.Drawing.Size(75, 23);
+            this.edit_button.TabIndex = 15;
+            this.edit_button.Text = "수정";
+            this.edit_button.UseVisualStyleBackColor = true;
             // 
-            // undoToolStripMenuItem
+            // Add_button
             // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.undoToolStripMenuItem.Text = "&Undo";
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.redoToolStripMenuItem.Text = "&Redo";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 6);
-            // 
-            // cutToolStripMenuItem
-            // 
-            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
-            this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.cutToolStripMenuItem.Text = "Cu&t";
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
-            this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.copyToolStripMenuItem.Text = "&Copy";
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
-            this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.pasteToolStripMenuItem.Text = "&Paste";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 6);
-            // 
-            // selectAllToolStripMenuItem
-            // 
-            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.selectAllToolStripMenuItem.Text = "Select &All";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.newToolStripMenuItem.Text = "&New";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.saveAsToolStripMenuItem.Text = "Save &As";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 6);
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.Add_button.Location = new System.Drawing.Point(702, 55);
+            this.Add_button.Name = "Add_button";
+            this.Add_button.Size = new System.Drawing.Size(75, 23);
+            this.Add_button.TabIndex = 16;
+            this.Add_button.Text = "등록";
+            this.Add_button.UseVisualStyleBackColor = true;
             // 
             // Mainmenu
             // 
@@ -273,8 +161,8 @@ namespace ERP_mobile_peristalsis
             this.Menu_manager});
             this.Mainmenu.Location = new System.Drawing.Point(0, 0);
             this.Mainmenu.Name = "Mainmenu";
-            this.Mainmenu.Size = new System.Drawing.Size(930, 24);
-            this.Mainmenu.TabIndex = 8;
+            this.Mainmenu.Size = new System.Drawing.Size(800, 24);
+            this.Mainmenu.TabIndex = 24;
             this.Mainmenu.Text = "menuStrip1";
             // 
             // Menu_schedule
@@ -447,49 +335,102 @@ namespace ERP_mobile_peristalsis
             this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.채팅관리ToolStripMenuItem.Text = "채팅 관리";
             // 
-            // Main
+            // Chatting
+            // 
+            this.Chatting.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Chatting.Location = new System.Drawing.Point(702, 407);
+            this.Chatting.Name = "Chatting";
+            this.Chatting.Size = new System.Drawing.Size(99, 43);
+            this.Chatting.TabIndex = 23;
+            this.Chatting.Text = "채팅";
+            this.Chatting.UseVisualStyleBackColor = true;
+            // 
+            // Approval_add_dataGridView
+            // 
+            this.Approval_add_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Approval_add_dataGridView.Location = new System.Drawing.Point(28, 202);
+            this.Approval_add_dataGridView.Name = "Approval_add_dataGridView";
+            this.Approval_add_dataGridView.RowTemplate.Height = 25;
+            this.Approval_add_dataGridView.Size = new System.Drawing.Size(644, 205);
+            this.Approval_add_dataGridView.TabIndex = 25;
+            // 
+            // Approval_textbox
+            // 
+            this.Approval_textbox.Location = new System.Drawing.Point(468, 55);
+            this.Approval_textbox.Multiline = true;
+            this.Approval_textbox.Name = "Approval_textbox";
+            this.Approval_textbox.Size = new System.Drawing.Size(204, 80);
+            this.Approval_textbox.TabIndex = 26;
+            // 
+            // Approval_text_label
+            // 
+            this.Approval_text_label.AutoSize = true;
+            this.Approval_text_label.Location = new System.Drawing.Point(519, 37);
+            this.Approval_text_label.Name = "Approval_text_label";
+            this.Approval_text_label.Size = new System.Drawing.Size(99, 15);
+            this.Approval_text_label.TabIndex = 27;
+            this.Approval_text_label.Text = "간략한 결재 내용";
+            // 
+            // upload_button
+            // 
+            this.upload_button.Location = new System.Drawing.Point(468, 152);
+            this.upload_button.Name = "upload_button";
+            this.upload_button.Size = new System.Drawing.Size(76, 25);
+            this.upload_button.TabIndex = 28;
+            this.upload_button.Text = "첨부 파일";
+            this.upload_button.UseVisualStyleBackColor = true;
+            // 
+            // Upload_label
+            // 
+            this.Upload_label.AutoSize = true;
+            this.Upload_label.Location = new System.Drawing.Point(550, 157);
+            this.Upload_label.Name = "Upload_label";
+            this.Upload_label.Size = new System.Drawing.Size(122, 15);
+            this.Upload_label.TabIndex = 29;
+            this.Upload_label.Text = "첨부파일이 없습니다.";
+            // 
+            // Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 469);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Upload_label);
+            this.Controls.Add(this.upload_button);
+            this.Controls.Add(this.Approval_text_label);
+            this.Controls.Add(this.Approval_textbox);
+            this.Controls.Add(this.Approval_add_dataGridView);
             this.Controls.Add(this.Mainmenu);
             this.Controls.Add(this.Chatting);
-            this.Name = "Main";
-            this.Text = "Main";
+            this.Controls.Add(this.Sub_category_label);
+            this.Controls.Add(this.Middle_category_label);
+            this.Controls.Add(this.Main_category_label);
+            this.Controls.Add(this.Sub_category);
+            this.Controls.Add(this.Middle_category);
+            this.Controls.Add(this.Main_category);
+            this.Controls.Add(this.remove_button);
+            this.Controls.Add(this.edit_button);
+            this.Controls.Add(this.Add_button);
+            this.Name = "Approval";
+            this.Text = "Approval";
             this.Mainmenu.ResumeLayout(false);
             this.Mainmenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button Chatting;
-        private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+
+        private System.Windows.Forms.Label Sub_category_label;
+        private System.Windows.Forms.Label Middle_category_label;
+        private System.Windows.Forms.Label Main_category_label;
+        private System.Windows.Forms.ComboBox Sub_category;
+        private System.Windows.Forms.ComboBox Middle_category;
+        private System.Windows.Forms.ComboBox Main_category;
+        private System.Windows.Forms.Button remove_button;
+        private System.Windows.Forms.Button edit_button;
+        private System.Windows.Forms.Button Add_button;
         private System.Windows.Forms.MenuStrip Mainmenu;
         private System.Windows.Forms.ToolStripMenuItem Menu_schedule;
         private System.Windows.Forms.ToolStripMenuItem 본인일정ToolStripMenuItem;
@@ -515,5 +456,11 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ToolStripMenuItem 권한관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사원관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 채팅관리ToolStripMenuItem;
+        private System.Windows.Forms.Button Chatting;
+        private System.Windows.Forms.DataGridView Approval_add_dataGridView;
+        private System.Windows.Forms.TextBox Approval_textbox;
+        private System.Windows.Forms.Label Approval_text_label;
+        private System.Windows.Forms.Button upload_button;
+        private System.Windows.Forms.Label Upload_label;
     }
 }
