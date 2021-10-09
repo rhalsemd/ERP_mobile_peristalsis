@@ -87,8 +87,9 @@ namespace ERP_mobile_peristalsis
             // 본인일정ToolStripMenuItem
             // 
             this.본인일정ToolStripMenuItem.Name = "본인일정ToolStripMenuItem";
-            this.본인일정ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.본인일정ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.본인일정ToolStripMenuItem.Text = "일정표";
+            this.본인일정ToolStripMenuItem.Click += new System.EventHandler(this.본인일정ToolStripMenuItem_Click);
             // 
             // Menu_work
             // 
@@ -101,8 +102,9 @@ namespace ERP_mobile_peristalsis
             // 출근현황ToolStripMenuItem
             // 
             this.출근현황ToolStripMenuItem.Name = "출근현황ToolStripMenuItem";
-            this.출근현황ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.출근현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.출근현황ToolStripMenuItem.Text = "출퇴근 현황";
+            this.출근현황ToolStripMenuItem.Click += new System.EventHandler(this.출근현황ToolStripMenuItem_Click);
             // 
             // Menu_task
             // 
@@ -127,14 +129,16 @@ namespace ERP_mobile_peristalsis
             // 업무등록ToolStripMenuItem
             // 
             this.업무등록ToolStripMenuItem.Name = "업무등록ToolStripMenuItem";
-            this.업무등록ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.업무등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.업무등록ToolStripMenuItem.Text = "업무 등록";
+            this.업무등록ToolStripMenuItem.Click += new System.EventHandler(this.업무등록ToolStripMenuItem_Click);
             // 
             // 업무확인ToolStripMenuItem
             // 
             this.업무확인ToolStripMenuItem.Name = "업무확인ToolStripMenuItem";
-            this.업무확인ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.업무확인ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.업무확인ToolStripMenuItem.Text = "업무 내역";
+            this.업무확인ToolStripMenuItem.Click += new System.EventHandler(this.업무확인ToolStripMenuItem_Click);
             // 
             // 결재ToolStripMenuItem
             // 
@@ -148,26 +152,30 @@ namespace ERP_mobile_peristalsis
             // 결재등록ToolStripMenuItem
             // 
             this.결재등록ToolStripMenuItem.Name = "결재등록ToolStripMenuItem";
-            this.결재등록ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.결재등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결재등록ToolStripMenuItem.Text = "결재 등록";
+            this.결재등록ToolStripMenuItem.Click += new System.EventHandler(this.결재등록ToolStripMenuItem_Click);
             // 
             // 결재내역ToolStripMenuItem
             // 
             this.결재내역ToolStripMenuItem.Name = "결재내역ToolStripMenuItem";
-            this.결재내역ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.결재내역ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결재내역ToolStripMenuItem.Text = "결재 내역";
+            this.결재내역ToolStripMenuItem.Click += new System.EventHandler(this.결재내역ToolStripMenuItem_Click);
             // 
             // 월급ToolStripMenuItem
             // 
             this.월급ToolStripMenuItem.Name = "월급ToolStripMenuItem";
             this.월급ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.월급ToolStripMenuItem.Text = "월급";
+            this.월급ToolStripMenuItem.Click += new System.EventHandler(this.월급ToolStripMenuItem_Click);
             // 
             // 재고ToolStripMenuItem
             // 
             this.재고ToolStripMenuItem.Name = "재고ToolStripMenuItem";
             this.재고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.재고ToolStripMenuItem.Text = "재고";
+            this.재고ToolStripMenuItem.Click += new System.EventHandler(this.재고ToolStripMenuItem_Click);
             // 
             // Menu_organization
             // 
@@ -182,6 +190,7 @@ namespace ERP_mobile_peristalsis
             this.조직도검색ToolStripMenuItem.Name = "조직도검색ToolStripMenuItem";
             this.조직도검색ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.조직도검색ToolStripMenuItem.Text = "조직도 검색";
+            this.조직도검색ToolStripMenuItem.Click += new System.EventHandler(this.조직도검색ToolStripMenuItem_Click);
             // 
             // Menu_manager
             // 
@@ -201,49 +210,49 @@ namespace ERP_mobile_peristalsis
             // 업무관련ToolStripMenuItem
             // 
             this.업무관련ToolStripMenuItem.Name = "업무관련ToolStripMenuItem";
-            this.업무관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.업무관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.업무관련ToolStripMenuItem.Text = "업무 관리";
             // 
             // 결재관련ToolStripMenuItem
             // 
             this.결재관련ToolStripMenuItem.Name = "결재관련ToolStripMenuItem";
-            this.결재관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.결재관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.결재관련ToolStripMenuItem.Text = "결재 관리";
             // 
             // 조직도관련ToolStripMenuItem
             // 
             this.조직도관련ToolStripMenuItem.Name = "조직도관련ToolStripMenuItem";
-            this.조직도관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.조직도관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.조직도관련ToolStripMenuItem.Text = "조직도 관리";
             // 
             // 출퇴근관련ToolStripMenuItem
             // 
             this.출퇴근관련ToolStripMenuItem.Name = "출퇴근관련ToolStripMenuItem";
-            this.출퇴근관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.출퇴근관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.출퇴근관련ToolStripMenuItem.Text = "출퇴근 관리";
             // 
             // 로그관련ToolStripMenuItem
             // 
             this.로그관련ToolStripMenuItem.Name = "로그관련ToolStripMenuItem";
-            this.로그관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.로그관련ToolStripMenuItem.Text = "로그 관리";
             // 
             // 권한관리ToolStripMenuItem
             // 
             this.권한관리ToolStripMenuItem.Name = "권한관리ToolStripMenuItem";
-            this.권한관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.권한관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.권한관리ToolStripMenuItem.Text = "권한 관리";
             // 
             // 사원관리ToolStripMenuItem
             // 
             this.사원관리ToolStripMenuItem.Name = "사원관리ToolStripMenuItem";
-            this.사원관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.사원관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.사원관리ToolStripMenuItem.Text = "사원 관리";
             // 
             // 채팅관리ToolStripMenuItem
             // 
             this.채팅관리ToolStripMenuItem.Name = "채팅관리ToolStripMenuItem";
-            this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.채팅관리ToolStripMenuItem.Text = "채팅 관리";
             // 
             // Chatting
@@ -255,6 +264,7 @@ namespace ERP_mobile_peristalsis
             this.Chatting.TabIndex = 19;
             this.Chatting.Text = "채팅";
             this.Chatting.UseVisualStyleBackColor = true;
+            this.Chatting.Click += new System.EventHandler(this.Chatting_Click);
             // 
             // Inventory_dataGridView
             // 
@@ -295,6 +305,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Chatting);
             this.Name = "Inventory";
             this.Text = "Inventory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inventory_FormClosing);
             this.Mainmenu.ResumeLayout(false);
             this.Mainmenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory_dataGridView)).EndInit();

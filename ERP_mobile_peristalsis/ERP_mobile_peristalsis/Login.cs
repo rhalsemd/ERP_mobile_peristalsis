@@ -10,12 +10,18 @@ using System.Windows.Forms;
 
 namespace ERP_mobile_peristalsis
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
 
+        private void Login_button_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Main.Main_form.ShowDialog();
+            Close();
+        }
     }
 }

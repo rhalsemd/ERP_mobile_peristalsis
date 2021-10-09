@@ -16,5 +16,13 @@ namespace ERP_mobile_peristalsis
         {
             InitializeComponent();
         }
+
+
+        private void Chatting_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main.chatting_switch = false;
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

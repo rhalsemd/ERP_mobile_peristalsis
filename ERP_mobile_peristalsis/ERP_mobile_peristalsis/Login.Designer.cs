@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_mobile_peristalsis
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -46,6 +46,7 @@ namespace ERP_mobile_peristalsis
             this.Login_button.TabIndex = 0;
             this.Login_button.Text = "로그인";
             this.Login_button.UseVisualStyleBackColor = true;
+            this.Login_button.Click += new System.EventHandler(this.Login_button_Click);
             // 
             // Title_label
             // 
@@ -91,7 +92,7 @@ namespace ERP_mobile_peristalsis
             this.PW_textbox.Size = new System.Drawing.Size(153, 23);
             this.PW_textbox.TabIndex = 3;
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,7 +103,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.ID_label);
             this.Controls.Add(this.Title_label);
             this.Controls.Add(this.Login_button);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
