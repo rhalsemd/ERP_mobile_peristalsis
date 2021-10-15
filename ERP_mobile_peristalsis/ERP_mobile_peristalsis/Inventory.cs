@@ -30,6 +30,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.Schedule_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void 출근현황ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.Go_to_work_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void Chatting_Click(object sender, EventArgs e)
@@ -56,6 +58,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.Work_Add_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void 업무확인ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +66,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.Work_list_check_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void 결재등록ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +74,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.Approval_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void 결재내역ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +82,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.Approval_list_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void 조직도검색ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,6 +90,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.organization_chart_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void 월급ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,6 +98,7 @@ namespace ERP_mobile_peristalsis
             Hide();
             Main.Money_form.ShowDialog();
             Close();
+            Dispose();
         }
 
         private void 재고ToolStripMenuItem_Click(object sender, EventArgs e)
