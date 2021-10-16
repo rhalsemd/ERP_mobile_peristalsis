@@ -81,13 +81,19 @@ namespace ERP_mobile_peristalsis
             this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.채팅관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Action_panel = new System.Windows.Forms.Panel();
+            this.Login_out_button = new System.Windows.Forms.Button();
+            this.PW_textbox = new System.Windows.Forms.TextBox();
+            this.ID_textbox = new System.Windows.Forms.TextBox();
+            this.PW_label = new System.Windows.Forms.Label();
+            this.ID_label = new System.Windows.Forms.Label();
             this.Mainmenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // Chatting
             // 
             this.Chatting.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Chatting.Location = new System.Drawing.Point(831, 425);
+            this.Chatting.Location = new System.Drawing.Point(948, 458);
             this.Chatting.Name = "Chatting";
             this.Chatting.Size = new System.Drawing.Size(99, 43);
             this.Chatting.TabIndex = 1;
@@ -274,7 +280,7 @@ namespace ERP_mobile_peristalsis
             this.Menu_manager});
             this.Mainmenu.Location = new System.Drawing.Point(0, 0);
             this.Mainmenu.Name = "Mainmenu";
-            this.Mainmenu.Size = new System.Drawing.Size(930, 24);
+            this.Mainmenu.Size = new System.Drawing.Size(1047, 24);
             this.Mainmenu.TabIndex = 8;
             this.Mainmenu.Text = "menuStrip1";
             // 
@@ -457,11 +463,68 @@ namespace ERP_mobile_peristalsis
             this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.채팅관리ToolStripMenuItem.Text = "채팅 관리";
             // 
+            // Action_panel
+            // 
+            this.Action_panel.Location = new System.Drawing.Point(12, 62);
+            this.Action_panel.Name = "Action_panel";
+            this.Action_panel.Size = new System.Drawing.Size(930, 439);
+            this.Action_panel.TabIndex = 9;
+            // 
+            // Login_out_button
+            // 
+            this.Login_out_button.Location = new System.Drawing.Point(867, 33);
+            this.Login_out_button.Name = "Login_out_button";
+            this.Login_out_button.Size = new System.Drawing.Size(75, 23);
+            this.Login_out_button.TabIndex = 10;
+            this.Login_out_button.Text = "로그인";
+            this.Login_out_button.UseVisualStyleBackColor = true;
+            this.Login_out_button.Click += new System.EventHandler(this.Logout_button_Click);
+            // 
+            // PW_textbox
+            // 
+            this.PW_textbox.Location = new System.Drawing.Point(706, 33);
+            this.PW_textbox.Name = "PW_textbox";
+            this.PW_textbox.Size = new System.Drawing.Size(153, 23);
+            this.PW_textbox.TabIndex = 13;
+            // 
+            // ID_textbox
+            // 
+            this.ID_textbox.Location = new System.Drawing.Point(453, 33);
+            this.ID_textbox.Name = "ID_textbox";
+            this.ID_textbox.Size = new System.Drawing.Size(153, 23);
+            this.ID_textbox.TabIndex = 14;
+            // 
+            // PW_label
+            // 
+            this.PW_label.AutoSize = true;
+            this.PW_label.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PW_label.Location = new System.Drawing.Point(621, 35);
+            this.PW_label.Name = "PW_label";
+            this.PW_label.Size = new System.Drawing.Size(79, 21);
+            this.PW_label.TabIndex = 11;
+            this.PW_label.Text = "Password";
+            // 
+            // ID_label
+            // 
+            this.ID_label.AutoSize = true;
+            this.ID_label.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ID_label.Location = new System.Drawing.Point(422, 35);
+            this.ID_label.Name = "ID_label";
+            this.ID_label.Size = new System.Drawing.Size(25, 21);
+            this.ID_label.TabIndex = 12;
+            this.ID_label.Text = "ID";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 469);
+            this.ClientSize = new System.Drawing.Size(1047, 505);
+            this.Controls.Add(this.PW_textbox);
+            this.Controls.Add(this.ID_textbox);
+            this.Controls.Add(this.PW_label);
+            this.Controls.Add(this.ID_label);
+            this.Controls.Add(this.Login_out_button);
+            this.Controls.Add(this.Action_panel);
             this.Controls.Add(this.Mainmenu);
             this.Controls.Add(this.Chatting);
             this.Name = "Main";
@@ -526,5 +589,11 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ToolStripMenuItem 권한관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사원관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 채팅관리ToolStripMenuItem;
+        private System.Windows.Forms.Panel Action_panel;
+        private System.Windows.Forms.Button Login_out_button;
+        private System.Windows.Forms.TextBox PW_textbox;
+        private System.Windows.Forms.TextBox ID_textbox;
+        private System.Windows.Forms.Label PW_label;
+        private System.Windows.Forms.Label ID_label;
     }
 }

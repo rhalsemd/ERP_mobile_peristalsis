@@ -17,7 +17,7 @@ namespace ERP_mobile_peristalsis
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Main());
         }
     }
 }
