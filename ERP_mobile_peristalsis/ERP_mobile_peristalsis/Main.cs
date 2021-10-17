@@ -164,8 +164,11 @@ namespace ERP_mobile_peristalsis
         {
             if (login_switch == true)
             {
-                login_switch = false;
-                logout_Action();
+                if (MessageBox.Show("로그아웃 하시겠습니까?\n(로그아웃 시 현재 작업하고 있는 모든 것들이 저장되지 않습니다!)", "YesORNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    login_switch = false;
+                    logout_Action();
+                }  
             }
             else if (login_switch == false)
             {
