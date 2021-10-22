@@ -10,6 +10,9 @@
     <Compile Update="Chatting.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="chatting_name_pannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Go_to_work.cs">
       <SubType>Form</SubType>
     </Compile>

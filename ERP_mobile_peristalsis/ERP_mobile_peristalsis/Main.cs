@@ -199,5 +199,10 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             Login_out_button.Text = "로그인";
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

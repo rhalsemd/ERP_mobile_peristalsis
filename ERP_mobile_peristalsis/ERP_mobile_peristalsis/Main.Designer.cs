@@ -530,6 +530,7 @@ namespace ERP_mobile_peristalsis
             this.Name = "Main";
             this.Text = "Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.Mainmenu.ResumeLayout(false);
             this.Mainmenu.PerformLayout();
             this.ResumeLayout(false);
