@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_mobile_peristalsis
 {
-    partial class chatting_name_pannel
+    partial class chatting_log_pannel
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -19,7 +19,6 @@ namespace ERP_mobile_peristalsis
                 components.Dispose();
             }
             base.Dispose(disposing);
-            
         }
 
         #region 구성 요소 디자이너에서 생성한 코드
@@ -32,17 +31,13 @@ namespace ERP_mobile_peristalsis
         {
             this.SuspendLayout();
             // 
-            // chatting_name_pannel
+            // chatting_log_pannel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "chatting_name_pannel";
-            this.Size = new System.Drawing.Size(472, 168);
-            this.Load += new System.EventHandler(this.chatting_name_pannel_Load);
-            this.Click += new System.EventHandler(this.chatting_name_pannel_Click);
-            this.MouseLeave += new System.EventHandler(this.chatting_name_pannel_MouseLeave);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chatting_name_pannel_MouseMove);
+            this.Name = "chatting_log_pannel";
+            this.Size = new System.Drawing.Size(689, 387);
+            this.Load += new System.EventHandler(this.chatting_log_pannel_Load);
             this.ResumeLayout(false);
 
         }

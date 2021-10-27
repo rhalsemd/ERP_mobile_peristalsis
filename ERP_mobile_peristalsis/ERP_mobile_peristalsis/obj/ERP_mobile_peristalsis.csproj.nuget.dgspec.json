@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ERP_Project\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj": {}
+    "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj": {}
   },
   "projects": {
-    "D:\\ERP_Project\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj": {
+    "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ERP_Project\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
+        "projectUniqueName": "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
         "projectName": "ERP_mobile_peristalsis",
-        "projectPath": "D:\\ERP_Project\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
-        "packagesPath": "C:\\Users\\영수\\.nuget\\packages\\",
-        "outputPath": "D:\\ERP_Project\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\obj\\",
+        "projectPath": "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
+        "packagesPath": "C:\\Users\\dudtn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\영수\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dudtn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
@@ -45,6 +43,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.27, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

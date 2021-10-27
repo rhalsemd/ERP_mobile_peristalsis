@@ -34,7 +34,29 @@ namespace ERP_mobile_peristalsis
 
         private void chatting_name_pannel_Click(object sender, EventArgs e)
         {
-            
+            this.BackColor = Color.FromArgb(192, 192, 192);
+            if (Singleton_chatting.instance().check == 0)
+            {
+                typing_pannel typping_add = new typing_pannel();
+                SplitContainer getsplit = Singleton_chatting.instance().splitcontainer_get();
+                typping_add.Size = new Size(getsplit.Panel2.Width, 100);
+                typping_add.Dock = DockStyle.Bottom;
+                getsplit.Panel2.Controls.Add(typping_add);
+                Singleton_chatting.instance().check++;
+
+                chatting_log_pannel log = new chatting_log_pannel();
+                log.Size = new Size(getsplit.Panel2.Width, getsplit.Panel2.Height - 100);
+                log.Dock = DockStyle.Fill;
+                log.BackColor = Color.Black;
+                getsplit.Panel2.Controls.Add(log);
+
+            }
+
+        }
+
+        private void chatting_name_pannel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

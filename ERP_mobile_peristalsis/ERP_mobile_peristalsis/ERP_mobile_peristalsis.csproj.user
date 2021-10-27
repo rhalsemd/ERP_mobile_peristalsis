@@ -10,6 +10,9 @@
     <Compile Update="Chatting.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="chatting_log_pannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="chatting_name_pannel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -30,6 +33,9 @@
     </Compile>
     <Compile Update="Schedule.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="typing_pannel.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Work_Add.cs">
       <SubType>Form</SubType>
