@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_mobile_peristalsis
 {
-    partial class Approval
+    partial class Approval_add
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@ namespace ERP_mobile_peristalsis
             this.Approval_text_label = new System.Windows.Forms.Label();
             this.upload_button = new System.Windows.Forms.Button();
             this.Upload_label = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +106,7 @@ namespace ERP_mobile_peristalsis
             this.remove_button.TabIndex = 14;
             this.remove_button.Text = "삭제";
             this.remove_button.UseVisualStyleBackColor = true;
+            this.remove_button.Click += new System.EventHandler(this.remove_button_Click);
             // 
             // edit_button
             // 
@@ -114,6 +116,7 @@ namespace ERP_mobile_peristalsis
             this.edit_button.TabIndex = 15;
             this.edit_button.Text = "수정";
             this.edit_button.UseVisualStyleBackColor = true;
+            this.edit_button.Click += new System.EventHandler(this.edit_button_Click);
             // 
             // Add_button
             // 
@@ -123,6 +126,7 @@ namespace ERP_mobile_peristalsis
             this.Add_button.TabIndex = 16;
             this.Add_button.Text = "등록";
             this.Add_button.UseVisualStyleBackColor = true;
+            this.Add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 
             // Approval_add_dataGridView
             // 
@@ -158,6 +162,7 @@ namespace ERP_mobile_peristalsis
             this.upload_button.TabIndex = 28;
             this.upload_button.Text = "첨부 파일";
             this.upload_button.UseVisualStyleBackColor = true;
+            this.upload_button.Click += new System.EventHandler(this.upload_button_Click);
             // 
             // Upload_label
             // 
@@ -168,11 +173,22 @@ namespace ERP_mobile_peristalsis
             this.Upload_label.TabIndex = 29;
             this.Upload_label.Text = "첨부파일이 없습니다.";
             // 
-            // Approval
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(688, 382);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 25);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "결재 상세 보기";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Approval_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Upload_label);
             this.Controls.Add(this.upload_button);
             this.Controls.Add(this.Approval_text_label);
@@ -187,7 +203,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.remove_button);
             this.Controls.Add(this.edit_button);
             this.Controls.Add(this.Add_button);
-            this.Name = "Approval";
+            this.Name = "Approval_add";
             this.Text = "Approval";
             ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -211,5 +227,6 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.Label Approval_text_label;
         private System.Windows.Forms.Button upload_button;
         private System.Windows.Forms.Label Upload_label;
+        private System.Windows.Forms.Button button1;
     }
 }

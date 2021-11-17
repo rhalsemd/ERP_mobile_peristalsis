@@ -14,7 +14,7 @@ namespace ERP_mobile_peristalsis
     public partial class Main : Form
     {
         public static readonly Main Main_form = new Main();
-        public static readonly Approval Approval_form = new Approval();
+        public static readonly Approval_add Approval_add_form = new Approval_add();
         public static readonly Approval_list Approval_list_form = new Approval_list();
         public static readonly Chatting Chatting_form = new Chatting();
         public static readonly Go_to_work Go_to_work_form = new Go_to_work();
@@ -103,12 +103,12 @@ namespace ERP_mobile_peristalsis
         private void 결재등록ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Action_panel.Controls.Clear();
-            Approval_form.TopLevel = false;
-            this.Controls.Add(Approval_form);
-            Approval_form.Show();
-            Approval_form.Parent = this.Action_panel;
-            Approval_form.Text = "";
-            Approval_form.ControlBox = false;
+            Approval_add_form.TopLevel = false;
+            this.Controls.Add(Approval_add_form);
+            Approval_add_form.Show();
+            Approval_add_form.Parent = this.Action_panel;
+            Approval_add_form.Text = "";
+            Approval_add_form.ControlBox = false;
         }
 
         private void 결재내역ToolStripMenuItem_Click(object sender, EventArgs e)
