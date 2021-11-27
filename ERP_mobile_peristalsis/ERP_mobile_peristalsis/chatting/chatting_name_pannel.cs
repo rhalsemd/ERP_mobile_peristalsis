@@ -51,32 +51,25 @@ namespace ERP_mobile_peristalsis
                 log.BackColor = Color.Black;
                 getsplit.Panel2.Controls.Add(log);
                 //여기 아래부터는 for 를 통해서 자동 생성할 부분들 스크롤 처리 테스트한다고 미리 만들어둠
-                chatting_log_column for_add1 = new chatting_log_column(true);
-                chatting_log_column for_add2 = new chatting_log_column(false);
-                chatting_log_column for_add3 = new chatting_log_column(false);
-                chatting_log_column for_add4 = new chatting_log_column(false);
-                chatting_log_column for_add5 = new chatting_log_column(false);
+                //여기 하단부터 채팅 내역을 그대로 불러와서 넣는 작업이 필요하다.
+                for(int i = 0; i < 10; i++)
+                {
+                    chatting_log_column for_add1 = new chatting_log_column(true, this.Width);
+                    for_add1.BackColor = Color.White;
+                    log.Controls.Add(for_add1);
+                    for_add1.Dock = DockStyle.Top;
+                    for_add1.BorderStyle = BorderStyle.FixedSingle;
 
+                }
+                for (int i = 0; i < 10; i++)
+                {
+                    chatting_log_column for_add1 = new chatting_log_column(false, this.Width);
+                    for_add1.BackColor = Color.White;
+                    log.Controls.Add(for_add1);
+                    for_add1.Dock = DockStyle.Top;
+                    for_add1.BorderStyle = BorderStyle.FixedSingle;
 
-                for_add1.BackColor = Color.White;
-                for_add2.BackColor = Color.White;
-                for_add3.BackColor = Color.White;
-                for_add4.BackColor = Color.White;
-                for_add5.BackColor = Color.White;
-
-
-                log.Controls.Add(for_add1);
-                log.Controls.Add(for_add2);
-                log.Controls.Add(for_add3);
-                log.Controls.Add(for_add4);
-                log.Controls.Add(for_add5);
-
-                for_add1.Dock = DockStyle.Top;
-                for_add2.Dock = DockStyle.Top;
-                for_add3.Dock = DockStyle.Top;
-                for_add4.Dock = DockStyle.Top;
-                for_add5.Dock = DockStyle.Top;
-
+                }
 
 
             }

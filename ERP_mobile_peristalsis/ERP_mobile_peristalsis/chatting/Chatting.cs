@@ -46,10 +46,10 @@ namespace ERP_mobile_peristalsis
             {
                 check_do++;
                 newpanel_class[i].Size = new Size(splitContainer1.Panel1.Width, 45);
-                newpanel_class[i].Location = new Point(0, 45 * i);
+               // newpanel_class[i].Location = new Point(0, 45 * i);
                 newpanel_class[i].BackColor = Color.White;
                 newpanel_class[i].chatting_room_name = "kimharve";
-                
+                    newpanel_class[i].Dock = DockStyle.Top;
                 splitContainer1.Panel1.Controls.Add(newpanel_class[i]);
             }
             else
