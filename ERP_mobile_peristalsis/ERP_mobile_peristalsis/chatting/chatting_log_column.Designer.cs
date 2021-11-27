@@ -1,7 +1,7 @@
 ﻿
-namespace ERP_mobile_peristalsis
+namespace ERP_mobile_peristalsis.chatting
 {
-    partial class chatting_log_pannel
+    partial class chatting_log_column
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -31,13 +31,12 @@ namespace ERP_mobile_peristalsis
         {
             this.SuspendLayout();
             // 
-            // chatting_log_pannel
+            // chatting_log_column
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "chatting_log_pannel";
-            this.Size = new System.Drawing.Size(689, 387);
-            this.Load += new System.EventHandler(this.chatting_log_pannel_Load);
+            this.Name = "chatting_log_column";
+            this.Size = new System.Drawing.Size(452, 150);
             this.ResumeLayout(false);
 
         }

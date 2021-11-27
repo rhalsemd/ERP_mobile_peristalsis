@@ -21,7 +21,7 @@ namespace ERP_mobile_peristalsis
 
         private void chatting_log_pannel_Load(object sender, EventArgs e)
         {
-
+            this.AutoScroll = true;
         }
         private void count_list()
         {
