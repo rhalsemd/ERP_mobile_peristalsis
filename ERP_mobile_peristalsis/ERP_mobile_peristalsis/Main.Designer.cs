@@ -484,6 +484,7 @@ namespace ERP_mobile_peristalsis
             // 
             this.PW_textbox.Location = new System.Drawing.Point(706, 33);
             this.PW_textbox.Name = "PW_textbox";
+            this.PW_textbox.PasswordChar = '*';
             this.PW_textbox.Size = new System.Drawing.Size(153, 23);
             this.PW_textbox.TabIndex = 13;
             // 

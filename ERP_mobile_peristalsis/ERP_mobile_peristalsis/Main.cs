@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERP_mobile_peristalsis.manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ERP_mobile_peristalsis
 {
@@ -162,18 +164,47 @@ namespace ERP_mobile_peristalsis
 
         private void Logout_button_Click(object sender, EventArgs e)
         {
-            if (login_switch == true)
+            if (Config_Manager.GetInstance().aboutLogin == true)
             {
                 if (MessageBox.Show("로그아웃 하시겠습니까?\n(로그아웃 시 현재 작업하고 있는 모든 것들이 저장되지 않습니다!)", "YesORNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    login_switch = false;
+                    Config_Manager.GetInstance().aboutLogin = false;
                     logout_Action();
                 }  
             }
-            else if (login_switch == false)
+            else if (Config_Manager.GetInstance().aboutLogin == false)
             {
-                login_switch = true;
-                login_Action();
+                try
+                {
+                    String user = "";
+
+
+                    Config_Manager.GetInstance().userid = ID_textbox.Text;
+                    Config_Manager.GetInstance().password = PW_textbox.Text;
+
+
+                    Query query = new Query().select("ID").From("User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
+                    DataTable dt = DB_Manager.getInstance().select(query.query);
+
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        user = row["ID"].ToString();
+                    }
+
+                    if (user != "")
+                    {
+                        Config_Manager.GetInstance().userid = user;
+                        Config_Manager.GetInstance().aboutLogin = true;
+                        login_Action();
+                    }
+                    else
+                    {
+                        MessageBox.Show("아이디가 존재하지 않거나 비밀번호 오류입니다.");
+                    }
+
+                }
+                catch { }
             }
         }
         private void login_Action()
@@ -185,6 +216,8 @@ namespace ERP_mobile_peristalsis
             PW_label.Visible = false;
             PW_textbox.Visible = false;
             Action_panel.Visible = true;
+            ID_textbox.Text = "";
+            PW_textbox.Text = "";
             Login_out_button.Text = "로그아웃";
         }
         private void logout_Action()
