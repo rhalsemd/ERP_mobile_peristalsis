@@ -9,11 +9,7 @@ namespace ERP_mobile_peristalsis.manager
     class Query
     {
         public string query = "";
-        public Query select(string cols)
-        {
-            query += "SELECT " + cols + " ";
-            return this;
-        }
+       
         public Query Select(string cols)
         {
             query += "SELECT " + cols + " ";

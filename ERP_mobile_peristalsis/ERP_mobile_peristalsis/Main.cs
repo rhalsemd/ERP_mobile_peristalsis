@@ -183,7 +183,7 @@ namespace ERP_mobile_peristalsis
                     Config_Manager.GetInstance().password = PW_textbox.Text;
 
 
-                    Query query = new Query().select("ID").From("User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
+                    Query query = new Query().Select("ID").From("User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
                     DataTable dt = DB_Manager.getInstance().select(query.query);
 
 

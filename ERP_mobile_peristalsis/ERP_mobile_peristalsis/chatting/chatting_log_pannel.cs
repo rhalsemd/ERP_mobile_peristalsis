@@ -16,8 +16,6 @@ namespace ERP_mobile_peristalsis
         {
             InitializeComponent();
         }
-        Label[] chatting_text_list;
-
 
         private void chatting_log_pannel_Load(object sender, EventArgs e)
         {

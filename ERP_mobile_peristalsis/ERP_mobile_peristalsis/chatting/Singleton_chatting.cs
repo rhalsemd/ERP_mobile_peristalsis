@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//채팅 스플릿 패널의 클릭 이벤트를 구현하기 위해서 작성한 코드
 namespace ERP_mobile_peristalsis
 {
     class Singleton_chatting

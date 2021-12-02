@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERP_mobile_peristalsis.manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,7 @@ namespace ERP_mobile_peristalsis
         public Chatting()
         {
             InitializeComponent();
-
         }
-
         
         private void Chatting_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -28,12 +27,25 @@ namespace ERP_mobile_peristalsis
             this.Hide();
             e.Cancel = true;
         }
+        private int count_personal_chatting()
+        {
+            Query query_count = new Query().Select("count(*)").From("meta_chatting").Where("name = '" + Config_Manager.GetInstance().userid + "' or owner = '" + Config_Manager.GetInstance().userid + "'");
 
+            DataTable dt_count = DB_Manager.getInstance().select(query_count.query);//여기에 채팅방 갯수를 넣어야된다.
+            string st_count = "";
+            foreach (DataRow row in dt_count.Rows)
+            {
+                st_count = row["count(*)"].ToString();
+            }
+            int count = Convert.ToInt32(st_count);
+            return count;
+        }
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
+            int count = count_personal_chatting();//채팅방 갯수를 세어주는 카운트
             splitContainer1.Panel1.BackColor = Color.White;
+            //Query query = new Query().Select("chat_name").From("meta_chatting").Where("name = '" + Config_Manager.GetInstance().userid + "' or owner = '" + Config_Manager.GetInstance().userid + "'");
 
-            int count = 3;//여기에 채팅방 갯수를 넣어야된다.
 
             chatting_name_pannel[] newpanel_class = new chatting_name_pannel[count];
             for(int i = 0; i < count; i++)
@@ -41,6 +53,7 @@ namespace ERP_mobile_peristalsis
                 newpanel_class[i] = new chatting_name_pannel();//여기서 객체 하나마다 채팅방 정보를 넣어야 된다.
 
             }
+
             if (check_do==0)
             for (int i = 0; i < count; i++)
             {

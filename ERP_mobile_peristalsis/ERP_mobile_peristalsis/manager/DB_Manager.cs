@@ -35,6 +35,7 @@ namespace ERP_mobile_peristalsis.manager
             return dt;
         }
 
+
         public void update(string query)
         {
             Console.WriteLine(query);
