@@ -66,7 +66,6 @@ namespace ERP_mobile_peristalsis
             this.Name = "Chatting";
             this.Text = "Chatting";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Chatting_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chatting_FormClosed);
             this.Load += new System.EventHandler(this.Chatting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

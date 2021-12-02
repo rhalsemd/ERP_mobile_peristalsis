@@ -39,7 +39,6 @@ namespace ERP_mobile_peristalsis
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "chatting_name_pannel";
             this.Size = new System.Drawing.Size(472, 168);
-            this.Load += new System.EventHandler(this.chatting_name_pannel_Load);
             this.Click += new System.EventHandler(this.chatting_name_pannel_Click);
             this.MouseLeave += new System.EventHandler(this.chatting_name_pannel_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chatting_name_pannel_MouseMove);
