@@ -28,7 +28,7 @@ namespace ERP_mobile_peristalsis
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private SplitContainer InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -70,7 +70,7 @@ namespace ERP_mobile_peristalsis
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
-
+            return splitContainer1;
         }
 
         #endregion

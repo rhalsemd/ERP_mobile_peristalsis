@@ -72,6 +72,7 @@ namespace ERP_mobile_peristalsis
         {
             if(chatting_switch == false)
             {
+                Chatting_form.test();
                 Chatting_form.Show();
                 chatting_switch = true;
             }
