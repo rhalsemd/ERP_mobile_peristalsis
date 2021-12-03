@@ -72,7 +72,7 @@ namespace ERP_mobile_peristalsis
         {
             if(chatting_switch == false)
             {
-                Chatting_form.test();
+                Chatting_form.init(); //채팅창 초기화하는 함수
                 Chatting_form.Show();
                 chatting_switch = true;
             }

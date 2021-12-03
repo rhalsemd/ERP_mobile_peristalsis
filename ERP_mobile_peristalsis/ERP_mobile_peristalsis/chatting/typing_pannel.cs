@@ -25,7 +25,6 @@ namespace ERP_mobile_peristalsis
         private void enter_button1_Click(object sender, EventArgs e)
         {
             chatting_textBox1.Text = "";
-            Main.Chatting_form.test();
         }
 
         private void chatting_textBox1_KeyUp(object sender, KeyEventArgs e)
