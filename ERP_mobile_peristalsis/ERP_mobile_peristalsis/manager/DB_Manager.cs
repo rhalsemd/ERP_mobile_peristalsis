@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,28 @@ namespace ERP_mobile_peristalsis.manager
             }
             return dt;
         }
+        /*
+        public byte[] Image_process(string query)
+        {
+            UInt32 FileSize;
+            byte[] rawData;
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader myData = cmd.ExecuteReader();
 
+                if (!myData.HasRows)
+                    throw new Exception("There are no BLOBs ");
+
+                myData.Read();
+
+                FileSize = myData.GetUInt32(myData.GetOrdinal("filesize"));
+                rawData = new byte[FileSize]; // 받아온 파일
+
+                return rawData;
+            }
+        }*/
 
         public void update(string query)
         {
