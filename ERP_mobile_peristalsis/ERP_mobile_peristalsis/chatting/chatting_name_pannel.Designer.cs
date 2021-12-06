@@ -36,7 +36,7 @@ namespace ERP_mobile_peristalsis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "chatting_name_pannel";
             this.Size = new System.Drawing.Size(472, 168);
             this.Click += new System.EventHandler(this.chatting_name_pannel_Click);
@@ -47,5 +47,6 @@ namespace ERP_mobile_peristalsis
         }
 
         #endregion
+
     }
 }

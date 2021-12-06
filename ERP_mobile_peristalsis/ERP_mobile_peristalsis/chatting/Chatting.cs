@@ -50,11 +50,13 @@ namespace ERP_mobile_peristalsis
         }
         public void init()
         {
+            int chatting_namming_count = 0;
             check_chatting_log = 0;
             check_chatting_log_panel = 0;
             splitcontainer = null;
             splitcontainer = new SplitContainer();
             splitcontainer.Dock = DockStyle.Fill;
+            
             
             Main.Chatting_form.Controls.Add(splitcontainer);
 
@@ -62,14 +64,20 @@ namespace ERP_mobile_peristalsis
             splitcontainer.Panel1.BackColor = Color.White;
             count = count_personal_chatting();//채팅방 갯수를 세어주는 카운트
 
-            //Query query = new Query().Select("chat_name").From("meta_chatting").Where("name = '" + Config_Manager.GetInstance().userid + "' or owner = '" + Config_Manager.GetInstance().userid + "'");
+            Query query = new Query().Select("chat_name").From("meta_chatting").Where("name = '" + Config_Manager.GetInstance().userid + "' or owner = '" + Config_Manager.GetInstance().userid + "'");
+            DataTable dt_chatting =  DB_Manager.getInstance().select(query.query);
+
 
             newpanel_class = null;
             newpanel_class = new chatting_name_pannel[count];
-            for (int i = 0; i < count; i++)
+
+            foreach (DataRow row in dt_chatting.Rows)//채팅이름 폼에 정보를 저장하는 반복문
             {
-                newpanel_class[i] = new chatting_name_pannel();//여기서 객체 하나마다 채팅방 정보를 넣어야 된다.
+                newpanel_class[chatting_namming_count] = new chatting_name_pannel();
+                newpanel_class[chatting_namming_count].chatting_room_name = row["chat_name"].ToString();
+                newpanel_class[chatting_namming_count++].set_chatting_name_label_text();
             }
+            
             if (check_chatting_log == 0)
                 for (int i = 0; i < count; i++)
                 {
@@ -77,7 +85,6 @@ namespace ERP_mobile_peristalsis
                     newpanel_class[i].Size = new Size(splitcontainer.Panel1.Width, 45);
                     // newpanel_class[i].Location = new Point(0, 45 * i);
                     newpanel_class[i].BackColor = Color.White;
-                    newpanel_class[i].chatting_room_name = "kimharve";
                     newpanel_class[i].Dock = DockStyle.Top;
                     splitcontainer.Panel1.Controls.Add(newpanel_class[i]);
                 }

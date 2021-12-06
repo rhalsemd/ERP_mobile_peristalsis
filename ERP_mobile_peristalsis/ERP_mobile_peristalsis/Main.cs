@@ -15,17 +15,17 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Main : Form
     {
-        public static readonly Main Main_form = new Main();
-        public static readonly Approval_add Approval_add_form = new Approval_add();
-        public static readonly Approval_list Approval_list_form = new Approval_list();
-        public static readonly Chatting Chatting_form = new Chatting();
-        public static readonly Go_to_work Go_to_work_form = new Go_to_work();
-        public static readonly Inventory Inventory_form = new Inventory();
-        public static readonly Money Money_form = new Money();
-        public static readonly organization_chart organization_chart_form = new organization_chart();
-        public static readonly Schedule Schedule_form = new Schedule();
-        public static readonly Work_Add Work_Add_form = new Work_Add();
-        public static readonly Work_list_check Work_list_check_form = new Work_list_check();
+        public static Main Main_form = new Main();
+        public static Approval_add Approval_add_form = new Approval_add();
+        public static Approval_list Approval_list_form = new Approval_list();
+        public static Chatting Chatting_form = new Chatting();
+        public static Go_to_work Go_to_work_form = new Go_to_work();
+        public static Inventory Inventory_form = new Inventory();
+        public static Money Money_form = new Money();
+        public static organization_chart organization_chart_form = new organization_chart();
+        public static Schedule Schedule_form = new Schedule();
+        public static Work_Add Work_Add_form = new Work_Add();
+        public static Work_list_check Work_list_check_form = new Work_list_check();
         public static bool chatting_switch = false; //채팅창 무한으로 안켜지게 스위치 역할
         public static bool manager_switch = true; //매니저 메뉴 보이는 스위치 역할
         public int hide_switch = 0;
@@ -72,6 +72,7 @@ namespace ERP_mobile_peristalsis
         {
             if(chatting_switch == false)
             {
+                Chatting_form = new Chatting();
                 Chatting_form.init(); //채팅창 초기화하는 함수
                 Chatting_form.Show();
                 chatting_switch = true;

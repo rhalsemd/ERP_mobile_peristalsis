@@ -39,7 +39,7 @@ namespace ERP_mobile_peristalsis
             this.ClientSize = new System.Drawing.Size(1029, 600);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Chatting";
-            this.Text = "Chatting";
+            this.Text = "7";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Chatting_FormClosing);
             this.ResumeLayout(false);
 
