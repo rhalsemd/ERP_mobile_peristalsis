@@ -22,6 +22,9 @@
     <Compile Update="chatting\chatting_name_pannel.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="chatting\Add_Chatting_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="etc_function\Go_to_work.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -79,8 +79,15 @@ namespace ERP_mobile_peristalsis
 
             return;
         }
+        private void chatting_partner_name_show()
+        {
+            
+            Main.Chatting_form.partner_name.Text = chat_partner;
+            
+        }
         private void chatting_name_pannel_Click(object sender, EventArgs e)
         {
+
             if (Main.Chatting_form.check_chatting_log_panel == 0)
             {
                 Main.Chatting_form.check_chatting_log_panel++;
@@ -123,7 +130,7 @@ namespace ERP_mobile_peristalsis
                 }
                 //st_count = row["count(*)"].ToString();
             }
-            
+            chatting_partner_name_show();
         }
     }
 }

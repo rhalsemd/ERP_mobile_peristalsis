@@ -35,6 +35,18 @@ namespace ERP_mobile_peristalsis.manager
             }
             return dt;
         }
+        public int count_call(Query query)
+        {
+
+            DataTable dt_count = DB_Manager.getInstance().select(query.query);//여기에 채팅방 갯수를 넣어야된다.
+            string st_count = "";
+            foreach (DataRow row in dt_count.Rows)
+            {
+                st_count = row["count(*)"].ToString();
+            }
+            int count = Convert.ToInt32(st_count);
+            return count;
+        }
         /*
         public byte[] Image_process(string query)
         {

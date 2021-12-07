@@ -109,3 +109,4 @@ E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debu
 C:\Users\dudtn\Desktop\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Approval_add.resources
 C:\Users\dudtn\Desktop\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.chatting_log_column.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.chatting_log_column.resources
+C:\Users\dudtn\Desktop\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.Add_Chatting_Panel.resources

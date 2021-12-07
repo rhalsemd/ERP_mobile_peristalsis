@@ -233,6 +233,10 @@ namespace ERP_mobile_peristalsis
             Action_panel.Visible = false;
             Action_panel.Controls.Clear();
             Login_out_button.Text = "로그인";
+            if (chatting_switch == true)
+            {
+                Chatting_form.Close();
+            }
         }
 
         private void Main_Load(object sender, EventArgs e)

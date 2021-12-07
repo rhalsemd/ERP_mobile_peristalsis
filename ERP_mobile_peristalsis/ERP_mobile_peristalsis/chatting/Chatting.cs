@@ -1,4 +1,5 @@
-﻿using ERP_mobile_peristalsis.manager;
+﻿using ERP_mobile_peristalsis.chatting;
+using ERP_mobile_peristalsis.manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Chatting : Form
     {
+        Button button_add_chatting = new Button();
+        public Label partner_name = new Label();
         public int closed = 0; //창 초기화를 위해 꺼진적이 있는지 체크
         public int clicked = -1; // 클릭한 채팅방 확인용
         public int check_chatting_log = 0;
@@ -23,6 +26,12 @@ namespace ERP_mobile_peristalsis
         public Chatting()
         {
             InitializeComponent();
+            button_add_chatting.Click += button_add_chatting_click;
+        }
+        public void button_add_chatting_click(object sender, EventArgs e)
+        {
+            Add_Chatting_Panel panel_add_chatting = new Add_Chatting_Panel();
+            panel_add_chatting.ShowDialog() ;
         }
 
         private void Chatting_FormClosing(object sender, FormClosingEventArgs e)
@@ -36,19 +45,7 @@ namespace ERP_mobile_peristalsis
             {
             }
         }
-        private int count_personal_chatting()
-        {
-            Query query_count = new Query().Select("count(*)").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userid + "' or User2 = '" + Config_Manager.GetInstance().userid + "'");
-
-            DataTable dt_count = DB_Manager.getInstance().select(query_count.query);//여기에 채팅방 갯수를 넣어야된다.
-            string st_count = "";
-            foreach (DataRow row in dt_count.Rows)
-            {
-                st_count = row["count(*)"].ToString();
-            }
-            int count = Convert.ToInt32(st_count);
-            return count;
-        }
+        
         public void init()
         {
             int chatting_namming_count = 0;
@@ -57,13 +54,14 @@ namespace ERP_mobile_peristalsis
             splitcontainer = null;
             splitcontainer = new SplitContainer();
             splitcontainer.Dock = DockStyle.Fill;
-            
-            
+
             Main.Chatting_form.Controls.Add(splitcontainer);
 
+            
             splitcontainer.Panel2.BackColor = Color.White;
             splitcontainer.Panel1.BackColor = Color.White;
-            count = count_personal_chatting();//채팅방 갯수를 세어주는 카운트
+            Query query_count = new Query().Select("count(*)").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userid + "' or User2 = '" + Config_Manager.GetInstance().userid + "'");
+            count = DB_Manager.getInstance().count_call(query_count);//채팅방 갯수를 세어주는 카운트
 
             Query query = new Query().Select("Title").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userid + "' or User2 = '" + Config_Manager.GetInstance().userid + "'");
             DataTable dt_chatting =  DB_Manager.getInstance().select(query.query);
@@ -80,7 +78,7 @@ namespace ERP_mobile_peristalsis
                 //newpanel_class[chatting_namming_count].set_chatting_profile_image();
                 newpanel_class[chatting_namming_count++].set_chatting_name_label_text();
             }
-            
+            //채팅이름 창을 띄워주는 반복문
             if (check_chatting_log == 0)
                 for (int i = 0; i < count; i++)
                 {
@@ -96,10 +94,21 @@ namespace ERP_mobile_peristalsis
                 for (int i = 0; i < count; i++)
                     newpanel_class[i].Size = new Size(splitcontainer.Panel1.Width, 45 * i);
             }
-        }
-        private void delete()
-        {
+            
+            //panel2 의 채팅 상대 이름 출력하는 코드
+            Main.Chatting_form.partner_name.AutoSize = false;
+            Main.Chatting_form.partner_name.TextAlign = ContentAlignment.MiddleCenter;
+
+            Main.Chatting_form.splitcontainer.Panel2.Controls.Add(Main.Chatting_form.partner_name);
+            Main.Chatting_form.partner_name.Dock = DockStyle.Top;
+
+            //새채팅 생성하는 버튼 생성하는 코드
+            button_add_chatting.Text = "새 채팅";
+            splitcontainer.Panel1.Controls.Add(button_add_chatting);
+            //splitcontainer.Panel1.Controls.SetChildIndex(button_add_chatting, 0);
+            button_add_chatting.Dock = DockStyle.Top;
 
         }
+        
     }
 }
