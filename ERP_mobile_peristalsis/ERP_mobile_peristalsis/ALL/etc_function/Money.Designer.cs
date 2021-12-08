@@ -39,7 +39,7 @@ namespace ERP_mobile_peristalsis
             // 
             this.Money_dateTimePicker.CustomFormat = "yyyy/MM";
             this.Money_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Money_dateTimePicker.Location = new System.Drawing.Point(12, 27);
+            this.Money_dateTimePicker.Location = new System.Drawing.Point(233, 91);
             this.Money_dateTimePicker.Name = "Money_dateTimePicker";
             this.Money_dateTimePicker.ShowUpDown = true;
             this.Money_dateTimePicker.Size = new System.Drawing.Size(70, 23);
@@ -48,7 +48,7 @@ namespace ERP_mobile_peristalsis
             // Money_dataGridView
             // 
             this.Money_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Money_dataGridView.Location = new System.Drawing.Point(149, 36);
+            this.Money_dataGridView.Location = new System.Drawing.Point(233, 135);
             this.Money_dataGridView.Name = "Money_dataGridView";
             this.Money_dataGridView.RowTemplate.Height = 25;
             this.Money_dataGridView.Size = new System.Drawing.Size(458, 158);
@@ -57,7 +57,7 @@ namespace ERP_mobile_peristalsis
             // Money_cal_label
             // 
             this.Money_cal_label.AutoSize = true;
-            this.Money_cal_label.Location = new System.Drawing.Point(149, 215);
+            this.Money_cal_label.Location = new System.Drawing.Point(247, 321);
             this.Money_cal_label.Name = "Money_cal_label";
             this.Money_cal_label.Size = new System.Drawing.Size(431, 15);
             this.Money_cal_label.TabIndex = 22;
@@ -67,7 +67,7 @@ namespace ERP_mobile_peristalsis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(924, 424);
             this.Controls.Add(this.Money_cal_label);
             this.Controls.Add(this.Money_dataGridView);
             this.Controls.Add(this.Money_dateTimePicker);

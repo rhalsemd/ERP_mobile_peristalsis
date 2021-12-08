@@ -11,6 +11,7 @@ namespace ERP_mobile_peristalsis.manager
         public string userid = "";
         public string password = "";
         public bool aboutLogin = false;
+        public int admin = -1;
         private static Config_Manager instance_ = new Config_Manager();
 
         public static Config_Manager GetInstance() { return instance_; }

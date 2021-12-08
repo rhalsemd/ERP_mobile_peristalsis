@@ -50,7 +50,7 @@ namespace ERP_mobile_peristalsis
             // Sub_category_label
             // 
             this.Sub_category_label.AutoSize = true;
-            this.Sub_category_label.Location = new System.Drawing.Point(349, 37);
+            this.Sub_category_label.Location = new System.Drawing.Point(411, 29);
             this.Sub_category_label.Name = "Sub_category_label";
             this.Sub_category_label.Size = new System.Drawing.Size(67, 15);
             this.Sub_category_label.TabIndex = 20;
@@ -59,7 +59,7 @@ namespace ERP_mobile_peristalsis
             // Middle_category_label
             // 
             this.Middle_category_label.AutoSize = true;
-            this.Middle_category_label.Location = new System.Drawing.Point(222, 37);
+            this.Middle_category_label.Location = new System.Drawing.Point(284, 29);
             this.Middle_category_label.Name = "Middle_category_label";
             this.Middle_category_label.Size = new System.Drawing.Size(43, 15);
             this.Middle_category_label.TabIndex = 21;
@@ -68,7 +68,7 @@ namespace ERP_mobile_peristalsis
             // Main_category_label
             // 
             this.Main_category_label.AutoSize = true;
-            this.Main_category_label.Location = new System.Drawing.Point(66, 37);
+            this.Main_category_label.Location = new System.Drawing.Point(128, 29);
             this.Main_category_label.Name = "Main_category_label";
             this.Main_category_label.Size = new System.Drawing.Size(43, 15);
             this.Main_category_label.TabIndex = 22;
@@ -77,7 +77,7 @@ namespace ERP_mobile_peristalsis
             // Sub_category
             // 
             this.Sub_category.FormattingEnabled = true;
-            this.Sub_category.Location = new System.Drawing.Point(325, 55);
+            this.Sub_category.Location = new System.Drawing.Point(387, 47);
             this.Sub_category.Name = "Sub_category";
             this.Sub_category.Size = new System.Drawing.Size(121, 23);
             this.Sub_category.TabIndex = 17;
@@ -85,7 +85,7 @@ namespace ERP_mobile_peristalsis
             // Middle_category
             // 
             this.Middle_category.FormattingEnabled = true;
-            this.Middle_category.Location = new System.Drawing.Point(183, 55);
+            this.Middle_category.Location = new System.Drawing.Point(245, 47);
             this.Middle_category.Name = "Middle_category";
             this.Middle_category.Size = new System.Drawing.Size(121, 23);
             this.Middle_category.TabIndex = 18;
@@ -93,14 +93,14 @@ namespace ERP_mobile_peristalsis
             // Main_category
             // 
             this.Main_category.FormattingEnabled = true;
-            this.Main_category.Location = new System.Drawing.Point(35, 55);
+            this.Main_category.Location = new System.Drawing.Point(97, 47);
             this.Main_category.Name = "Main_category";
             this.Main_category.Size = new System.Drawing.Size(121, 23);
             this.Main_category.TabIndex = 19;
             // 
             // remove_button
             // 
-            this.remove_button.Location = new System.Drawing.Point(702, 113);
+            this.remove_button.Location = new System.Drawing.Point(764, 105);
             this.remove_button.Name = "remove_button";
             this.remove_button.Size = new System.Drawing.Size(75, 23);
             this.remove_button.TabIndex = 14;
@@ -110,7 +110,7 @@ namespace ERP_mobile_peristalsis
             // 
             // edit_button
             // 
-            this.edit_button.Location = new System.Drawing.Point(702, 84);
+            this.edit_button.Location = new System.Drawing.Point(764, 76);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(75, 23);
             this.edit_button.TabIndex = 15;
@@ -120,7 +120,7 @@ namespace ERP_mobile_peristalsis
             // 
             // Add_button
             // 
-            this.Add_button.Location = new System.Drawing.Point(702, 55);
+            this.Add_button.Location = new System.Drawing.Point(764, 47);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(75, 23);
             this.Add_button.TabIndex = 16;
@@ -131,7 +131,7 @@ namespace ERP_mobile_peristalsis
             // Approval_add_dataGridView
             // 
             this.Approval_add_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Approval_add_dataGridView.Location = new System.Drawing.Point(28, 202);
+            this.Approval_add_dataGridView.Location = new System.Drawing.Point(90, 175);
             this.Approval_add_dataGridView.Name = "Approval_add_dataGridView";
             this.Approval_add_dataGridView.RowTemplate.Height = 25;
             this.Approval_add_dataGridView.Size = new System.Drawing.Size(644, 205);
@@ -139,7 +139,7 @@ namespace ERP_mobile_peristalsis
             // 
             // Approval_textbox
             // 
-            this.Approval_textbox.Location = new System.Drawing.Point(468, 55);
+            this.Approval_textbox.Location = new System.Drawing.Point(530, 47);
             this.Approval_textbox.Multiline = true;
             this.Approval_textbox.Name = "Approval_textbox";
             this.Approval_textbox.Size = new System.Drawing.Size(204, 80);
@@ -148,7 +148,7 @@ namespace ERP_mobile_peristalsis
             // Approval_text_label
             // 
             this.Approval_text_label.AutoSize = true;
-            this.Approval_text_label.Location = new System.Drawing.Point(519, 37);
+            this.Approval_text_label.Location = new System.Drawing.Point(581, 29);
             this.Approval_text_label.Name = "Approval_text_label";
             this.Approval_text_label.Size = new System.Drawing.Size(99, 15);
             this.Approval_text_label.TabIndex = 27;
@@ -156,7 +156,7 @@ namespace ERP_mobile_peristalsis
             // 
             // upload_button
             // 
-            this.upload_button.Location = new System.Drawing.Point(468, 152);
+            this.upload_button.Location = new System.Drawing.Point(530, 144);
             this.upload_button.Name = "upload_button";
             this.upload_button.Size = new System.Drawing.Size(76, 25);
             this.upload_button.TabIndex = 28;
@@ -167,7 +167,7 @@ namespace ERP_mobile_peristalsis
             // Upload_label
             // 
             this.Upload_label.AutoSize = true;
-            this.Upload_label.Location = new System.Drawing.Point(550, 157);
+            this.Upload_label.Location = new System.Drawing.Point(612, 149);
             this.Upload_label.Name = "Upload_label";
             this.Upload_label.Size = new System.Drawing.Size(122, 15);
             this.Upload_label.TabIndex = 29;
@@ -175,7 +175,7 @@ namespace ERP_mobile_peristalsis
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(688, 382);
+            this.button1.Location = new System.Drawing.Point(740, 356);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 25);
             this.button1.TabIndex = 30;
@@ -187,7 +187,8 @@ namespace ERP_mobile_peristalsis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(924, 424);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Upload_label);
             this.Controls.Add(this.upload_button);

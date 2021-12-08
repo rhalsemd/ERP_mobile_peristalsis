@@ -41,7 +41,7 @@ namespace ERP_mobile_peristalsis
             // Organization_chart_dataGridView
             // 
             this.Organization_chart_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Organization_chart_dataGridView.Location = new System.Drawing.Point(40, 77);
+            this.Organization_chart_dataGridView.Location = new System.Drawing.Point(134, 81);
             this.Organization_chart_dataGridView.Name = "Organization_chart_dataGridView";
             this.Organization_chart_dataGridView.RowTemplate.Height = 25;
             this.Organization_chart_dataGridView.Size = new System.Drawing.Size(505, 302);
@@ -49,7 +49,7 @@ namespace ERP_mobile_peristalsis
             // 
             // Organization_chart_pictureBox
             // 
-            this.Organization_chart_pictureBox.Location = new System.Drawing.Point(583, 77);
+            this.Organization_chart_pictureBox.Location = new System.Drawing.Point(677, 81);
             this.Organization_chart_pictureBox.Name = "Organization_chart_pictureBox";
             this.Organization_chart_pictureBox.Size = new System.Drawing.Size(129, 109);
             this.Organization_chart_pictureBox.TabIndex = 23;
@@ -58,7 +58,7 @@ namespace ERP_mobile_peristalsis
             // Organization_chart_listView
             // 
             this.Organization_chart_listView.HideSelection = false;
-            this.Organization_chart_listView.Location = new System.Drawing.Point(583, 192);
+            this.Organization_chart_listView.Location = new System.Drawing.Point(677, 196);
             this.Organization_chart_listView.Name = "Organization_chart_listView";
             this.Organization_chart_listView.Size = new System.Drawing.Size(129, 187);
             this.Organization_chart_listView.TabIndex = 24;
@@ -66,16 +66,17 @@ namespace ERP_mobile_peristalsis
             // 
             // Organization_chart_search_textbox
             // 
-            this.Organization_chart_search_textbox.Location = new System.Drawing.Point(291, 38);
+            this.Organization_chart_search_textbox.Location = new System.Drawing.Point(380, 42);
             this.Organization_chart_search_textbox.Name = "Organization_chart_search_textbox";
-            this.Organization_chart_search_textbox.Size = new System.Drawing.Size(157, 23);
+            this.Organization_chart_search_textbox.Size = new System.Drawing.Size(162, 23);
             this.Organization_chart_search_textbox.TabIndex = 25;
             this.Organization_chart_search_textbox.Text = "검색어를 입력하세요.";
             this.Organization_chart_search_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Organization_chart_search_textbox.Click += new System.EventHandler(this.Organization_chart_search_textbox_Click);
             // 
             // Organization_chart_search_button
             // 
-            this.Organization_chart_search_button.Location = new System.Drawing.Point(470, 37);
+            this.Organization_chart_search_button.Location = new System.Drawing.Point(564, 41);
             this.Organization_chart_search_button.Name = "Organization_chart_search_button";
             this.Organization_chart_search_button.Size = new System.Drawing.Size(75, 23);
             this.Organization_chart_search_button.TabIndex = 26;
@@ -86,7 +87,8 @@ namespace ERP_mobile_peristalsis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(924, 424);
             this.Controls.Add(this.Organization_chart_search_button);
             this.Controls.Add(this.Organization_chart_search_textbox);
             this.Controls.Add(this.Organization_chart_listView);

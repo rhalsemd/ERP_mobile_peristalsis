@@ -44,7 +44,7 @@ namespace ERP_mobile_peristalsis
             // 
             // Add_button
             // 
-            this.Add_button.Location = new System.Drawing.Point(584, 55);
+            this.Add_button.Location = new System.Drawing.Point(730, 55);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(75, 23);
             this.Add_button.TabIndex = 10;
@@ -57,13 +57,13 @@ namespace ERP_mobile_peristalsis
             this.Work_add_gridview.Location = new System.Drawing.Point(154, 178);
             this.Work_add_gridview.Name = "Work_add_gridview";
             this.Work_add_gridview.RowTemplate.Height = 25;
-            this.Work_add_gridview.Size = new System.Drawing.Size(476, 205);
+            this.Work_add_gridview.Size = new System.Drawing.Size(651, 205);
             this.Work_add_gridview.TabIndex = 11;
             // 
             // Main_category
             // 
             this.Main_category.FormattingEnabled = true;
-            this.Main_category.Location = new System.Drawing.Point(154, 56);
+            this.Main_category.Location = new System.Drawing.Point(234, 55);
             this.Main_category.Name = "Main_category";
             this.Main_category.Size = new System.Drawing.Size(121, 23);
             this.Main_category.TabIndex = 12;
@@ -71,7 +71,7 @@ namespace ERP_mobile_peristalsis
             // Middle_category
             // 
             this.Middle_category.FormattingEnabled = true;
-            this.Middle_category.Location = new System.Drawing.Point(301, 56);
+            this.Middle_category.Location = new System.Drawing.Point(381, 55);
             this.Middle_category.Name = "Middle_category";
             this.Middle_category.Size = new System.Drawing.Size(121, 23);
             this.Middle_category.TabIndex = 12;
@@ -79,14 +79,14 @@ namespace ERP_mobile_peristalsis
             // Sub_category
             // 
             this.Sub_category.FormattingEnabled = true;
-            this.Sub_category.Location = new System.Drawing.Point(443, 56);
+            this.Sub_category.Location = new System.Drawing.Point(523, 55);
             this.Sub_category.Name = "Sub_category";
             this.Sub_category.Size = new System.Drawing.Size(121, 23);
             this.Sub_category.TabIndex = 12;
             // 
             // edit_button
             // 
-            this.edit_button.Location = new System.Drawing.Point(584, 84);
+            this.edit_button.Location = new System.Drawing.Point(730, 84);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(75, 23);
             this.edit_button.TabIndex = 10;
@@ -95,7 +95,7 @@ namespace ERP_mobile_peristalsis
             // 
             // remove_button
             // 
-            this.remove_button.Location = new System.Drawing.Point(584, 113);
+            this.remove_button.Location = new System.Drawing.Point(730, 113);
             this.remove_button.Name = "remove_button";
             this.remove_button.Size = new System.Drawing.Size(75, 23);
             this.remove_button.TabIndex = 10;
@@ -105,7 +105,7 @@ namespace ERP_mobile_peristalsis
             // Main_category_label
             // 
             this.Main_category_label.AutoSize = true;
-            this.Main_category_label.Location = new System.Drawing.Point(193, 38);
+            this.Main_category_label.Location = new System.Drawing.Point(273, 37);
             this.Main_category_label.Name = "Main_category_label";
             this.Main_category_label.Size = new System.Drawing.Size(43, 15);
             this.Main_category_label.TabIndex = 13;
@@ -114,7 +114,7 @@ namespace ERP_mobile_peristalsis
             // Middle_category_label
             // 
             this.Middle_category_label.AutoSize = true;
-            this.Middle_category_label.Location = new System.Drawing.Point(344, 38);
+            this.Middle_category_label.Location = new System.Drawing.Point(424, 37);
             this.Middle_category_label.Name = "Middle_category_label";
             this.Middle_category_label.Size = new System.Drawing.Size(43, 15);
             this.Middle_category_label.TabIndex = 13;
@@ -123,7 +123,7 @@ namespace ERP_mobile_peristalsis
             // Sub_category_label
             // 
             this.Sub_category_label.AutoSize = true;
-            this.Sub_category_label.Location = new System.Drawing.Point(484, 38);
+            this.Sub_category_label.Location = new System.Drawing.Point(564, 37);
             this.Sub_category_label.Name = "Sub_category_label";
             this.Sub_category_label.Size = new System.Drawing.Size(43, 15);
             this.Sub_category_label.TabIndex = 13;
@@ -133,7 +133,7 @@ namespace ERP_mobile_peristalsis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(974, 401);
             this.Controls.Add(this.Sub_category_label);
             this.Controls.Add(this.Middle_category_label);
             this.Controls.Add(this.Main_category_label);

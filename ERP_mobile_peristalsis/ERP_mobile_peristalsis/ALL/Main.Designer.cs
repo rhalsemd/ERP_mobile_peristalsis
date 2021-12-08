@@ -30,7 +30,6 @@ namespace ERP_mobile_peristalsis
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.Chatting = new System.Windows.Forms.Button();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +71,8 @@ namespace ERP_mobile_peristalsis
             this.재고ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_organization = new System.Windows.Forms.ToolStripMenuItem();
             this.조직도검색ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.채팅ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.채팅창ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_manager = new System.Windows.Forms.ToolStripMenuItem();
             this.업무관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.결재관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,25 +82,14 @@ namespace ERP_mobile_peristalsis
             this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.채팅관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Action_panel = new System.Windows.Forms.Panel();
             this.Login_out_button = new System.Windows.Forms.Button();
             this.PW_textbox = new System.Windows.Forms.TextBox();
             this.ID_textbox = new System.Windows.Forms.TextBox();
             this.PW_label = new System.Windows.Forms.Label();
             this.ID_label = new System.Windows.Forms.Label();
+            this.Action_panel = new System.Windows.Forms.Panel();
             this.Mainmenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Chatting
-            // 
-            this.Chatting.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Chatting.Location = new System.Drawing.Point(948, 458);
-            this.Chatting.Name = "Chatting";
-            this.Chatting.Size = new System.Drawing.Size(99, 43);
-            this.Chatting.TabIndex = 1;
-            this.Chatting.Text = "채팅";
-            this.Chatting.UseVisualStyleBackColor = true;
-            this.Chatting.Click += new System.EventHandler(this.Chatting_Click);
             // 
             // contentsToolStripMenuItem
             // 
@@ -277,10 +267,11 @@ namespace ERP_mobile_peristalsis
             this.Menu_work,
             this.Menu_task,
             this.Menu_organization,
+            this.채팅ToolStripMenuItem,
             this.Menu_manager});
             this.Mainmenu.Location = new System.Drawing.Point(0, 0);
             this.Mainmenu.Name = "Mainmenu";
-            this.Mainmenu.Size = new System.Drawing.Size(1047, 24);
+            this.Mainmenu.Size = new System.Drawing.Size(940, 24);
             this.Mainmenu.TabIndex = 8;
             this.Mainmenu.Text = "menuStrip1";
             // 
@@ -400,6 +391,21 @@ namespace ERP_mobile_peristalsis
             this.조직도검색ToolStripMenuItem.Text = "조직도 검색";
             this.조직도검색ToolStripMenuItem.Click += new System.EventHandler(this.조직도검색ToolStripMenuItem_Click);
             // 
+            // 채팅ToolStripMenuItem
+            // 
+            this.채팅ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.채팅창ToolStripMenuItem});
+            this.채팅ToolStripMenuItem.Name = "채팅ToolStripMenuItem";
+            this.채팅ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.채팅ToolStripMenuItem.Text = "채팅";
+            // 
+            // 채팅창ToolStripMenuItem
+            // 
+            this.채팅창ToolStripMenuItem.Name = "채팅창ToolStripMenuItem";
+            this.채팅창ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.채팅창ToolStripMenuItem.Text = "채팅창";
+            this.채팅창ToolStripMenuItem.Click += new System.EventHandler(this.채팅창ToolStripMenuItem_Click);
+            // 
             // Menu_manager
             // 
             this.Menu_manager.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -463,16 +469,9 @@ namespace ERP_mobile_peristalsis
             this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.채팅관리ToolStripMenuItem.Text = "채팅 관리";
             // 
-            // Action_panel
-            // 
-            this.Action_panel.Location = new System.Drawing.Point(12, 62);
-            this.Action_panel.Name = "Action_panel";
-            this.Action_panel.Size = new System.Drawing.Size(930, 439);
-            this.Action_panel.TabIndex = 9;
-            // 
             // Login_out_button
             // 
-            this.Login_out_button.Location = new System.Drawing.Point(867, 33);
+            this.Login_out_button.Location = new System.Drawing.Point(842, 41);
             this.Login_out_button.Name = "Login_out_button";
             this.Login_out_button.Size = new System.Drawing.Size(75, 23);
             this.Login_out_button.TabIndex = 10;
@@ -482,7 +481,7 @@ namespace ERP_mobile_peristalsis
             // 
             // PW_textbox
             // 
-            this.PW_textbox.Location = new System.Drawing.Point(706, 33);
+            this.PW_textbox.Location = new System.Drawing.Point(681, 41);
             this.PW_textbox.Name = "PW_textbox";
             this.PW_textbox.PasswordChar = '*';
             this.PW_textbox.Size = new System.Drawing.Size(153, 23);
@@ -490,7 +489,7 @@ namespace ERP_mobile_peristalsis
             // 
             // ID_textbox
             // 
-            this.ID_textbox.Location = new System.Drawing.Point(453, 33);
+            this.ID_textbox.Location = new System.Drawing.Point(428, 41);
             this.ID_textbox.Name = "ID_textbox";
             this.ID_textbox.Size = new System.Drawing.Size(153, 23);
             this.ID_textbox.TabIndex = 14;
@@ -499,7 +498,7 @@ namespace ERP_mobile_peristalsis
             // 
             this.PW_label.AutoSize = true;
             this.PW_label.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PW_label.Location = new System.Drawing.Point(621, 35);
+            this.PW_label.Location = new System.Drawing.Point(596, 43);
             this.PW_label.Name = "PW_label";
             this.PW_label.Size = new System.Drawing.Size(79, 21);
             this.PW_label.TabIndex = 11;
@@ -509,29 +508,38 @@ namespace ERP_mobile_peristalsis
             // 
             this.ID_label.AutoSize = true;
             this.ID_label.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ID_label.Location = new System.Drawing.Point(422, 35);
+            this.ID_label.Location = new System.Drawing.Point(397, 43);
             this.ID_label.Name = "ID_label";
             this.ID_label.Size = new System.Drawing.Size(25, 21);
             this.ID_label.TabIndex = 12;
             this.ID_label.Text = "ID";
             // 
+            // Action_panel
+            // 
+            this.Action_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Action_panel.Location = new System.Drawing.Point(0, 71);
+            this.Action_panel.Margin = new System.Windows.Forms.Padding(0);
+            this.Action_panel.Name = "Action_panel";
+            this.Action_panel.Size = new System.Drawing.Size(940, 440);
+            this.Action_panel.TabIndex = 16;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 505);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(940, 511);
+            this.Controls.Add(this.Action_panel);
             this.Controls.Add(this.PW_textbox);
             this.Controls.Add(this.ID_textbox);
             this.Controls.Add(this.PW_label);
             this.Controls.Add(this.ID_label);
             this.Controls.Add(this.Login_out_button);
-            this.Controls.Add(this.Action_panel);
             this.Controls.Add(this.Mainmenu);
-            this.Controls.Add(this.Chatting);
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
-            this.Load += new System.EventHandler(this.Main_Load);
             this.Mainmenu.ResumeLayout(false);
             this.Mainmenu.PerformLayout();
             this.ResumeLayout(false);
@@ -540,7 +548,6 @@ namespace ERP_mobile_peristalsis
         }
 
         #endregion
-        private System.Windows.Forms.Button Chatting;
         private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
@@ -591,11 +598,14 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ToolStripMenuItem 권한관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사원관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 채팅관리ToolStripMenuItem;
-        private System.Windows.Forms.Panel Action_panel;
+
         private System.Windows.Forms.Button Login_out_button;
         private System.Windows.Forms.TextBox PW_textbox;
         private System.Windows.Forms.TextBox ID_textbox;
         private System.Windows.Forms.Label PW_label;
         private System.Windows.Forms.Label ID_label;
+        private System.Windows.Forms.Panel Action_panel;
+        private System.Windows.Forms.ToolStripMenuItem 채팅ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 채팅창ToolStripMenuItem;
     }
 }

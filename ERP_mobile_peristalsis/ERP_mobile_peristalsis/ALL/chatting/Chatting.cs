@@ -36,7 +36,7 @@ namespace ERP_mobile_peristalsis
 
         private void Chatting_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Main.chatting_switch = false;
+            Main.form_switch[2] = false;
             this.Hide();
             e.Cancel = true;
             splitcontainer = null;

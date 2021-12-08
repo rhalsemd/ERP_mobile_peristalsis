@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ERP_mobile_peristalsis
 {
-    public partial class Inventory : Form
+    public partial class organization_chart : Form
     {
-        public Inventory()
+        public organization_chart()
         {
             InitializeComponent();
+        }
+
+        private void Organization_chart_search_textbox_Click(object sender, EventArgs e)
+        {
+            Organization_chart_search_textbox.Text = "";
         }
     }
 }
