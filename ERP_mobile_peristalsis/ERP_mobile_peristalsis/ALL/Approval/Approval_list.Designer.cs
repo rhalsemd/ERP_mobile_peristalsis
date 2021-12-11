@@ -82,6 +82,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Approval_list_check_datetimepicker);
             this.Name = "Approval_list";
             this.Text = "Approval_list";
+            this.Load += new System.EventHandler(this.Approval_list_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Approval_list_gridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

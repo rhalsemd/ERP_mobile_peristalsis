@@ -81,6 +81,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Work_list_check_datetimepicker);
             this.Name = "Work_list_check";
             this.Text = "Work_list_check";
+            this.Load += new System.EventHandler(this.Work_list_check_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Work_list_gridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

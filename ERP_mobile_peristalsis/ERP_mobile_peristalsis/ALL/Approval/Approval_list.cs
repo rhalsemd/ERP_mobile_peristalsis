@@ -12,10 +12,22 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Approval_list : Form
     {
-        public Approval_list()
+        string user_id = "";
+        string load_id = "";
+        int admin = -1;
+        int load_ad = -1;
+        public Approval_list(string userid, int admin)
         {
             InitializeComponent();
-           
+            user_id = userid;
+            this.admin = admin;
+
+        }
+
+        private void Approval_list_Load(object sender, EventArgs e)
+        {
+            load_id = user_id;
+            load_ad = admin;
         }
     }
 }

@@ -12,9 +12,21 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Money : Form
     {
-        public Money()
+        string user_id = "";
+        string load_id = "";
+        int admin = -1;
+        int load_ad = -1;
+        public Money(string userid, int admin)
         {
             InitializeComponent();
+            user_id = userid;
+            this.admin = admin;
+        }
+
+        private void Money_Load(object sender, EventArgs e)
+        {
+            load_id = user_id;
+            load_ad = admin;
         }
     }
 }

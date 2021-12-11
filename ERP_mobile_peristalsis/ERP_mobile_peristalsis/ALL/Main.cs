@@ -17,16 +17,28 @@ namespace ERP_mobile_peristalsis
     public partial class Main : Form
     {
         public static Main Main_form = new Main();
-        public static Approval_add Approval_add_form = new Approval_add();
-        public static Approval_list Approval_list_form = new Approval_list();
+        public static Approval_add Approval_add_form = new Approval_add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static Approval_list Approval_list_form = new Approval_list(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Chatting Chatting_form = new Chatting();
-        public static Go_to_work Go_to_work_form = new Go_to_work();
-        public static Inventory Inventory_form = new Inventory();
-        public static Money Money_form = new Money();
-        public static organization_chart organization_chart_form = new organization_chart();
-        public static Schedule Schedule_form = new Schedule();
-        public static Work_Add Work_Add_form = new Work_Add();
-        public static Work_list_check Work_list_check_form = new Work_list_check();
+        public static Go_to_work Go_to_work_form = new Go_to_work(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static Inventory Inventory_form = new Inventory(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static Money Money_form = new Money(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static organization_chart organization_chart_form = new organization_chart(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static Schedule Schedule_form = new Schedule(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static Work_Add Work_Add_form = new Work_Add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static Work_list_check Work_list_check_form = new Work_list_check(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static void level()
+        {
+            Schedule_form.TopLevel = false;
+            Go_to_work_form.TopLevel = false;
+            Work_Add_form.TopLevel = false;
+            Approval_add_form.TopLevel = false;
+            Work_list_check_form.TopLevel = false;
+            Approval_list_form.TopLevel = false;
+            Inventory_form.TopLevel = false;
+            Money_form.TopLevel = false;
+            organization_chart_form.TopLevel = false;
+        }
         public static bool login_switch = false;
         public static bool[] form_switch = new bool[10] { false, false, false, false, false, false, false, false, false, false}; //위의 approval_add부터 순서대로
         public Main()
@@ -34,13 +46,12 @@ namespace ERP_mobile_peristalsis
             InitializeComponent();
             Mainmenu.Visible = false;
         }
-
         private void 본인일정ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Action_panel.Controls.Clear();
             if (Schedule_form.IsDisposed)
             {
-                Schedule_form = new Schedule();
+                Schedule_form = new Schedule(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Schedule_form.TopLevel = false;
                 Action_panel.Controls.Add(Schedule_form);
                 Schedule_form.Show();
@@ -61,7 +72,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (Go_to_work_form.IsDisposed)
             {
-                Go_to_work_form = new Go_to_work();
+                Go_to_work_form = new Go_to_work(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Go_to_work_form.TopLevel = false;
                 Action_panel.Controls.Add(Go_to_work_form);
                 Go_to_work_form.Show();
@@ -96,9 +107,8 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (Work_Add_form.IsDisposed)
             {
-                Work_Add_form = new Work_Add();
+                Work_Add_form = new Work_Add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Work_Add_form.TopLevel = false;
-                Action_panel.Controls.Add(Work_Add_form);
                 Work_Add_form.Show();
             }
             else
@@ -117,7 +127,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (Work_list_check_form.IsDisposed)
             {
-                Work_list_check_form = new Work_list_check();
+                Work_list_check_form = new Work_list_check(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Work_list_check_form.TopLevel = false;
                 Action_panel.Controls.Add(Work_list_check_form);
                 Work_list_check_form.Show();
@@ -138,7 +148,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (Approval_add_form.IsDisposed)
             {
-                Approval_add_form = new Approval_add();
+                Approval_add_form = new Approval_add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Approval_add_form.TopLevel = false;
                 Action_panel.Controls.Add(Approval_add_form);
                 Approval_add_form.Show();
@@ -159,7 +169,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (Approval_list_form.IsDisposed)
             {
-                Approval_list_form = new Approval_list();
+                Approval_list_form = new Approval_list(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Approval_list_form.TopLevel = false;
                 Action_panel.Controls.Add(Approval_list_form);
                 Approval_list_form.Show();
@@ -180,7 +190,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (organization_chart_form.IsDisposed)
             {
-                organization_chart_form = new organization_chart();
+                organization_chart_form = new organization_chart(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 organization_chart_form.TopLevel = false;
                 Action_panel.Controls.Add(organization_chart_form);
                 organization_chart_form.Show();
@@ -201,7 +211,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (Money_form.IsDisposed)
             {
-                Money_form = new Money();
+                Money_form = new Money(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Money_form.TopLevel = false;
                 Action_panel.Controls.Add(Money_form);
                 Money_form.Show();
@@ -222,7 +232,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Controls.Clear();
             if (Inventory_form.IsDisposed)
             {
-                Inventory_form = new Inventory();
+                Inventory_form = new Inventory(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
                 Inventory_form.TopLevel = false;
                 Action_panel.Controls.Add(Inventory_form);
                 Inventory_form.Show();

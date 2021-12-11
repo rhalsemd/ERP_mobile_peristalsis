@@ -39,6 +39,8 @@ namespace ERP_mobile_peristalsis
             this.id_label = new System.Windows.Forms.Label();
             this.name_label = new System.Windows.Forms.Label();
             this.Lookup_button = new System.Windows.Forms.Button();
+            this.Quantity_textBox = new System.Windows.Forms.TextBox();
+            this.Quantity_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Inventory_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@ namespace ERP_mobile_peristalsis
             // 
             // object_add_button
             // 
-            this.object_add_button.Location = new System.Drawing.Point(703, 277);
+            this.object_add_button.Location = new System.Drawing.Point(706, 301);
             this.object_add_button.Name = "object_add_button";
             this.object_add_button.Size = new System.Drawing.Size(102, 25);
             this.object_add_button.TabIndex = 22;
@@ -80,14 +82,14 @@ namespace ERP_mobile_peristalsis
             // 
             // inventory_ID_textbox
             // 
-            this.inventory_ID_textbox.Location = new System.Drawing.Point(693, 194);
+            this.inventory_ID_textbox.Location = new System.Drawing.Point(696, 182);
             this.inventory_ID_textbox.Name = "inventory_ID_textbox";
             this.inventory_ID_textbox.Size = new System.Drawing.Size(122, 23);
             this.inventory_ID_textbox.TabIndex = 23;
             // 
             // inventory_name_textBox
             // 
-            this.inventory_name_textBox.Location = new System.Drawing.Point(693, 248);
+            this.inventory_name_textBox.Location = new System.Drawing.Point(696, 228);
             this.inventory_name_textBox.Name = "inventory_name_textBox";
             this.inventory_name_textBox.Size = new System.Drawing.Size(122, 23);
             this.inventory_name_textBox.TabIndex = 23;
@@ -104,7 +106,7 @@ namespace ERP_mobile_peristalsis
             // id_label
             // 
             this.id_label.AutoSize = true;
-            this.id_label.Location = new System.Drawing.Point(706, 176);
+            this.id_label.Location = new System.Drawing.Point(709, 164);
             this.id_label.Name = "id_label";
             this.id_label.Size = new System.Drawing.Size(99, 15);
             this.id_label.TabIndex = 24;
@@ -113,7 +115,7 @@ namespace ERP_mobile_peristalsis
             // name_label
             // 
             this.name_label.AutoSize = true;
-            this.name_label.Location = new System.Drawing.Point(710, 230);
+            this.name_label.Location = new System.Drawing.Point(713, 210);
             this.name_label.Name = "name_label";
             this.name_label.Size = new System.Drawing.Size(87, 15);
             this.name_label.TabIndex = 24;
@@ -129,6 +131,22 @@ namespace ERP_mobile_peristalsis
             this.Lookup_button.UseVisualStyleBackColor = true;
             this.Lookup_button.Click += new System.EventHandler(this.Lookup_button_Click);
             // 
+            // Quantity_textBox
+            // 
+            this.Quantity_textBox.Location = new System.Drawing.Point(696, 272);
+            this.Quantity_textBox.Name = "Quantity_textBox";
+            this.Quantity_textBox.Size = new System.Drawing.Size(122, 23);
+            this.Quantity_textBox.TabIndex = 23;
+            // 
+            // Quantity_label
+            // 
+            this.Quantity_label.AutoSize = true;
+            this.Quantity_label.Location = new System.Drawing.Point(719, 254);
+            this.Quantity_label.Name = "Quantity_label";
+            this.Quantity_label.Size = new System.Drawing.Size(59, 15);
+            this.Quantity_label.TabIndex = 24;
+            this.Quantity_label.Text = "수량 입력";
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -137,8 +155,10 @@ namespace ERP_mobile_peristalsis
             this.ClientSize = new System.Drawing.Size(924, 424);
             this.Controls.Add(this.name_label);
             this.Controls.Add(this.id_label);
+            this.Controls.Add(this.Quantity_label);
             this.Controls.Add(this.count_label);
             this.Controls.Add(this.inventory_name_textBox);
+            this.Controls.Add(this.Quantity_textBox);
             this.Controls.Add(this.inventory_ID_textbox);
             this.Controls.Add(this.count_textBox);
             this.Controls.Add(this.object_add_button);
@@ -147,6 +167,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Inventory_dataGridView);
             this.Name = "Inventory";
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Inventory_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,5 +185,7 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.Label id_label;
         private System.Windows.Forms.Label name_label;
         private System.Windows.Forms.Button Lookup_button;
+        private System.Windows.Forms.TextBox Quantity_textBox;
+        private System.Windows.Forms.Label Quantity_label;
     }
 }

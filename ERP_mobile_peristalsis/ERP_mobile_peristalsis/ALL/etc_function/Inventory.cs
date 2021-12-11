@@ -12,9 +12,16 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Inventory : Form
     {
-        public Inventory()
+        string user_id = "";
+        string load_id = "";
+        int admin = -1;
+        int load_ad = -1;
+        public Inventory(string userid, int admin)
         {
             InitializeComponent();
+            user_id = userid;
+            this.admin = admin;
+            
             Inventory_dataGridView.Columns.Clear();
             Inventory_dataGridView.Refresh();
         }
@@ -26,7 +33,14 @@ namespace ERP_mobile_peristalsis
 
         private void object_add_button_Click(object sender, EventArgs e)
         {
-
+            if(inventory_ID_textbox.Text == "" || inventory_name_textBox.Text == "" || Quantity_textBox.Text == "")
+            {
+                MessageBox.Show("제품 이름 혹은 ID 혹은 숫자가 잘못 입력되었거나 공백인지 확인하세요.");
+            }
+            else
+            {
+              
+            }
         }
 
         private void Lookup_button_Click(object sender, EventArgs e)
@@ -35,6 +49,12 @@ namespace ERP_mobile_peristalsis
             DataTable dt = manager.DB_Manager.getInstance().select(query.query);
             Inventory_dataGridView.DataSource = dt;
             Inventory_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+            load_id = user_id;
+            load_ad = admin;
         }
     }
 }

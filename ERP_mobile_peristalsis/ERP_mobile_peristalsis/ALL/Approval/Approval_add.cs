@@ -12,10 +12,16 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Approval_add : Form
     {
-        public static readonly Approval approval = new Approval();
-        public Approval_add()
+        string user_id = "";
+        string load_id = "";
+        int admin = -1;
+        int load_ad = -1;
+        public static Approval approval = new Approval();
+        public Approval_add(string userid, int admin)
         {
             InitializeComponent();
+            user_id = userid;
+            this.admin = admin;
         }
 
         private void Add_button_Click(object sender, EventArgs e)
@@ -38,7 +44,13 @@ namespace ERP_mobile_peristalsis
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Approval_add_Load(object sender, EventArgs e)
+        {
+            load_id = user_id;
+            load_ad = admin;
+        }
+
+        private void Approval_open_button_Click(object sender, EventArgs e)
         {
             approval.Show();
         }

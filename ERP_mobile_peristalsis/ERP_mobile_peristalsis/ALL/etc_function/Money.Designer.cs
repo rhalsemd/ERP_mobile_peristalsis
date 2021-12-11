@@ -73,6 +73,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Money_dateTimePicker);
             this.Name = "Money";
             this.Text = "Money";
+            this.Load += new System.EventHandler(this.Money_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Money_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

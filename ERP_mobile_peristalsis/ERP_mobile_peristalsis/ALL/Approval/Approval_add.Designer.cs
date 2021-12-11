@@ -43,7 +43,7 @@ namespace ERP_mobile_peristalsis
             this.Approval_text_label = new System.Windows.Forms.Label();
             this.upload_button = new System.Windows.Forms.Button();
             this.Upload_label = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Approval_open_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,15 +173,15 @@ namespace ERP_mobile_peristalsis
             this.Upload_label.TabIndex = 29;
             this.Upload_label.Text = "첨부파일이 없습니다.";
             // 
-            // button1
+            // Approval_open_button
             // 
-            this.button1.Location = new System.Drawing.Point(740, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 25);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "결재 상세 보기";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Approval_open_button.Location = new System.Drawing.Point(740, 356);
+            this.Approval_open_button.Name = "Approval_open_button";
+            this.Approval_open_button.Size = new System.Drawing.Size(100, 25);
+            this.Approval_open_button.TabIndex = 30;
+            this.Approval_open_button.Text = "결재 상세 보기";
+            this.Approval_open_button.UseVisualStyleBackColor = true;
+            this.Approval_open_button.Click += new System.EventHandler(this.Approval_open_button_Click);
             // 
             // Approval_add
             // 
@@ -189,7 +189,7 @@ namespace ERP_mobile_peristalsis
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(924, 424);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Approval_open_button);
             this.Controls.Add(this.Upload_label);
             this.Controls.Add(this.upload_button);
             this.Controls.Add(this.Approval_text_label);
@@ -206,6 +206,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Add_button);
             this.Name = "Approval_add";
             this.Text = "Approval";
+            this.Load += new System.EventHandler(this.Approval_add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,6 +229,6 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.Label Approval_text_label;
         private System.Windows.Forms.Button upload_button;
         private System.Windows.Forms.Label Upload_label;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Approval_open_button;
     }
 }

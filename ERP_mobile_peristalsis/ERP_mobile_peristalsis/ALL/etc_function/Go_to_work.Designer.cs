@@ -85,6 +85,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Go_to_work_gridview);
             this.Name = "Go_to_work";
             this.Text = "Go_to_work";
+            this.Load += new System.EventHandler(this.Go_to_work_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Go_to_work_gridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

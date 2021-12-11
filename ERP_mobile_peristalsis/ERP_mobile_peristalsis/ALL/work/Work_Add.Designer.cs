@@ -146,6 +146,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Add_button);
             this.Name = "Work_Add";
             this.Text = "Work";
+            this.Load += new System.EventHandler(this.Work_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Work_add_gridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

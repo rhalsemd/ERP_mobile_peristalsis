@@ -96,6 +96,7 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Organization_chart_dataGridView);
             this.Name = "organization_chart";
             this.Text = "organization_chart";
+            this.Load += new System.EventHandler(this.organization_chart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Organization_chart_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Organization_chart_pictureBox)).EndInit();
             this.ResumeLayout(false);
