@@ -98,7 +98,7 @@ namespace ERP_mobile_peristalsis.manager
             }
         }
 
-        public int insert(string query)
+        public void insert(string query)
         {
             Console.WriteLine(query);
             int ret = 0;
@@ -108,7 +108,6 @@ namespace ERP_mobile_peristalsis.manager
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 ret = cmd.ExecuteNonQuery();
             }
-            return ret;
         }
         public void updatePhoto(string query, byte[] img)
         {

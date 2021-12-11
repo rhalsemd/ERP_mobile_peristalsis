@@ -38,7 +38,6 @@ namespace ERP_mobile_peristalsis
         {
             load_id = user_id;
             load_ad = admin;
-            label1.Text = load_id;
         }
     }
 }

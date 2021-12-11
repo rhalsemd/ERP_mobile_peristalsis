@@ -50,6 +50,7 @@ namespace ERP_mobile_peristalsis
             this.Inventory_dataGridView.Location = new System.Drawing.Point(12, 65);
             this.Inventory_dataGridView.Name = "Inventory_dataGridView";
             this.Inventory_dataGridView.RowTemplate.Height = 25;
+            this.Inventory_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Inventory_dataGridView.Size = new System.Drawing.Size(610, 284);
             this.Inventory_dataGridView.TabIndex = 21;
             // 
