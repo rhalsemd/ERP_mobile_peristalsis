@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//새 채팅을 만들기 위해서 사용하는 패널( 새창 띄워준다)
 namespace ERP_mobile_peristalsis.chatting
 {
     public partial class Add_Chatting_Panel : Form

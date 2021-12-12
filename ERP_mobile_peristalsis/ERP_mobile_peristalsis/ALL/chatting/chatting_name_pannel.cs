@@ -15,9 +15,10 @@ namespace ERP_mobile_peristalsis
 {
     public partial class chatting_name_pannel : UserControl
     {
+        int count_log = 0; // 채팅이 몇개있는지 세어주는 카운터
         public PictureBox profile_image = new PictureBox();
         public int number = 0; // 이게 몇번째 배열에 들어있는지 체킹하는 함수
-        public string chatting_room_name = "";
+        public string chatting_room_name = "";//디비에 들어가는 채팅방이름
         public string chat_partner = "";
         Label chatting_room_label = new Label();
         
@@ -87,19 +88,8 @@ namespace ERP_mobile_peristalsis
         }
         private void chatting_name_pannel_Click(object sender, EventArgs e)
         {
+            chatting_log_pannel log = new chatting_log_pannel();//채팅 로그를 얹을 판넬
 
-            if (Main.Chatting_form.check_chatting_log_panel == 0)
-            {
-                Main.Chatting_form.check_chatting_log_panel++;
-                typing_pannel typping_add = new typing_pannel();
-                typping_add.Size = new Size(Main.Chatting_form.splitcontainer.Panel2.Width, 100);
-                typping_add.Dock = DockStyle.Bottom;
-                Main.Chatting_form.splitcontainer.Panel2.Controls.Add(typping_add);
-
-                //return;
-            }
-
-            chatting_log_pannel log = new chatting_log_pannel();
             log.Size = new Size(Main.Chatting_form.splitcontainer.Panel2.Width, Main.Chatting_form.splitcontainer.Panel2.Height - 100);
             log.Dock = DockStyle.Fill;
             Main.Chatting_form.splitcontainer.Panel2.Controls.Add(log);
@@ -107,7 +97,7 @@ namespace ERP_mobile_peristalsis
             //여기 아래부터는 for 를 통해서 자동 생성할 부분들 스크롤 처리 테스트한다고 미리 만들어둠
             //여기 하단부터 채팅 내역을 그대로 불러와서 넣는 작업이 필요하다.
             Query query = new Query().Select("*").From("Personal_Chatting_Log").Where("Title='" + chatting_room_name + "'");
-            DataTable dt_chatting_log = DB_Manager.getInstance().select(query.query);
+            DataTable dt_chatting_log = DB_Manager.getInstance().select(query.query+"order by Datetime desc");
 
             foreach (DataRow row in dt_chatting_log.Rows)
             {
@@ -118,6 +108,7 @@ namespace ERP_mobile_peristalsis
                     log.Controls.Add(for_add1);
                     for_add1.Dock = DockStyle.Top;
                     for_add1.BorderStyle = BorderStyle.FixedSingle;
+                    count_log++;//채팅 갯수를 세어주는 카운터 증가
                 }
                 else
                 {
@@ -126,11 +117,22 @@ namespace ERP_mobile_peristalsis
                     log.Controls.Add(for_add1);
                     for_add1.Dock = DockStyle.Top;
                     for_add1.BorderStyle = BorderStyle.FixedSingle;
+                    count_log++;//채팅 갯수를 세어주는 카운터 증가
 
                 }
                 //st_count = row["count(*)"].ToString();
             }
             chatting_partner_name_show();
+            if (Main.Chatting_form.check_chatting_log_panel == 0)
+            {
+                Main.Chatting_form.check_chatting_log_panel++;
+                typing_pannel typping_add = new typing_pannel(chatting_room_name, log, this.Width,count_log);
+                typping_add.Size = new Size(Main.Chatting_form.splitcontainer.Panel2.Width, 100);
+                typping_add.Dock = DockStyle.Bottom;
+                Main.Chatting_form.splitcontainer.Panel2.Controls.Add(typping_add);
+
+                //return;
+            }
         }
     }
 }

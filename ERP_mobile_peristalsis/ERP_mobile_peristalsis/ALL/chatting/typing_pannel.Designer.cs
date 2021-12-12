@@ -52,7 +52,6 @@ namespace ERP_mobile_peristalsis
             this.chatting_textBox1.Name = "chatting_textBox1";
             this.chatting_textBox1.Size = new System.Drawing.Size(618, 164);
             this.chatting_textBox1.TabIndex = 1;
-            this.chatting_textBox1.TextChanged += new System.EventHandler(this.chatting_textBox1_TextChanged);
             this.chatting_textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.chatting_textBox1_KeyUp);
             // 
             // typing_pannel
@@ -63,7 +62,6 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.button1);
             this.Name = "typing_pannel";
             this.Size = new System.Drawing.Size(712, 164);
-            this.Load += new System.EventHandler(this.typing_pannel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
