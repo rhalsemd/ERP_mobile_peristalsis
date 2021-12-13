@@ -15,17 +15,15 @@ namespace ERP_mobile_peristalsis.chatting
         public chatting_log_column(int width, string chatting_log)
         {
             this.Size = new Size(width - 70, 80);
-            PictureBox profile_picturebox = new PictureBox();
             Label textlog = new Label();
-
+            this.BackColor = Color.White;
             textlog.BringToFront();
-            textlog.Dock = DockStyle.Fill;
             textlog.BackColor = Color.White;
             textlog.AutoSize = false;
             textlog.TextAlign = ContentAlignment.MiddleRight;
             textlog.Text = chatting_log;
-            this.Controls.Add(profile_picturebox);
             this.Controls.Add(textlog);
+            textlog.Dock = DockStyle.Fill;
         }
         public chatting_log_column(bool my ,int width,string chatting_log, PictureBox profile_image)//생성자에 프로필 이미지와 채팅 로그, 사용자 명를 변수로 전해줘야된다.
         {

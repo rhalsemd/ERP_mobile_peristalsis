@@ -14,6 +14,8 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Chatting : Form
     {
+        public List<chatting_log_column> chatting_log_column_list = new List<chatting_log_column>();
+        public chatting_log_pannel log;// 채팅로그가 올라가는 패널 현재 화면에 띄워진 패널을 여기에 저장하여  typing_pannel에서 불러와 사용
         Button button_add_chatting = new Button();
         public Label partner_name = new Label();
         public int closed = 0; //창 초기화를 위해 꺼진적이 있는지 체크
@@ -21,8 +23,10 @@ namespace ERP_mobile_peristalsis
         public int check_chatting_log = 0;
         public int check_chatting_log_panel = 0;
         int count;
+        public string chatting_room_name; // 현재 클릭되어 보여지고 있는 채팅방 이름
         public chatting_name_pannel[] newpanel_class;
         public SplitContainer splitcontainer;
+        public int chatting_log_count;
         public Chatting()
         {
             InitializeComponent();

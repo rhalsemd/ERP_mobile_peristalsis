@@ -17,12 +17,11 @@ namespace ERP_mobile_peristalsis
         int chatting_log_count;
         string chatting_room_name;
         int width;// 채팅 로그를 받아오기 위해 chatting_name_pannel 에서 받아오는 width 값
-        chatting_log_pannel log;
-        public typing_pannel(string chatting_room_name,chatting_log_pannel log,int width, int chatting_log_count)
+        
+        public typing_pannel(string chatting_room_name,int width)
         {
             InitializeComponent();
             this.chatting_room_name = chatting_room_name;
-            this.log = log;
             this.width = width;
         }
         
@@ -35,18 +34,22 @@ namespace ERP_mobile_peristalsis
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string query = "insert into Personal_Chatting_Log values('"+Config_Manager.GetInstance().userid+"','"+chatting_textBox1.Text+"', null,'"+chatting_room_name+"',now());";
-                //엔터 입력을 받았을 때
-                DB_Manager.getInstance().insert(query);
-                chatting_log_column new_chat_log = new chatting_log_column(width, chatting_textBox1.Text);
-                new_chat_log.BackColor = Color.White;
-                log.Controls.Add(new_chat_log);
-                new_chat_log.Dock = DockStyle.Top;
-                log.Controls.SetChildIndex(new_chat_log, chatting_log_count++);
-                new_chat_log.BorderStyle = BorderStyle.FixedSingle;
-                
-                chatting_textBox1.Text = "";
+                if (chatting_textBox1.Text != Environment.NewLine)
+                {
+                    chatting_textBox1.Text.Replace("Environment.NewLine", "");
+                    string query = "insert into Personal_Chatting_Log values('" + Config_Manager.GetInstance().userid + "','" + chatting_textBox1.Text + "', null,'" + Main.Chatting_form.chatting_room_name + "',now());";
+                    //엔터 입력을 받았을 때
+                    DB_Manager.getInstance().insert(query);
+                    chatting_log_column new_chat_log = new chatting_log_column(width, chatting_textBox1.Text);
+                    Main.Chatting_form.log.Controls.Add(new_chat_log);
+                    new_chat_log.BorderStyle  = BorderStyle.FixedSingle;
+                    Main.Chatting_form.chatting_log_count++;
+                    new_chat_log.Dock = DockStyle.Bottom;
+                    Main.Chatting_form.log.Controls.SetChildIndex(new_chat_log, Main.Chatting_form.chatting_log_count);
 
+                    chatting_textBox1.Text = "";
+                }
+                chatting_textBox1.Text = "";
             }
         }
     }
