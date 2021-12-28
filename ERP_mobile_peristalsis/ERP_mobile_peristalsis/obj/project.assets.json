@@ -849,23 +849,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dudtn\\.nuget\\packages\\": {},
+    "C:\\Users\\rhals\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
+      "projectUniqueName": "E:\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
       "projectName": "ERP_mobile_peristalsis",
-      "projectPath": "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
-      "packagesPath": "C:\\Users\\dudtn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dudtn\\Desktop\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\obj\\",
+      "projectPath": "E:\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis.csproj",
+      "packagesPath": "C:\\Users\\rhals\\.nuget\\packages\\",
+      "outputPath": "E:\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\ERP_mobile_peristalsis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\dudtn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rhals\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

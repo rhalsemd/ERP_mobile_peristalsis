@@ -31,13 +31,14 @@ namespace ERP_mobile_peristalsis
         {
             this.Go_to_work_gridview = new System.Windows.Forms.DataGridView();
             this.Go_to_work_label = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Go_to_work_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.search_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Go_to_work_gridview)).BeginInit();
             this.SuspendLayout();
             // 
             // Go_to_work_gridview
             // 
+            this.Go_to_work_gridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Go_to_work_gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Go_to_work_gridview.Location = new System.Drawing.Point(80, 98);
             this.Go_to_work_gridview.Name = "Go_to_work_gridview";
@@ -55,14 +56,14 @@ namespace ERP_mobile_peristalsis
             this.Go_to_work_label.TabIndex = 7;
             this.Go_to_work_label.Text = "출근 내역";
             // 
-            // dateTimePicker1
+            // Go_to_work_dateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy/MM";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(658, 60);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(87, 23);
-            this.dateTimePicker1.TabIndex = 8;
+            this.Go_to_work_dateTimePicker.CustomFormat = "yyyy/MM";
+            this.Go_to_work_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Go_to_work_dateTimePicker.Location = new System.Drawing.Point(658, 60);
+            this.Go_to_work_dateTimePicker.Name = "Go_to_work_dateTimePicker";
+            this.Go_to_work_dateTimePicker.Size = new System.Drawing.Size(87, 23);
+            this.Go_to_work_dateTimePicker.TabIndex = 8;
             // 
             // search_button
             // 
@@ -72,6 +73,7 @@ namespace ERP_mobile_peristalsis
             this.search_button.TabIndex = 9;
             this.search_button.Text = "검색";
             this.search_button.UseVisualStyleBackColor = true;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
             // Go_to_work
             // 
@@ -80,7 +82,7 @@ namespace ERP_mobile_peristalsis
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(924, 424);
             this.Controls.Add(this.search_button);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Go_to_work_dateTimePicker);
             this.Controls.Add(this.Go_to_work_label);
             this.Controls.Add(this.Go_to_work_gridview);
             this.Name = "Go_to_work";
@@ -95,7 +97,7 @@ namespace ERP_mobile_peristalsis
         #endregion
         private System.Windows.Forms.DataGridView Go_to_work_gridview;
         private System.Windows.Forms.Label Go_to_work_label;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Go_to_work_dateTimePicker;
         private System.Windows.Forms.Button search_button;
     }
 }

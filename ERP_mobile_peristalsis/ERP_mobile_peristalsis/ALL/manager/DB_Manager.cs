@@ -12,7 +12,7 @@ namespace ERP_mobile_peristalsis.manager
 {
     class DB_Manager
     {
-        string strConn = "Server=1.251.132.194;Port=5033;Database=cpp_project;Uid=cppuser;Pwd=cppuser;SSL Mode=None";
+        string strConn = "Server=221.162.215.119;Port=5033;Database=cpp_project;Uid=cppuser;Pwd=cppuser;SSL Mode=None";
         private static DB_Manager instance_ = new DB_Manager();
         private DB_Manager()
         {
