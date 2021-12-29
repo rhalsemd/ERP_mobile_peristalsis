@@ -9,9 +9,11 @@ namespace ERP_mobile_peristalsis.manager
     class Config_Manager
     {
         public string userid = "";
+        public string userName = "";
         public string password = "";
         public bool aboutLogin = false;
         public int admin = -1;
+        
         private static Config_Manager instance_ = new Config_Manager();
 
         public static Config_Manager GetInstance() { return instance_; }

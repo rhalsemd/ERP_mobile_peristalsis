@@ -64,10 +64,11 @@ namespace ERP_mobile_peristalsis
             
             splitcontainer.Panel2.BackColor = Color.White;
             splitcontainer.Panel1.BackColor = Color.White;
-            Query query_count = new Query().Select("count(*)").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userid + "' or User2 = '" + Config_Manager.GetInstance().userid + "'");
+            Query query_count = new Query().Select("count(*)").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userName + "' or User2 = '" + Config_Manager.GetInstance().userName + "'");
             count = DB_Manager.getInstance().count_call(query_count);//채팅방 갯수를 세어주는 카운트
 
-            Query query = new Query().Select("Title").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userid + "' or User2 = '" + Config_Manager.GetInstance().userid + "'");
+            Query query = new Query().Select("Title").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userName + "' or User2 = '" + Config_Manager.GetInstance().userName + "'");
+
             DataTable dt_chatting =  DB_Manager.getInstance().select(query.query);
 
 

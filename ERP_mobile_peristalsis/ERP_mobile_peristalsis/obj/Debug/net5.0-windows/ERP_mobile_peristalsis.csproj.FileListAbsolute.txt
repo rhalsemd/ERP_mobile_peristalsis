@@ -111,3 +111,16 @@ C:\Users\dudtn\Desktop\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.chatting_log_column.resources
 C:\Users\dudtn\Desktop\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.Add_Chatting_Panel.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.Add_Chatting_Panel.resources
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\Google.Protobuf.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\MySql.Data.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\bin\Debug\net5.0-windows\ZstdNet.dll
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Approval_add.resources
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.Add_Chatting_Panel.resources
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.chatting_log_column.resources
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting_log_pannel.resources
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.typing_pannel.resources

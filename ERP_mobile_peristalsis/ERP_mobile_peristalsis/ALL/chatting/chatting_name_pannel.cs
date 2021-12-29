@@ -48,7 +48,7 @@ namespace ERP_mobile_peristalsis
             
             string[] sub_chatting_name = chatting_room_name.Split('/');
             foreach (string sub in sub_chatting_name)//채팅방 이름 저장할 때 /를 넣어서 저장하고, 불러올 때 /기준으로 id와 비교해서 다른거 출력
-                if (sub != Config_Manager.GetInstance().userid)
+                if (sub != Config_Manager.GetInstance().userName)
                     chatting_room_label.Text = sub;//여기서 문자열 자르기 들어가자
             chat_partner = chatting_room_label.Text;
             chatting_room_label.BringToFront();

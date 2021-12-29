@@ -287,11 +287,21 @@ namespace ERP_mobile_peristalsis
                         Config_Manager.GetInstance().userid = user;
                         Config_Manager.GetInstance().aboutLogin = true;
                         login_Action();
+                        Query query_name = new Query().Select("Name").From("User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
+                        DataTable dt_name = DB_Manager.getInstance().select(query_name.query);
+                        foreach(DataRow row in dt_name.Rows)
+                        {
+                            Config_Manager.GetInstance().userName = row["Name"].ToString();
+                            string a = Config_Manager.GetInstance().userName;
+                            string b = a;
+                        }
+
                     }
                     else
                     {
                         MessageBox.Show("아이디가 존재하지 않거나 비밀번호 오류입니다.");
                     }
+
 
                 }
                 catch { }
