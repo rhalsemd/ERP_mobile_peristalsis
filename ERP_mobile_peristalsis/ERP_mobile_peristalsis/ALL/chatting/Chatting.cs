@@ -22,7 +22,7 @@ namespace ERP_mobile_peristalsis
         public int clicked = -1; // 클릭한 채팅방 확인용
         public int check_chatting_log = 0;
         public int check_chatting_log_panel = 0;
-        int count;
+        public int count; //name 갯수 세는 카운터
         public string chatting_room_name; // 현재 클릭되어 보여지고 있는 채팅방 이름
         public chatting_name_pannel[] newpanel_class;
         public SplitContainer splitcontainer;

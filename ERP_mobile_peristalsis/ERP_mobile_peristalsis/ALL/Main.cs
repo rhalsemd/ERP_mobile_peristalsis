@@ -87,7 +87,7 @@ namespace ERP_mobile_peristalsis
             Go_to_work_form.ControlBox = false;
             form_switch[4] = true;
         }
-
+        
         private void 채팅창ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (form_switch[2] == false)

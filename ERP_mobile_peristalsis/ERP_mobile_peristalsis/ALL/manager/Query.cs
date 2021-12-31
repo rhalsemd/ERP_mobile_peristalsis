@@ -50,7 +50,7 @@ namespace ERP_mobile_peristalsis.manager
 
         public Query Values(string val_cols)
         {
-            query += "VALUES" + val_cols;
+            query += "VALUES(" + val_cols+")";
             return this;
         }
 

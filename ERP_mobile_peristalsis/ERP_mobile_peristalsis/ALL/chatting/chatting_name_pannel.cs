@@ -19,7 +19,7 @@ namespace ERP_mobile_peristalsis
         public PictureBox profile_image = new PictureBox();
         public int number = 0; // 이게 몇번째 배열에 들어있는지 체킹하는 함수
         public string chat_partner = "";
-        Label chatting_room_label = new Label();
+        public Label chatting_room_label = new Label();
         public string chatting_room_name;
         public chatting_name_pannel()
         {
