@@ -35,11 +35,12 @@ namespace ERP_mobile_peristalsis
             this.schdule_listbox = new System.Windows.Forms.ListBox();
             this.add_textBox = new System.Windows.Forms.TextBox();
             this.schedule_box = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Change_textBox = new System.Windows.Forms.TextBox();
             this.schedule_label = new System.Windows.Forms.Label();
             this.Change_button = new System.Windows.Forms.Button();
             this.Delete_label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Schedule_calendar
@@ -47,6 +48,7 @@ namespace ERP_mobile_peristalsis
             this.Schedule_calendar.Location = new System.Drawing.Point(418, 167);
             this.Schedule_calendar.Name = "Schedule_calendar";
             this.Schedule_calendar.TabIndex = 9;
+            this.Schedule_calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.Schedule_calendar_DateSelected);
             // 
             // add_button
             // 
@@ -76,6 +78,7 @@ namespace ERP_mobile_peristalsis
             this.schdule_listbox.Name = "schdule_listbox";
             this.schdule_listbox.Size = new System.Drawing.Size(237, 304);
             this.schdule_listbox.TabIndex = 12;
+            this.schdule_listbox.SelectedIndexChanged += new System.EventHandler(this.schdule_listbox_SelectedIndexChanged);
             // 
             // add_textBox
             // 
@@ -85,6 +88,7 @@ namespace ERP_mobile_peristalsis
             this.add_textBox.TabIndex = 13;
             this.add_textBox.Text = "추가할 스케쥴을 입력하세요.";
             this.add_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.add_textBox.Click += new System.EventHandler(this.add_textBox_Click);
             // 
             // schedule_box
             // 
@@ -95,14 +99,15 @@ namespace ERP_mobile_peristalsis
             this.schedule_box.TabStop = false;
             this.schedule_box.Text = "스케쥴 목록";
             // 
-            // textBox1
+            // Change_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 167);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 23);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "변경할 스케쥴을 선택 후 내용을 입력하세요.";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Change_textBox.Location = new System.Drawing.Point(82, 167);
+            this.Change_textBox.Name = "Change_textBox";
+            this.Change_textBox.Size = new System.Drawing.Size(260, 23);
+            this.Change_textBox.TabIndex = 13;
+            this.Change_textBox.Text = "변경할 스케쥴을 선택 후 내용을 입력하세요.";
+            this.Change_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Change_textBox.Click += new System.EventHandler(this.Change_textBox_Click);
             // 
             // schedule_label
             // 
@@ -122,20 +127,21 @@ namespace ERP_mobile_peristalsis
             this.Change_button.TabIndex = 10;
             this.Change_button.Text = "변경";
             this.Change_button.UseVisualStyleBackColor = true;
-            this.Change_button.Click += new System.EventHandler(this.add_button_Click);
+            this.Change_button.Click += new System.EventHandler(this.Change_button_Click);
             // 
             // Delete_label
             // 
             this.Delete_label.AutoSize = true;
-            this.Delete_label.Location = new System.Drawing.Point(36, 248);
+            this.Delete_label.Location = new System.Drawing.Point(53, 211);
             this.Delete_label.Name = "Delete_label";
-            this.Delete_label.Size = new System.Drawing.Size(370, 15);
+            this.Delete_label.Size = new System.Drawing.Size(253, 15);
             this.Delete_label.TabIndex = 15;
-            this.Delete_label.Text = "삭제 하고 싶은 스케쥴을 선택 후 아래 버튼을 클릭하여 삭제하세요.";
+            this.Delete_label.Text = "삭제 하고 싶은 스케쥴을 선택 후 삭제하세요..";
             this.Delete_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Delete_label);
             this.groupBox1.Location = new System.Drawing.Point(36, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(370, 350);
@@ -149,9 +155,8 @@ namespace ERP_mobile_peristalsis
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 424);
             this.Controls.Add(this.del_button);
-            this.Controls.Add(this.Delete_label);
             this.Controls.Add(this.schedule_label);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Change_textBox);
             this.Controls.Add(this.add_textBox);
             this.Controls.Add(this.schdule_listbox);
             this.Controls.Add(this.Change_button);
@@ -162,6 +167,8 @@ namespace ERP_mobile_peristalsis
             this.Name = "Schedule";
             this.Text = "Schedule";
             this.Load += new System.EventHandler(this.Schedule_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +181,7 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ListBox schdule_listbox;
         private System.Windows.Forms.TextBox add_textBox;
         private System.Windows.Forms.GroupBox schedule_box;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Change_textBox;
         private System.Windows.Forms.Label schedule_label;
         private System.Windows.Forms.Button Change_button;
         private System.Windows.Forms.Label Delete_label;
