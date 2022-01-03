@@ -27,6 +27,17 @@ namespace ERP_mobile_peristalsis
         
         private void enter_button1_Click(object sender, EventArgs e)
         {
+            chatting_textBox1.Text.Replace("Environment.NewLine", "");
+            string query = "insert into Personal_Chatting_Log values('" + Config_Manager.GetInstance().userid + "','" + chatting_textBox1.Text + "', null,'" + Main.Chatting_form.chatting_room_name + "',now());";
+            //엔터 입력을 받았을 때
+            DB_Manager.getInstance().insert(query);
+            chatting_log_column new_chat_log = new chatting_log_column(width, chatting_textBox1.Text);
+            Main.Chatting_form.log.Controls.Add(new_chat_log);
+            new_chat_log.BorderStyle = BorderStyle.FixedSingle;
+            Main.Chatting_form.chatting_log_count++;
+            new_chat_log.Dock = DockStyle.Bottom;
+            Main.Chatting_form.log.Controls.SetChildIndex(new_chat_log, Main.Chatting_form.chatting_log_count);
+
             chatting_textBox1.Text = "";
         }
 
