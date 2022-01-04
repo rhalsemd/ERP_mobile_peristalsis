@@ -313,6 +313,7 @@ namespace ERP_mobile_peristalsis
             Action_panel.Visible = true;
             ID_textbox.Text = "";
             PW_textbox.Text = "";
+
             if (Config_Manager.GetInstance().admin >= 2)
             {
                 Menu_manager.Visible = true;
@@ -321,9 +322,22 @@ namespace ERP_mobile_peristalsis
             {
                 Menu_manager.Visible = false;
             }
+
+            manager.Query query = new manager.Query().Select("distinct(now())").From("cpp_project.User");
+            DataTable dt = DB_Manager.getInstance().select(query.query);
+            string now_time = "";
+            foreach (DataRow row in dt.Rows)
+            {
+                now_time = row["(now())"].ToString();
+            }
+            DateTime date = new DateTime();
+            date = Convert.ToDateTime(now_time);
+            now_time = date.ToString("yyyy-MM-dd HH:mm:ss");
             string login_s = "login";
-            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + login_s + "'");
+            query = new manager.Query().Insert("cpp_project.Login_log(ID, Log_time, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + now_time + "','" + login_s + "'");
             manager.DB_Manager.getInstance().insert(query.query);
+
+            login_switch = true;
             Login_out_button.Text = "로그아웃";
 
         }
@@ -337,9 +351,23 @@ namespace ERP_mobile_peristalsis
             Action_panel.Visible = false;
             Action_panel.Controls.Clear();
             Login_out_button.Text = "로그인";
+
+            manager.Query query = new manager.Query().Select("distinct(now())").From("cpp_project.User");
+            DataTable dt = DB_Manager.getInstance().select(query.query);
+            string now_time = "";
+            foreach (DataRow row in dt.Rows)
+            {
+                now_time = row["(now())"].ToString();
+            }
+            DateTime date = new DateTime();
+            date = Convert.ToDateTime(now_time);
+            now_time = date.ToString("yyyy-MM-dd HH:mm:ss");
             string logout_s = "logout";
-            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','"+logout_s+"'");
+            query = new manager.Query().Insert("cpp_project.Login_log(ID, Log_time, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + now_time + "','" + logout_s + "'");
+            MessageBox.Show(query.query);
             manager.DB_Manager.getInstance().insert(query.query);
+
+            login_switch = false;
             formclosed();
         }
         public void formclosed()
@@ -393,15 +421,42 @@ namespace ERP_mobile_peristalsis
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string logout_s = "logout";
-            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + logout_s + "'");
-            manager.DB_Manager.getInstance().insert(query.query);
+            if (login_switch == true)
+            {
+                manager.Query query = new manager.Query().Select("distinct(now())").From("cpp_project.User");
+                DataTable dt = DB_Manager.getInstance().select(query.query);
+                string now_time = "";
+                foreach (DataRow row in dt.Rows)
+                {
+                    now_time = row["(now())"].ToString();
+                }
+                DateTime date = new DateTime();
+                date = Convert.ToDateTime(now_time);
+                now_time = date.ToString("yyyy-MM-dd HH:mm:ss");
+                string logout_s = "logout";
+                query = new manager.Query().Insert("cpp_project.Login_log(ID, Log_time, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + now_time + "','" + logout_s + "'");
+                manager.DB_Manager.getInstance().insert(query.query);
+            }
+
         }
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string logout_s = "logout";
-            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + logout_s + "'");
-            manager.DB_Manager.getInstance().insert(query.query);
+            if (login_switch == true)
+            {
+                manager.Query query = new manager.Query().Select("distinct(now())").From("cpp_project.User");
+                DataTable dt = DB_Manager.getInstance().select(query.query);
+                string now_time = "";
+                foreach (DataRow row in dt.Rows)
+                {
+                    now_time = row["(now())"].ToString();
+                }
+                DateTime date = new DateTime();
+                date = Convert.ToDateTime(now_time);
+                now_time = date.ToString("yyyy-MM-dd HH:mm:ss");
+                string logout_s = "logout";
+                query = new manager.Query().Insert("cpp_project.Login_log(ID, Log_time, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + now_time + "','" + logout_s + "'");
+                manager.DB_Manager.getInstance().insert(query.query);
+            }
             Chatting_form.Close();
             log_form.Close();
         }

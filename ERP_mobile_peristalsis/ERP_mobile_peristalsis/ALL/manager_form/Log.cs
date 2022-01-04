@@ -21,7 +21,7 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
 
         private void login_log_button_Click(object sender, EventArgs e)
         {
-            manager.Query query = new manager.Query().Select("ID, Log_time, Log_type").From("Login_log");
+            manager.Query query = new manager.Query().Select("ID, Log_time, Login_type").From("Login_log");
             DataTable dt = manager.DB_Manager.getInstance().select(query.query);
             log_dataGridView.DataSource = dt;
             log_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
