@@ -37,7 +37,7 @@ namespace ERP_mobile_peristalsis
             DateTime date = Go_to_work_dateTimePicker.Value;
             string s_date = date.Year.ToString()+'-';
             s_date += date.Month.ToString();
-            manager.Query query = new manager.Query().Select("Work_Time as '출근시간'").From("Go_to_work").Where("id='" + user_id + "'and date_format(Work_Time, '%Y-%m') = DATE_FORMAT(now(),'"+s_date+"')");
+            manager.Query query = new manager.Query().Select("Work_Time as '출근시간'").From("cpp_project.Go_to_work").Where("id='" + user_id + "'and date_format(Work_Time, '%Y-%m') = DATE_FORMAT(now(),'"+s_date+"')");
             DataTable dt = manager.DB_Manager.getInstance().select(query.query);
             Go_to_work_gridview.DataSource = dt;
             Go_to_work_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;

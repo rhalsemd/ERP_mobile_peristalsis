@@ -45,7 +45,7 @@ namespace ERP_mobile_peristalsis
             }
             else
             {
-                manager.Query query = new manager.Query().Insert("Schedule(ID, Content, Schedule_date)").Values("'" + user_id + "','" +add_textBox.Text+"','" + selected_day + "'");
+                manager.Query query = new manager.Query().Insert("cpp_project.Schedule(ID, Content, Schedule_date)").Values("'" + user_id + "','" +add_textBox.Text+"','" + selected_day + "'");
                 MessageBox.Show(query.query);
                 manager.DB_Manager.getInstance().insert(query.query);
                 select_schedule();
@@ -60,10 +60,10 @@ namespace ERP_mobile_peristalsis
             }
             else
             {
-                manager.Query query = new manager.Query().Select("NUMBER, Content").From("Schedule").Where("ID='" + user_id + "' and date_format(Schedule_Date, '%Y-%m-%d') = '" + selected_day + "'");
+                manager.Query query = new manager.Query().Select("NUMBER, Content").From("cpp_project.Schedule").Where("ID='" + user_id + "' and date_format(Schedule_Date, '%Y-%m-%d') = '" + selected_day + "'");
                 DataTable dt = manager.DB_Manager.getInstance().select(query.query);
                 int number = Convert.ToInt32(dt.Rows[selected_number]["NUMBER"]);
-                query = new manager.Query().Delete("Schedule").Where("ID='" + user_id + "' and NUMBER=" + number);
+                query = new manager.Query().Delete("cpp_project.Schedule").Where("ID='" + user_id + "' and NUMBER=" + number);
                 manager.DB_Manager.getInstance().delete(query.query);
                 MessageBox.Show("삭제 되었습니다.");
                 select_schedule();
@@ -84,7 +84,7 @@ namespace ERP_mobile_peristalsis
         public void select_schedule() //스케줄 명단을 가져오는 메소드
         {
             schdule_listbox.Items.Clear();
-            manager.Query query = new manager.Query().Select("NUMBER, Content").From("Schedule").Where("ID='" + user_id + "' and date_format(Schedule_Date, '%Y-%m-%d') = '" + selected_day + "'");
+            manager.Query query = new manager.Query().Select("NUMBER, Content").From("cpp_project.Schedule").Where("ID='" + user_id + "' and date_format(Schedule_Date, '%Y-%m-%d') = '" + selected_day + "'");
             DataTable dt = manager.DB_Manager.getInstance().select(query.query);
             foreach (DataRow row in dt.Rows)
             {
@@ -108,10 +108,10 @@ namespace ERP_mobile_peristalsis
             }
             else
             {
-                manager.Query query = new manager.Query().Select("NUMBER, Content").From("Schedule").Where("ID='" + user_id + "' and date_format(Schedule_Date, '%Y-%m-%d') = '" + selected_day + "'");
+                manager.Query query = new manager.Query().Select("NUMBER, Content").From("cpp_project.Schedule").Where("ID='" + user_id + "' and date_format(Schedule_Date, '%Y-%m-%d') = '" + selected_day + "'");
                 DataTable dt = manager.DB_Manager.getInstance().select(query.query);
                 int number = Convert.ToInt32(dt.Rows[selected_number]["NUMBER"]);
-                query = new manager.Query().Update("Schedule").Set("Content='"+Change_textBox.Text+"'").Where("ID='" + user_id + "' and NUMBER="+number);
+                query = new manager.Query().Update("cpp_project.Schedule").Set("Content='"+Change_textBox.Text+"'").Where("ID='" + user_id + "' and NUMBER="+number);
                 manager.DB_Manager.getInstance().update(query.query);
                 MessageBox.Show("변경 되었습니다.");
                 select_schedule();

@@ -424,49 +424,50 @@ namespace ERP_mobile_peristalsis
             // 업무관련ToolStripMenuItem
             // 
             this.업무관련ToolStripMenuItem.Name = "업무관련ToolStripMenuItem";
-            this.업무관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.업무관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.업무관련ToolStripMenuItem.Text = "업무 관리";
             // 
             // 결재관련ToolStripMenuItem
             // 
             this.결재관련ToolStripMenuItem.Name = "결재관련ToolStripMenuItem";
-            this.결재관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.결재관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결재관련ToolStripMenuItem.Text = "결재 관리";
             // 
             // 조직도관련ToolStripMenuItem
             // 
             this.조직도관련ToolStripMenuItem.Name = "조직도관련ToolStripMenuItem";
-            this.조직도관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.조직도관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.조직도관련ToolStripMenuItem.Text = "조직도 관리";
             // 
             // 출퇴근관련ToolStripMenuItem
             // 
             this.출퇴근관련ToolStripMenuItem.Name = "출퇴근관련ToolStripMenuItem";
-            this.출퇴근관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.출퇴근관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.출퇴근관련ToolStripMenuItem.Text = "출퇴근 관리";
             // 
             // 로그관련ToolStripMenuItem
             // 
             this.로그관련ToolStripMenuItem.Name = "로그관련ToolStripMenuItem";
-            this.로그관련ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.로그관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.로그관련ToolStripMenuItem.Text = "로그 관리";
+            this.로그관련ToolStripMenuItem.Click += new System.EventHandler(this.로그관련ToolStripMenuItem_Click);
             // 
             // 권한관리ToolStripMenuItem
             // 
             this.권한관리ToolStripMenuItem.Name = "권한관리ToolStripMenuItem";
-            this.권한관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.권한관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.권한관리ToolStripMenuItem.Text = "권한 관리";
             // 
             // 사원관리ToolStripMenuItem
             // 
             this.사원관리ToolStripMenuItem.Name = "사원관리ToolStripMenuItem";
-            this.사원관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.사원관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.사원관리ToolStripMenuItem.Text = "사원 관리";
             // 
             // 채팅관리ToolStripMenuItem
             // 
             this.채팅관리ToolStripMenuItem.Name = "채팅관리ToolStripMenuItem";
-            this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.채팅관리ToolStripMenuItem.Text = "채팅 관리";
             // 
             // Login_out_button
@@ -540,6 +541,7 @@ namespace ERP_mobile_peristalsis
             this.Name = "Main";
             this.Text = "Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Mainmenu.ResumeLayout(false);
             this.Mainmenu.PerformLayout();
             this.ResumeLayout(false);

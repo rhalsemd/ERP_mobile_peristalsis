@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Reflection;
+using ERP_mobile_peristalsis.ALL.manager_form;
 
 namespace ERP_mobile_peristalsis
 {
@@ -27,6 +28,7 @@ namespace ERP_mobile_peristalsis
         public static Schedule Schedule_form = new Schedule(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Work_Add Work_Add_form = new Work_Add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Work_list_check Work_list_check_form = new Work_list_check(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
+        public static Log log_form = new Log();
         public static void level()
         {
             Schedule_form.TopLevel = false;
@@ -40,7 +42,7 @@ namespace ERP_mobile_peristalsis
             organization_chart_form.TopLevel = false;
         }
         public static bool login_switch = false;
-        public static bool[] form_switch = new bool[10] { false, false, false, false, false, false, false, false, false, false}; //위의 approval_add부터 순서대로
+        public static bool[] form_switch = new bool[11] { false, false, false, false, false, false, false, false, false, false, false}; //위의 approval_add부터 순서대로
         public Main()
         {
             InitializeComponent();
@@ -247,12 +249,6 @@ namespace ERP_mobile_peristalsis
             Inventory_form.ControlBox = false;
             form_switch[3] = true;
         }
-
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Chatting_form.Close();
-        }
-
         private void Logout_button_Click(object sender, EventArgs e)
         {
             if (Config_Manager.GetInstance().aboutLogin == true)
@@ -273,7 +269,7 @@ namespace ERP_mobile_peristalsis
                     Config_Manager.GetInstance().password = PW_textbox.Text;
 
 
-                    Query query = new Query().Select("ID, Admin").From("User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
+                    Query query = new Query().Select("ID, Admin").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
                     DataTable dt = DB_Manager.getInstance().select(query.query);
 
 
@@ -287,7 +283,7 @@ namespace ERP_mobile_peristalsis
                         Config_Manager.GetInstance().userid = user;
                         Config_Manager.GetInstance().aboutLogin = true;
                         login_Action();
-                        Query query_name = new Query().Select("Name").From("User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
+                        Query query_name = new Query().Select("Name").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
                         DataTable dt_name = DB_Manager.getInstance().select(query_name.query);
                         foreach(DataRow row in dt_name.Rows)
                         {
@@ -325,6 +321,9 @@ namespace ERP_mobile_peristalsis
             {
                 Menu_manager.Visible = false;
             }
+            string login_s = "login";
+            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + login_s + "'");
+            manager.DB_Manager.getInstance().insert(query.query);
             Login_out_button.Text = "로그아웃";
 
         }
@@ -338,7 +337,9 @@ namespace ERP_mobile_peristalsis
             Action_panel.Visible = false;
             Action_panel.Controls.Clear();
             Login_out_button.Text = "로그인";
-
+            string logout_s = "logout";
+            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','"+logout_s+"'");
+            manager.DB_Manager.getInstance().insert(query.query);
             formclosed();
         }
         public void formclosed()
@@ -383,6 +384,38 @@ namespace ERP_mobile_peristalsis
             if (form_switch[9] == true)
             {
                 Work_list_check_form.Close();
+            }
+            if (form_switch[10] == true)
+            {
+                log_form.Close();
+            }
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            string logout_s = "logout";
+            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + logout_s + "'");
+            manager.DB_Manager.getInstance().insert(query.query);
+        }
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string logout_s = "logout";
+            manager.Query query = new manager.Query().Insert("cpp_project.Login_log(ID, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + logout_s + "'");
+            manager.DB_Manager.getInstance().insert(query.query);
+            Chatting_form.Close();
+            log_form.Close();
+        }
+
+        private void 로그관련ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (form_switch[10] == false)
+            {
+                log_form = new Log();
+                log_form.Show();
+                form_switch[10] = true;
+            }
+            else if (form_switch[10] == true)
+            {
             }
         }
     }

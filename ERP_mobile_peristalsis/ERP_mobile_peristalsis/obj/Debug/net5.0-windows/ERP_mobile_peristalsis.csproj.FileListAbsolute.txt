@@ -124,3 +124,4 @@ D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristal
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting.chatting_log_column.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting_log_pannel.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.typing_pannel.resources
+E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.ALL.manager_form.Log.resources

@@ -58,7 +58,7 @@ namespace ERP_mobile_peristalsis
 
         private void Lookup_button_Click(object sender, EventArgs e)
         {
-            manager.Query query = new manager.Query().Select("*").From("Inventory");
+            manager.Query query = new manager.Query().Select("*").From("cpp_project.Inventory");
             DataTable dt = manager.DB_Manager.getInstance().select(query.query);
             Inventory_dataGridView.DataSource = dt;
             Inventory_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
