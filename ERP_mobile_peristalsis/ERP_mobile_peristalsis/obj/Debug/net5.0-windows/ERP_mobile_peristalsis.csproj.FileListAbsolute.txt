@@ -12,7 +12,6 @@ E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debu
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Go_to_work.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Inventory.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Main.resources
-E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Money.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.organization_chart.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Schedule.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Work_Add.resources

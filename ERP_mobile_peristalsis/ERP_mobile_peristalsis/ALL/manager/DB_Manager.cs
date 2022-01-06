@@ -47,7 +47,7 @@ namespace ERP_mobile_peristalsis.manager
             int count = Convert.ToInt32(st_count);
             return count;
         }
-        /*
+        
         public byte[] Image_process(string query)
         {
             UInt32 FileSize;
@@ -68,7 +68,7 @@ namespace ERP_mobile_peristalsis.manager
 
                 return rawData;
             }
-        }*/
+        }
 
         public void update(string query)
         {

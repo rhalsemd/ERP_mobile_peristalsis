@@ -34,9 +34,6 @@
     <Compile Update="ALL\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ALL\etc_function\Money.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="ALL\etc_function\Organization_chart.cs">
       <SubType>Form</SubType>
     </Compile>

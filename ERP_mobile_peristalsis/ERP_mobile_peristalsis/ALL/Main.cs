@@ -23,7 +23,6 @@ namespace ERP_mobile_peristalsis
         public static Chatting Chatting_form = new Chatting();
         public static Go_to_work Go_to_work_form = new Go_to_work(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Inventory Inventory_form = new Inventory(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
-        public static Money Money_form = new Money(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static organization_chart organization_chart_form = new organization_chart(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Schedule Schedule_form = new Schedule(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Work_Add Work_Add_form = new Work_Add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
@@ -31,18 +30,17 @@ namespace ERP_mobile_peristalsis
         public static Log log_form = new Log();
         public static void level()
         {
-            Schedule_form.TopLevel = false;
-            Go_to_work_form.TopLevel = false;
-            Work_Add_form.TopLevel = false;
             Approval_add_form.TopLevel = false;
-            Work_list_check_form.TopLevel = false;
             Approval_list_form.TopLevel = false;
+            Go_to_work_form.TopLevel = false;
             Inventory_form.TopLevel = false;
-            Money_form.TopLevel = false;
             organization_chart_form.TopLevel = false;
+            Schedule_form.TopLevel = false;
+            Work_Add_form.TopLevel = false;
+            Work_list_check_form.TopLevel = false;
         }
         public static bool login_switch = false;
-        public static bool[] form_switch = new bool[11] { false, false, false, false, false, false, false, false, false, false, false}; //위의 approval_add부터 순서대로
+        public static bool[] form_switch = new bool[10] { false, false, false, false, false, false, false, false, false, false}; //위의 approval_add부터 순서대로
         public Main()
         {
             InitializeComponent();
@@ -208,27 +206,6 @@ namespace ERP_mobile_peristalsis
             form_switch[6] = true;
         }
 
-        private void 월급ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Action_panel.Controls.Clear();
-            if (Money_form.IsDisposed)
-            {
-                Money_form = new Money(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
-                Money_form.TopLevel = false;
-                Action_panel.Controls.Add(Money_form);
-                Money_form.Show();
-            }
-            else
-            {
-                Money_form.TopLevel = false;
-                Action_panel.Controls.Add(Money_form);
-                Money_form.Show();
-            }
-            Money_form.Text = "";
-            Money_form.ControlBox = false;
-            form_switch[5] = true;
-        }
-
         private void 재고ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Action_panel.Controls.Clear();
@@ -364,7 +341,6 @@ namespace ERP_mobile_peristalsis
             now_time = date.ToString("yyyy-MM-dd HH:mm:ss");
             string logout_s = "logout";
             query = new manager.Query().Insert("cpp_project.Login_log(ID, Log_time, Login_type)").Values("'" + Config_Manager.GetInstance().userid + "','" + now_time + "','" + logout_s + "'");
-            MessageBox.Show(query.query);
             manager.DB_Manager.getInstance().insert(query.query);
 
             login_switch = false;
@@ -395,25 +371,21 @@ namespace ERP_mobile_peristalsis
             }
             if (form_switch[5] == true)
             {
-                Money_form.Close();
+                organization_chart_form.Close();
             }
             if (form_switch[6] == true)
             {
-                organization_chart_form.Close();
+                Schedule_form.Close();
             }
             if (form_switch[7] == true)
             {
-                Schedule_form.Close();
+                Work_Add_form.Close();
             }
             if (form_switch[8] == true)
             {
-                Work_Add_form.Close();
-            }
-            if (form_switch[9] == true)
-            {
                 Work_list_check_form.Close();
             }
-            if (form_switch[10] == true)
+            if (form_switch[9] == true)
             {
                 log_form.Close();
             }

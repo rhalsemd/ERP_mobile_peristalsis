@@ -67,7 +67,6 @@ namespace ERP_mobile_peristalsis
             this.결재ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.결재등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.결재내역ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.월급ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.재고ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_organization = new System.Windows.Forms.ToolStripMenuItem();
             this.조직도검색ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,7 +80,6 @@ namespace ERP_mobile_peristalsis
             this.로그관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.채팅관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Login_out_button = new System.Windows.Forms.Button();
             this.PW_textbox = new System.Windows.Forms.TextBox();
             this.ID_textbox = new System.Windows.Forms.TextBox();
@@ -310,7 +308,6 @@ namespace ERP_mobile_peristalsis
             this.Menu_task.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.업무ToolStripMenuItem,
             this.결재ToolStripMenuItem,
-            this.월급ToolStripMenuItem,
             this.재고ToolStripMenuItem});
             this.Menu_task.Name = "Menu_task";
             this.Menu_task.Size = new System.Drawing.Size(43, 20);
@@ -362,13 +359,6 @@ namespace ERP_mobile_peristalsis
             this.결재내역ToolStripMenuItem.Text = "결재 내역";
             this.결재내역ToolStripMenuItem.Click += new System.EventHandler(this.결재내역ToolStripMenuItem_Click);
             // 
-            // 월급ToolStripMenuItem
-            // 
-            this.월급ToolStripMenuItem.Name = "월급ToolStripMenuItem";
-            this.월급ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.월급ToolStripMenuItem.Text = "월급";
-            this.월급ToolStripMenuItem.Click += new System.EventHandler(this.월급ToolStripMenuItem_Click);
-            // 
             // 재고ToolStripMenuItem
             // 
             this.재고ToolStripMenuItem.Name = "재고ToolStripMenuItem";
@@ -402,7 +392,7 @@ namespace ERP_mobile_peristalsis
             // 채팅창ToolStripMenuItem
             // 
             this.채팅창ToolStripMenuItem.Name = "채팅창ToolStripMenuItem";
-            this.채팅창ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.채팅창ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.채팅창ToolStripMenuItem.Text = "채팅창";
             this.채팅창ToolStripMenuItem.Click += new System.EventHandler(this.채팅창ToolStripMenuItem_Click);
             // 
@@ -415,8 +405,7 @@ namespace ERP_mobile_peristalsis
             this.출퇴근관련ToolStripMenuItem,
             this.로그관련ToolStripMenuItem,
             this.권한관리ToolStripMenuItem,
-            this.사원관리ToolStripMenuItem,
-            this.채팅관리ToolStripMenuItem});
+            this.사원관리ToolStripMenuItem});
             this.Menu_manager.Name = "Menu_manager";
             this.Menu_manager.Size = new System.Drawing.Size(83, 20);
             this.Menu_manager.Text = "관리자 권한";
@@ -463,12 +452,6 @@ namespace ERP_mobile_peristalsis
             this.사원관리ToolStripMenuItem.Name = "사원관리ToolStripMenuItem";
             this.사원관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.사원관리ToolStripMenuItem.Text = "사원 관리";
-            // 
-            // 채팅관리ToolStripMenuItem
-            // 
-            this.채팅관리ToolStripMenuItem.Name = "채팅관리ToolStripMenuItem";
-            this.채팅관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.채팅관리ToolStripMenuItem.Text = "채팅 관리";
             // 
             // Login_out_button
             // 
@@ -587,7 +570,6 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ToolStripMenuItem 결재ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 결재등록ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 결재내역ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 월급ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 재고ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Menu_organization;
         private System.Windows.Forms.ToolStripMenuItem 조직도검색ToolStripMenuItem;
@@ -599,7 +581,6 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ToolStripMenuItem 로그관련ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 권한관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사원관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 채팅관리ToolStripMenuItem;
 
         private System.Windows.Forms.Button Login_out_button;
         private System.Windows.Forms.TextBox PW_textbox;
