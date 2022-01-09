@@ -435,13 +435,13 @@ namespace ERP_mobile_peristalsis
 
         private void 로그관련ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (form_switch[10] == false)
+            if (form_switch[9] == false)
             {
                 log_form = new Log();
                 log_form.Show();
-                form_switch[10] = true;
+                form_switch[9] = true;
             }
-            else if (form_switch[10] == true)
+            else if (form_switch[9] == true)
             {
             }
         }
