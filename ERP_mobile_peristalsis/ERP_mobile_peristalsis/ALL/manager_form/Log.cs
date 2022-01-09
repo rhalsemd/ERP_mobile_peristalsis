@@ -31,7 +31,7 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
 
         private void Log_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Main.form_switch[10] = false;
+            Main.form_switch[9] = false;
         }
     }
 }
