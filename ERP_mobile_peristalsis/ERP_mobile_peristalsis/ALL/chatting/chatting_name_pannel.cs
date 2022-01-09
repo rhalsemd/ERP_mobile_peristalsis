@@ -16,7 +16,7 @@ namespace ERP_mobile_peristalsis
     public partial class chatting_name_pannel : UserControl
     {
         //public int count_log = 0; // 채팅이 몇개있는지 세어주는 카운터
-        public PictureBox profile_image = new PictureBox();
+        public MemoryStream profile_image;
         public int number = 0; // 이게 몇번째 배열에 들어있는지 체킹하는 함수
         public string chat_partner = "";
         public Label chatting_room_label = new Label();
@@ -25,6 +25,7 @@ namespace ERP_mobile_peristalsis
         {
             InitializeComponent();
             chatting_room_label.Click += chatting_namming_label_Click;
+
         }
        /*
         public void set_chatting_profile_image()
@@ -106,7 +107,7 @@ namespace ERP_mobile_peristalsis
             {
                 if (row["Writter"].ToString() == Config_Manager.GetInstance().userid)
                 {
-                    chatting_log_column for_add1 = new chatting_log_column(true, this.Width,row["Log"].ToString(), profile_image);
+                    chatting_log_column for_add1 = new chatting_log_column(true, this.Width,row["Log"].ToString(), chatting_room_label.Text);
                     for_add1.BackColor = Color.White;
                     Main.Chatting_form.log.Controls.Add(for_add1);
                     for_add1.Dock = DockStyle.Top;
@@ -115,7 +116,7 @@ namespace ERP_mobile_peristalsis
                 }
                 else
                 {
-                    chatting_log_column for_add1 = new chatting_log_column(false, this.Width, row["Log"].ToString(), profile_image);
+                    chatting_log_column for_add1 = new chatting_log_column(false, this.Width, row["Log"].ToString(), chatting_room_label.Text);
                     for_add1.BackColor = Color.White;
                     Main.Chatting_form.log.Controls.Add(for_add1);
                     for_add1.Dock = DockStyle.Top;

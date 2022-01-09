@@ -40,7 +40,6 @@ D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristal
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Go_to_work.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Inventory.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Main.resources
-D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Money.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.organization_chart.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Schedule.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.Work_Add.resources
@@ -124,3 +123,4 @@ D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristal
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.chatting_log_pannel.resources
 D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.typing_pannel.resources
 E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.ALL.manager_form.Log.resources
+D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\obj\Debug\net5.0-windows\ERP_mobile_peristalsis.ALL.manager_form.Log.resources
