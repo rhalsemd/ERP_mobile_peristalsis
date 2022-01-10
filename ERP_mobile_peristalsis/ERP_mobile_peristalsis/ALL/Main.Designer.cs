@@ -73,13 +73,7 @@ namespace ERP_mobile_peristalsis
             this.채팅ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.채팅창ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_manager = new System.Windows.Forms.ToolStripMenuItem();
-            this.업무관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.결재관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.조직도관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.출퇴근관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.로그관련ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.사원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Login_out_button = new System.Windows.Forms.Button();
             this.PW_textbox = new System.Windows.Forms.TextBox();
             this.ID_textbox = new System.Windows.Forms.TextBox();
@@ -319,7 +313,7 @@ namespace ERP_mobile_peristalsis
             this.업무등록ToolStripMenuItem,
             this.업무확인ToolStripMenuItem});
             this.업무ToolStripMenuItem.Name = "업무ToolStripMenuItem";
-            this.업무ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.업무ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.업무ToolStripMenuItem.Text = "업무";
             // 
             // 업무등록ToolStripMenuItem
@@ -342,7 +336,7 @@ namespace ERP_mobile_peristalsis
             this.결재등록ToolStripMenuItem,
             this.결재내역ToolStripMenuItem});
             this.결재ToolStripMenuItem.Name = "결재ToolStripMenuItem";
-            this.결재ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.결재ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결재ToolStripMenuItem.Text = "결재";
             // 
             // 결재등록ToolStripMenuItem
@@ -362,7 +356,7 @@ namespace ERP_mobile_peristalsis
             // 재고ToolStripMenuItem
             // 
             this.재고ToolStripMenuItem.Name = "재고ToolStripMenuItem";
-            this.재고ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.재고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.재고ToolStripMenuItem.Text = "재고";
             this.재고ToolStripMenuItem.Click += new System.EventHandler(this.재고ToolStripMenuItem_Click);
             // 
@@ -377,7 +371,7 @@ namespace ERP_mobile_peristalsis
             // 조직도검색ToolStripMenuItem
             // 
             this.조직도검색ToolStripMenuItem.Name = "조직도검색ToolStripMenuItem";
-            this.조직도검색ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.조직도검색ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.조직도검색ToolStripMenuItem.Text = "조직도 검색";
             this.조직도검색ToolStripMenuItem.Click += new System.EventHandler(this.조직도검색ToolStripMenuItem_Click);
             // 
@@ -399,40 +393,10 @@ namespace ERP_mobile_peristalsis
             // Menu_manager
             // 
             this.Menu_manager.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.업무관련ToolStripMenuItem,
-            this.결재관련ToolStripMenuItem,
-            this.조직도관련ToolStripMenuItem,
-            this.출퇴근관련ToolStripMenuItem,
-            this.로그관련ToolStripMenuItem,
-            this.권한관리ToolStripMenuItem,
-            this.사원관리ToolStripMenuItem});
+            this.로그관련ToolStripMenuItem});
             this.Menu_manager.Name = "Menu_manager";
             this.Menu_manager.Size = new System.Drawing.Size(83, 20);
             this.Menu_manager.Text = "관리자 권한";
-            // 
-            // 업무관련ToolStripMenuItem
-            // 
-            this.업무관련ToolStripMenuItem.Name = "업무관련ToolStripMenuItem";
-            this.업무관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.업무관련ToolStripMenuItem.Text = "업무 관리";
-            // 
-            // 결재관련ToolStripMenuItem
-            // 
-            this.결재관련ToolStripMenuItem.Name = "결재관련ToolStripMenuItem";
-            this.결재관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.결재관련ToolStripMenuItem.Text = "결재 관리";
-            // 
-            // 조직도관련ToolStripMenuItem
-            // 
-            this.조직도관련ToolStripMenuItem.Name = "조직도관련ToolStripMenuItem";
-            this.조직도관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.조직도관련ToolStripMenuItem.Text = "조직도 관리";
-            // 
-            // 출퇴근관련ToolStripMenuItem
-            // 
-            this.출퇴근관련ToolStripMenuItem.Name = "출퇴근관련ToolStripMenuItem";
-            this.출퇴근관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.출퇴근관련ToolStripMenuItem.Text = "출퇴근 관리";
             // 
             // 로그관련ToolStripMenuItem
             // 
@@ -440,18 +404,6 @@ namespace ERP_mobile_peristalsis
             this.로그관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.로그관련ToolStripMenuItem.Text = "로그 관리";
             this.로그관련ToolStripMenuItem.Click += new System.EventHandler(this.로그관련ToolStripMenuItem_Click);
-            // 
-            // 권한관리ToolStripMenuItem
-            // 
-            this.권한관리ToolStripMenuItem.Name = "권한관리ToolStripMenuItem";
-            this.권한관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.권한관리ToolStripMenuItem.Text = "권한 관리";
-            // 
-            // 사원관리ToolStripMenuItem
-            // 
-            this.사원관리ToolStripMenuItem.Name = "사원관리ToolStripMenuItem";
-            this.사원관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.사원관리ToolStripMenuItem.Text = "사원 관리";
             // 
             // Login_out_button
             // 
@@ -574,13 +526,7 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ToolStripMenuItem Menu_organization;
         private System.Windows.Forms.ToolStripMenuItem 조직도검색ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Menu_manager;
-        private System.Windows.Forms.ToolStripMenuItem 업무관련ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 결재관련ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 조직도관련ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 출퇴근관련ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 로그관련ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 권한관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 사원관리ToolStripMenuItem;
 
         private System.Windows.Forms.Button Login_out_button;
         private System.Windows.Forms.TextBox PW_textbox;

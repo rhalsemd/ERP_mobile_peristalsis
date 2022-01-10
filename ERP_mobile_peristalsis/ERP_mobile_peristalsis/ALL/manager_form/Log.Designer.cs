@@ -46,9 +46,9 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
             // 
             // login_log_button
             // 
-            this.login_log_button.Location = new System.Drawing.Point(71, 49);
+            this.login_log_button.Location = new System.Drawing.Point(71, 37);
             this.login_log_button.Name = "login_log_button";
-            this.login_log_button.Size = new System.Drawing.Size(120, 23);
+            this.login_log_button.Size = new System.Drawing.Size(120, 40);
             this.login_log_button.TabIndex = 1;
             this.login_log_button.Text = "로그인 로그 확인";
             this.login_log_button.UseVisualStyleBackColor = true;
