@@ -31,6 +31,9 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
         {
             this.log_dataGridView = new System.Windows.Forms.DataGridView();
             this.login_log_button = new System.Windows.Forms.Button();
+            this.Work_Add_log_button = new System.Windows.Forms.Button();
+            this.Approval_add_log_button = new System.Windows.Forms.Button();
+            this.Go_to_work_log_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.log_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,11 +57,44 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
             this.login_log_button.UseVisualStyleBackColor = true;
             this.login_log_button.Click += new System.EventHandler(this.login_log_button_Click);
             // 
+            // Work_Add_log_button
+            // 
+            this.Work_Add_log_button.Location = new System.Drawing.Point(240, 37);
+            this.Work_Add_log_button.Name = "Work_Add_log_button";
+            this.Work_Add_log_button.Size = new System.Drawing.Size(120, 40);
+            this.Work_Add_log_button.TabIndex = 1;
+            this.Work_Add_log_button.Text = "업무 로그 확인";
+            this.Work_Add_log_button.UseVisualStyleBackColor = true;
+            this.Work_Add_log_button.Click += new System.EventHandler(this.Work_Add_log_button_Click);
+            // 
+            // Approval_add_log_button
+            // 
+            this.Approval_add_log_button.Location = new System.Drawing.Point(407, 37);
+            this.Approval_add_log_button.Name = "Approval_add_log_button";
+            this.Approval_add_log_button.Size = new System.Drawing.Size(120, 40);
+            this.Approval_add_log_button.TabIndex = 1;
+            this.Approval_add_log_button.Text = "결재 로그 확인";
+            this.Approval_add_log_button.UseVisualStyleBackColor = true;
+            this.Approval_add_log_button.Click += new System.EventHandler(this.Approval_add_log_button_Click);
+            // 
+            // Go_to_work_log_button
+            // 
+            this.Go_to_work_log_button.Location = new System.Drawing.Point(576, 37);
+            this.Go_to_work_log_button.Name = "Go_to_work_log_button";
+            this.Go_to_work_log_button.Size = new System.Drawing.Size(120, 40);
+            this.Go_to_work_log_button.TabIndex = 1;
+            this.Go_to_work_log_button.Text = "출퇴근 로그 확인";
+            this.Go_to_work_log_button.UseVisualStyleBackColor = true;
+            this.Go_to_work_log_button.Click += new System.EventHandler(this.Go_to_work_log_button_Click);
+            // 
             // Log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Go_to_work_log_button);
+            this.Controls.Add(this.Approval_add_log_button);
+            this.Controls.Add(this.Work_Add_log_button);
             this.Controls.Add(this.login_log_button);
             this.Controls.Add(this.log_dataGridView);
             this.Name = "Log";
@@ -73,5 +109,8 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
 
         private System.Windows.Forms.DataGridView log_dataGridView;
         private System.Windows.Forms.Button login_log_button;
+        private System.Windows.Forms.Button Work_Add_log_button;
+        private System.Windows.Forms.Button Approval_add_log_button;
+        private System.Windows.Forms.Button Go_to_work_log_button;
     }
 }

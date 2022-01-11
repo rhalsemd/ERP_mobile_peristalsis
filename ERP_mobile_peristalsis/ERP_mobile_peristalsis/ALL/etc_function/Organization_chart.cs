@@ -52,7 +52,7 @@ namespace ERP_mobile_peristalsis
             }
             else
             {
-                manager.Query query = new manager.Query().Select("ID, PhoneNumber, Department, Name").From("cpp_project.User").Where("ID='"+Organization_chart_search_textbox.Text+ "'or PhoneNumber='" + Organization_chart_search_textbox.Text + "'or Department='" + Organization_chart_search_textbox.Text + "'");
+                manager.Query query = new manager.Query().Select("ID, PhoneNumber, Department, Name").From("cpp_project.User").Where("ID='"+Organization_chart_search_textbox.Text+ "'or PhoneNumber='" + Organization_chart_search_textbox.Text + "'or Department='" + Organization_chart_search_textbox.Text + "'or Name='" + Organization_chart_search_textbox.Text + "'");
                 DataTable dt = manager.DB_Manager.getInstance().select(query.query);
                 Organization_chart_dataGridView.DataSource = dt;
                 Organization_chart_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -62,27 +62,28 @@ namespace ERP_mobile_peristalsis
 
         private void Organization_chart_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            list_view_label.Text = "";
-            Organization_chart_pictureBox.Image = null;
-            DataGridViewRow row = Organization_chart_dataGridView.SelectedRows[0];
-            string id = row.Cells[0].Value.ToString();
-            string phonenumber = row.Cells[1].Value.ToString();
-            string department = row.Cells[2].Value.ToString();
-            string name = row.Cells[3].Value.ToString();
-            string list_data = "이름 : " + name + "\n" + "아이디 : " + id + "\n" + "전화번호 : " + phonenumber + "\n" + "소속부서 : " + department;
-            list_view_label.Text = list_data;
-            try
-            {
+            try{
+                list_view_label.Text = "";
+                Organization_chart_pictureBox.Image = null;
+                DataGridViewRow row = Organization_chart_dataGridView.SelectedRows[0];
+                string id = row.Cells[0].Value.ToString();
+                string phonenumber = row.Cells[1].Value.ToString();
+                string department = row.Cells[2].Value.ToString();
+                string name = row.Cells[3].Value.ToString();
+                string list_data = "이름 : " + name + "\n" + "아이디 : " + id + "\n" + "전화번호 : " + phonenumber + "\n" + "소속부서 : " + department;
+                list_view_label.Text = list_data;
                 Query query = new Query().Select("Picture").From("cpp_project.User").Where("ID = '" + id + "'");
                 DataTable dt = DB_Manager.getInstance().select(query.query);
-                if (!(dt.Rows[0][0].Equals(DBNull.Value)))
-                {
-                    byte[] img = (byte[])dt.Rows[0][0];
-                    MemoryStream ms = new MemoryStream(img);
-                    Organization_chart_pictureBox.Image = Image.FromStream(ms);
-                }
+
             }
-            catch { }
+            catch(NullReferenceException) {
+            
+            
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

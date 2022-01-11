@@ -33,5 +33,20 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
         {
             Main.form_switch[9] = false;
         }
+
+        private void Work_Add_log_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Approval_add_log_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Go_to_work_log_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

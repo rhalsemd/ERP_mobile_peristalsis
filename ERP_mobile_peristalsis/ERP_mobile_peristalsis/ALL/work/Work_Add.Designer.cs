@@ -50,6 +50,7 @@ namespace ERP_mobile_peristalsis
             this.Add_button.TabIndex = 10;
             this.Add_button.Text = "등록";
             this.Add_button.UseVisualStyleBackColor = true;
+            this.Add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 
             // Work_add_gridview
             // 
@@ -59,6 +60,8 @@ namespace ERP_mobile_peristalsis
             this.Work_add_gridview.RowTemplate.Height = 25;
             this.Work_add_gridview.Size = new System.Drawing.Size(651, 205);
             this.Work_add_gridview.TabIndex = 11;
+            this.Work_add_gridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Work_add_gridview_CellClick);
+            this.Work_add_gridview.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Work_add_gridview_CellContentDoubleClick);
             // 
             // Main_category
             // 
@@ -67,6 +70,7 @@ namespace ERP_mobile_peristalsis
             this.Main_category.Name = "Main_category";
             this.Main_category.Size = new System.Drawing.Size(121, 23);
             this.Main_category.TabIndex = 12;
+            this.Main_category.SelectedIndexChanged += new System.EventHandler(this.Main_category_SelectedIndexChanged);
             // 
             // Middle_category
             // 
@@ -75,6 +79,7 @@ namespace ERP_mobile_peristalsis
             this.Middle_category.Name = "Middle_category";
             this.Middle_category.Size = new System.Drawing.Size(121, 23);
             this.Middle_category.TabIndex = 12;
+            this.Middle_category.SelectedIndexChanged += new System.EventHandler(this.Middle_category_SelectedIndexChanged);
             // 
             // Sub_category
             // 
@@ -83,6 +88,7 @@ namespace ERP_mobile_peristalsis
             this.Sub_category.Name = "Sub_category";
             this.Sub_category.Size = new System.Drawing.Size(121, 23);
             this.Sub_category.TabIndex = 12;
+            this.Sub_category.SelectedIndexChanged += new System.EventHandler(this.Sub_category_SelectedIndexChanged);
             // 
             // edit_button
             // 
@@ -92,6 +98,7 @@ namespace ERP_mobile_peristalsis
             this.edit_button.TabIndex = 10;
             this.edit_button.Text = "수정";
             this.edit_button.UseVisualStyleBackColor = true;
+            this.edit_button.Click += new System.EventHandler(this.edit_button_Click);
             // 
             // remove_button
             // 
@@ -101,6 +108,7 @@ namespace ERP_mobile_peristalsis
             this.remove_button.TabIndex = 10;
             this.remove_button.Text = "삭제";
             this.remove_button.UseVisualStyleBackColor = true;
+            this.remove_button.Click += new System.EventHandler(this.remove_button_Click);
             // 
             // Main_category_label
             // 
