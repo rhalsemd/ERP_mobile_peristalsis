@@ -31,7 +31,6 @@ namespace ERP_mobile_peristalsis.chatting
         {
             InitializeComponent();
             this.Size = new Size(width-70,80);
-            Bitmap bmp;
             PictureBox profile_picturebox = new PictureBox();
             profile_picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
             Label textlog = new Label();

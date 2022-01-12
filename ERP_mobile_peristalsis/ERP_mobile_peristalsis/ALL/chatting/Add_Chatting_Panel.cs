@@ -21,8 +21,6 @@ namespace ERP_mobile_peristalsis.chatting
             init();
             this.Size = new Size(200, 200);
         }
-
-        int i = 0;
         int Count_User;
         public void init()
         {

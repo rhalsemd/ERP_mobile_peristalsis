@@ -14,7 +14,6 @@ namespace ERP_mobile_peristalsis
 {
     public partial class typing_pannel : UserControl
     {
-        int chatting_log_count;
         string chatting_room_name;
         int width;// 채팅 로그를 받아오기 위해 chatting_name_pannel 에서 받아오는 width 값
         
