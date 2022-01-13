@@ -46,7 +46,6 @@ namespace ERP_mobile_peristalsis
             else
             {
                 manager.Query query = new manager.Query().Insert("cpp_project.Schedule(ID, Content, Schedule_date)").Values("'" + user_id + "','" +add_textBox.Text+"','" + selected_day + "'");
-                MessageBox.Show(query.query);
                 manager.DB_Manager.getInstance().insert(query.query);
                 select_schedule();
             }
