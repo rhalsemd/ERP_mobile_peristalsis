@@ -313,7 +313,7 @@ namespace ERP_mobile_peristalsis
             this.업무등록ToolStripMenuItem,
             this.업무확인ToolStripMenuItem});
             this.업무ToolStripMenuItem.Name = "업무ToolStripMenuItem";
-            this.업무ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.업무ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.업무ToolStripMenuItem.Text = "업무";
             // 
             // 업무등록ToolStripMenuItem
@@ -336,7 +336,7 @@ namespace ERP_mobile_peristalsis
             this.결재등록ToolStripMenuItem,
             this.결재내역ToolStripMenuItem});
             this.결재ToolStripMenuItem.Name = "결재ToolStripMenuItem";
-            this.결재ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.결재ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.결재ToolStripMenuItem.Text = "결재";
             // 
             // 결재등록ToolStripMenuItem
@@ -356,7 +356,7 @@ namespace ERP_mobile_peristalsis
             // 재고ToolStripMenuItem
             // 
             this.재고ToolStripMenuItem.Name = "재고ToolStripMenuItem";
-            this.재고ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.재고ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.재고ToolStripMenuItem.Text = "재고";
             this.재고ToolStripMenuItem.Click += new System.EventHandler(this.재고ToolStripMenuItem_Click);
             // 
@@ -371,7 +371,7 @@ namespace ERP_mobile_peristalsis
             // 조직도검색ToolStripMenuItem
             // 
             this.조직도검색ToolStripMenuItem.Name = "조직도검색ToolStripMenuItem";
-            this.조직도검색ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.조직도검색ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.조직도검색ToolStripMenuItem.Text = "조직도 검색";
             this.조직도검색ToolStripMenuItem.Click += new System.EventHandler(this.조직도검색ToolStripMenuItem_Click);
             // 
@@ -386,7 +386,7 @@ namespace ERP_mobile_peristalsis
             // 채팅창ToolStripMenuItem
             // 
             this.채팅창ToolStripMenuItem.Name = "채팅창ToolStripMenuItem";
-            this.채팅창ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.채팅창ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.채팅창ToolStripMenuItem.Text = "채팅창";
             this.채팅창ToolStripMenuItem.Click += new System.EventHandler(this.채팅창ToolStripMenuItem_Click);
             // 
@@ -401,7 +401,7 @@ namespace ERP_mobile_peristalsis
             // 로그관련ToolStripMenuItem
             // 
             this.로그관련ToolStripMenuItem.Name = "로그관련ToolStripMenuItem";
-            this.로그관련ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그관련ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.로그관련ToolStripMenuItem.Text = "로그 관리";
             this.로그관련ToolStripMenuItem.Click += new System.EventHandler(this.로그관련ToolStripMenuItem_Click);
             // 

@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Reflection;
 using ERP_mobile_peristalsis.ALL.manager_form;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace ERP_mobile_peristalsis
 {
@@ -28,6 +30,8 @@ namespace ERP_mobile_peristalsis
         public static Work_Add Work_Add_form = new Work_Add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Work_list_check Work_list_check_form = new Work_list_check(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Log log_form = new Log();
+        private SHA256Managed sha256Managed = new SHA256Managed();
+        private RijndaelManaged aes = new RijndaelManaged();
         public static void level()
         {
             Approval_add_form.TopLevel = false;
@@ -245,10 +249,13 @@ namespace ERP_mobile_peristalsis
                     Config_Manager.GetInstance().userid = ID_textbox.Text;
                     Config_Manager.GetInstance().password = PW_textbox.Text;
 
+                    var rsa_password = "w'uTJQlW+uVS9uY";
+                    var byteArray = Encoding.UTF8.GetBytes(Config_Manager.GetInstance().password);
+                    byte[] encryptedArray = AESEncrypt256(byteArray, rsa_password);
+                    string last_encoding_password= Encoding.UTF8.GetString(encryptedArray);
 
-                    Query query = new Query().Select("ID, Admin").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
+                    Query query = new Query().Select("ID, Admin").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW_AES='" + last_encoding_password + "'");
                     DataTable dt = DB_Manager.getInstance().select(query.query);
-
 
                     foreach (DataRow row in dt.Rows)
                     {
@@ -260,7 +267,7 @@ namespace ERP_mobile_peristalsis
                         Config_Manager.GetInstance().userid = user;
                         Config_Manager.GetInstance().aboutLogin = true;
                         login_Action();
-                        Query query_name = new Query().Select("Name").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW='" + Config_Manager.GetInstance().password + "'");
+                        Query query_name = new Query().Select("Name").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW_RSA='" + Config_Manager.GetInstance().password + "'");
                         DataTable dt_name = DB_Manager.getInstance().select(query_name.query);
                         foreach(DataRow row in dt_name.Rows)
                         {
@@ -280,7 +287,69 @@ namespace ERP_mobile_peristalsis
                 catch { }
             }
         }
-        private void login_Action()
+
+        public void AESEncrypt()
+        {
+            aes.KeySize = 256;
+            aes.BlockSize = 128;
+            aes.Mode = CipherMode.CBC;
+            aes.Padding = PaddingMode.PKCS7;
+        }
+
+
+        //AES_256 암호화
+        public byte[] AESEncrypt256(byte[] encryptData, String password)
+        {
+            // Salt는 비밀번호의 길이를 SHA256 해쉬값으로 한다.
+            var salt = sha256Managed.ComputeHash(Encoding.UTF8.GetBytes(password.Length.ToString()));
+            Console.WriteLine("Salt(Base64) : " + Convert.ToBase64String(salt));
+
+
+            //PBKDF2(Password-Based Key Derivation Function)
+            //반복은 65535번
+            var PBKDF2Key = new Rfc2898DeriveBytes(password, salt, 65535, HashAlgorithmName.SHA256);
+            var secretKey = PBKDF2Key.GetBytes(aes.KeySize / 8);
+            var iv = PBKDF2Key.GetBytes(aes.BlockSize / 8);
+
+            Console.WriteLine("SecretKey(Base64) : " + Convert.ToBase64String(secretKey));
+            Console.WriteLine("IV(Base64) : " + Convert.ToBase64String(iv));
+
+            byte[] xBuff = null;
+            using (var ms = new MemoryStream())
+            {
+                using (var cs = new CryptoStream(ms, aes.CreateEncryptor(secretKey, iv), CryptoStreamMode.Write))
+                {
+                    cs.Write(encryptData, 0, encryptData.Length);
+                }
+                xBuff = ms.ToArray();
+            }
+            return xBuff;
+        }
+
+        //AES_256 복호화 확인용
+        public byte[] AESDecrypt256(byte[] decryptData, String password)
+        {
+            // Salt는 비밀번호의 길이를 SHA256 해쉬값으로 한다.
+            var salt = sha256Managed.ComputeHash(Encoding.UTF8.GetBytes(password.Length.ToString()));
+
+            //PBKDF2(Password-Based Key Derivation Function)
+            //반복은 65535번
+            var PBKDF2Key = new Rfc2898DeriveBytes(password, salt, 65535, HashAlgorithmName.SHA256);
+            var secretKey = PBKDF2Key.GetBytes(aes.KeySize / 8);
+            var iv = PBKDF2Key.GetBytes(aes.BlockSize / 8);
+
+            byte[] xBuff = null;
+            using (var ms = new MemoryStream())
+            {
+                using (var cs = new CryptoStream(ms, aes.CreateDecryptor(secretKey, iv), CryptoStreamMode.Write))
+                {
+                    cs.Write(decryptData, 0, decryptData.Length);
+                }
+                xBuff = ms.ToArray();
+            }
+            return xBuff;
+        }
+    private void login_Action()
         {
             Mainmenu.Visible = true;
             ID_label.Visible = false;
@@ -345,6 +414,38 @@ namespace ERP_mobile_peristalsis
 
             login_switch = false;
             formclosed();
+        }
+        public string RSAEncrypt(string getValue, string pubKey)
+        {
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(); //암호화
+            rsa.FromXmlString(pubKey);
+
+            //암호화할 문자열을 UFT8인코딩
+            byte[] inbuf = (new UTF8Encoding()).GetBytes(getValue);
+
+            //암호화
+            byte[] encbuf = rsa.Encrypt(inbuf, false);
+
+            //암호화된 문자열 Base64인코딩
+            return Convert.ToBase64String(encbuf);
+        }
+
+        // RSA 복호화
+        public static string RSADecrypt(string getValue, string priKey)
+        {
+            //RSA객체생성
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(); //복호화
+            rsa.FromXmlString(priKey);
+
+            //sValue문자열을 바이트배열로 변환
+            byte[] srcbuf = Convert.FromBase64String(getValue);
+
+            //바이트배열 복호화
+            byte[] decbuf = rsa.Decrypt(srcbuf, false);
+
+            //복호화 바이트배열을 문자열로 변환
+            string sDec = (new UTF8Encoding()).GetString(decbuf, 0, decbuf.Length);
+            return sDec;
         }
         public void formclosed()
         {
