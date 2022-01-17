@@ -14,7 +14,7 @@ namespace ERP_mobile_peristalsis
 {
     public partial class Chatting : Form
     {
-        public List<chatting_log_column> chatting_log_column_list = new List<chatting_log_column>();
+        public bool loadfinished = false;//채팅 로드가 끝났는지 확인하는 함수
         public chatting_log_pannel log;// 채팅로그가 올라가는 패널 현재 화면에 띄워진 패널을 여기에 저장하여  typing_pannel에서 불러와 사용
         Button button_add_chatting = new Button();
         public Label partner_name = new Label();
@@ -26,9 +26,12 @@ namespace ERP_mobile_peristalsis
         public string chatting_room_name; // 현재 클릭되어 보여지고 있는 채팅방 이름
         public chatting_name_pannel[] newpanel_class;
         public SplitContainer splitcontainer;
-        public int chatting_log_count;
+        public int chatting_log_count;//채팅 로그를 불러온적 있는지 체크하는 함수로 타이핑 패널을 생성할 때 if 조건을 통해 사용한다.
+        public chatting_name_pannel clicked_chatting_name_panel;
+        public typing_pannel typing_pannel;
         public Chatting()
         {
+            loadfinished = false;
             InitializeComponent();
             button_add_chatting.Click += button_add_chatting_click;
         }
@@ -45,9 +48,6 @@ namespace ERP_mobile_peristalsis
             e.Cancel = true;
             splitcontainer = null;
             closed++;
-            for(int i = 0; i < count; i++)
-            {
-            }
         }
         
         public void init()
@@ -68,7 +68,6 @@ namespace ERP_mobile_peristalsis
             count = DB_Manager.getInstance().count_call(query_count);//채팅방 갯수를 세어주는 카운트
 
             Query query = new Query().Select("Title").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userName + "' or User2 = '" + Config_Manager.GetInstance().userName + "'");
-
             DataTable dt_chatting =  DB_Manager.getInstance().select(query.query);
 
 

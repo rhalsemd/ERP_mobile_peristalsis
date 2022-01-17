@@ -14,7 +14,8 @@ namespace ERP_mobile_peristalsis.chatting
 {
     public partial class chatting_log_column : UserControl
     {
-        public chatting_log_column(int width, string chatting_log)
+        public int last_chat_num = 0;
+        public chatting_log_column(int width, string chatting_log,string chatting_room_name)
         {
             this.Size = new Size(width - 70, 80);
             Label textlog = new Label();
@@ -26,9 +27,14 @@ namespace ERP_mobile_peristalsis.chatting
             textlog.Text = chatting_log;
             this.Controls.Add(textlog);
             textlog.Dock = DockStyle.Fill;
+            string query = "select now()";
+            DataTable dt_chatting = DB_Manager.getInstance().select(query);
+            this.last_chat_num = DB_Manager.getInstance().last_chat_num(chatting_room_name);
+            
         }
-        public chatting_log_column(bool my ,int width,string chatting_log,string chatting_with)//생성자에 프로필 이미지와 채팅 로그, 사용자 명를 변수로 전해줘야된다.
+        public chatting_log_column(bool my ,int width,string chatting_log,string chatting_with,int num)//생성자에 프로필 이미지와 채팅 로그, 사용자 명를 변수로 전해줘야된다.
         {
+            this.last_chat_num = num;
             InitializeComponent();
             this.Size = new Size(width-70,80);
             PictureBox profile_picturebox = new PictureBox();

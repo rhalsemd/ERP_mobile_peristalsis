@@ -141,5 +141,28 @@ namespace ERP_mobile_peristalsis.manager
                 return dt;
             }
         }
+        //TODO: 여기서 시간 처리해줘야됨
+        public int last_chat_num(string chatting_room_name)//마지막으로 채팅친 num을 찾아내는 함수로 typing_pannel에서 사용하고있다.
+        {
+            int lasttime = 0;
+            string query = "select* from  Personal_Chatting_Log where Key_num = (select max(Key_num) from Personal_Chatting_Log where Title = '" + chatting_room_name + "')";//마지막으로 채팅친 내역 불러오기
+            DataTable datatable = DB_Manager.getInstance().select(query);//마지막 채팅기록을 불러온다
+            foreach (DataRow row in datatable.Rows)
+            {
+                lasttime = Convert.ToInt32(row["Key_num"]);
+            }
+            return lasttime;
+        }
+        public int chat_num(string chatting_room_name,string chatting_log)//채팅 로그를 기반으로 채팅친 num을 찾아내는 함수로 typing_pannel에서 사용하고있다.
+        {
+            int lasttime = 0;
+            string query = "select Key_num from  Personal_Chatting_Log where Log='" + chatting_log + "' and Title = '" + chatting_room_name + "'";//마지막으로 채팅친 내역 불러오기
+            DataTable datatable = DB_Manager.getInstance().select(query);//마지막 채팅기록을 불러온다
+            foreach (DataRow row in datatable.Rows)
+            {
+                lasttime = Convert.ToInt32(row["Key_num"]);
+            }
+            return lasttime;
+        }
     }
 }

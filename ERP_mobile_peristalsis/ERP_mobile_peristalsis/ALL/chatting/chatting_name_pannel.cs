@@ -21,10 +21,12 @@ namespace ERP_mobile_peristalsis
         public string chat_partner = "";
         public Label chatting_room_label = new Label();
         public string chatting_room_name;
+        public List<chatting_log_column> collect_chatting_log = null;
         public chatting_name_pannel()
         {
             InitializeComponent();
             chatting_room_label.Click += chatting_namming_label_Click;
+            collect_chatting_log = new List<chatting_log_column>();
 
         }
        /*
@@ -92,8 +94,9 @@ namespace ERP_mobile_peristalsis
         }
         private void chatting_name_pannel_Click(object sender, EventArgs e)
         {
+            Main.Chatting_form.loadfinished = false;
             Main.Chatting_form.log = new chatting_log_pannel();//채팅 로그를 얹을 판넬
-
+            Main.Chatting_form.clicked_chatting_name_panel = this;
             Main.Chatting_form.log.Size = new Size(Main.Chatting_form.splitcontainer.Panel2.Width, Main.Chatting_form.splitcontainer.Panel2.Height - 100);
             Main.Chatting_form.log.Dock = DockStyle.Fill;
             Main.Chatting_form.splitcontainer.Panel2.Controls.Add(Main.Chatting_form.log);
@@ -103,26 +106,29 @@ namespace ERP_mobile_peristalsis
             Query query = new Query().Select("*").From("Personal_Chatting_Log").Where("Title='" + Main.Chatting_form.chatting_room_name+ "'");
             DataTable dt_chatting_log = DB_Manager.getInstance().select(query.query+"order by Datetime desc");
 
-            foreach (DataRow row in dt_chatting_log.Rows)
+            foreach (DataRow row in dt_chatting_log.Rows)//채팅 로그를 받아와서 생성하나 따로 리스트에 넣어 관리하지는 않는다 다만 카운터로 갯수를 세어주므로 생성가능
             {
                 if (row["Writter"].ToString() == Config_Manager.GetInstance().userid)
                 {
-                    chatting_log_column for_add1 = new chatting_log_column(true, this.Width,row["Log"].ToString(), chatting_room_label.Text);
+                    chatting_log_column for_add1 = new chatting_log_column(true, this.Width,row["Log"].ToString(), chatting_room_label.Text,Convert.ToInt32( row["Key_num"]));
                     for_add1.BackColor = Color.White;
                     Main.Chatting_form.log.Controls.Add(for_add1);
                     for_add1.Dock = DockStyle.Top;
                     for_add1.BorderStyle = BorderStyle.FixedSingle;
                     Main.Chatting_form.chatting_log_count++;//채팅 갯수를 세어주는 카운터 증가
+                    for_add1.last_chat_num = Convert.ToInt32(row["Key_num"]);
+                    collect_chatting_log.Add(for_add1);
                 }
                 else
                 {
-                    chatting_log_column for_add1 = new chatting_log_column(false, this.Width, row["Log"].ToString(), chatting_room_label.Text);
+                    chatting_log_column for_add1 = new chatting_log_column(false, this.Width, row["Log"].ToString(), chatting_room_label.Text, Convert.ToInt32(row["Key_num"]));
                     for_add1.BackColor = Color.White;
                     Main.Chatting_form.log.Controls.Add(for_add1);
                     for_add1.Dock = DockStyle.Top;
                     for_add1.BorderStyle = BorderStyle.FixedSingle;
                     Main.Chatting_form.chatting_log_count++;//채팅 갯수를 세어주는 카운터 증가
-
+                    for_add1.last_chat_num = Convert.ToInt32(row["Key_num"]);
+                    collect_chatting_log.Add(for_add1);
                 }
                 //st_count = row["count(*)"].ToString();
             }
@@ -137,6 +143,7 @@ namespace ERP_mobile_peristalsis
 
                 //return;
             }
+            Main.Chatting_form.loadfinished = true;
         }
     }
 }
