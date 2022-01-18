@@ -267,7 +267,8 @@ namespace ERP_mobile_peristalsis
                         Config_Manager.GetInstance().userid = user;
                         Config_Manager.GetInstance().aboutLogin = true;
                         login_Action();
-                        Query query_name = new Query().Select("Name").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW_RSA='" + Config_Manager.GetInstance().password + "'");
+                        Query query_name = new Query().Select("Name").From("cpp_project.User").Where("ID='" + Config_Manager.GetInstance().userid + "' AND " + "PW_AES='" + last_encoding_password + "'");
+                        
                         DataTable dt_name = DB_Manager.getInstance().select(query_name.query);
                         foreach(DataRow row in dt_name.Rows)
                         {

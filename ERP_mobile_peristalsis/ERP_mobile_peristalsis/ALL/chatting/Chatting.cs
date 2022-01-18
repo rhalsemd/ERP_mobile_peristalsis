@@ -68,6 +68,7 @@ namespace ERP_mobile_peristalsis
             count = DB_Manager.getInstance().count_call(query_count);//채팅방 갯수를 세어주는 카운트
 
             Query query = new Query().Select("Title").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userName + "' or User2 = '" + Config_Manager.GetInstance().userName + "'");
+            string qwe = query.query;
             DataTable dt_chatting =  DB_Manager.getInstance().select(query.query);
 
 
