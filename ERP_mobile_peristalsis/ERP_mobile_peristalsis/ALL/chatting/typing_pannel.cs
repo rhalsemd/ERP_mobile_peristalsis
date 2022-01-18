@@ -22,12 +22,12 @@ namespace ERP_mobile_peristalsis
         public Thread thread_check_new;
         string chatting_room_name;
         int width;// 채팅 로그를 받아오기 위해 chatting_name_pannel 에서 받아오는 width 값
-
+        int last = 0;
         public void renew_thread()// 채티을 실시간으로 불러와서 업데이트해주는 쓰레드에
         {
             while (Main.form_switch[2])
             {
-                Thread.Sleep(2);
+                Thread.Sleep(100);
                 if(Main.Chatting_form.loadfinished==true && Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log!=null)
                 this.Invoke(new threadDelegate_1(real_func)) ;
             }
@@ -39,28 +39,27 @@ namespace ERP_mobile_peristalsis
             Query query = new Query().Select("max(Key_num)").From("Personal_Chatting_Log").Where("Title='" + Main.Chatting_form.chatting_room_name + "'");
             //+"and Key_num >" + Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Last().last_chat_num.ToString()
             DataTable dt = DB_Manager.getInstance().select(query.query);
-            string query_ = query.query;
-
             foreach (DataRow row in dt.Rows)
             {
-                if(!DBNull.Value.Equals(row["max(Key_num)"]))
+                if(!DBNull.Value.Equals(row["max(Key_num)"])&& Convert.ToInt32(row["max(Key_num)"])>last)
                 num = Convert.ToInt32(row["max(Key_num)"]);
             } 
             if (num!=0)
             {
-                if(Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Any())
-                if ((Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Last().last_chat_num < num))
+                //if(Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Any())
+                if ((Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Last().last_chat_num < num && Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.First().last_chat_num < num))
                 {
                     Query new_chatting_log = new Query().Select("*").From("Personal_Chatting_Log").Where("Title='" + Main.Chatting_form.chatting_room_name + "' and Key_num > " + Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Last().last_chat_num);
                     string a = new_chatting_log.query;
                     DataTable dt_chatting_log = DB_Manager.getInstance().select(new_chatting_log.query + "order by Datetime desc");
                     foreach (DataRow row in dt_chatting_log.Rows)
                     {
-                        if ((!string.Equals(row["Writter"].ToString(), Config_Manager.GetInstance().userid) )&& Convert.ToInt32( row["Key_num"])> Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Last().last_chat_num)
+                        if ((!string.Equals(row["Writter"].ToString(), Config_Manager.GetInstance().userid) )&& Convert.ToInt32( row["Key_num"])> Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Last().last_chat_num&& Convert.ToInt32(row["Key_num"]) > Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.First().last_chat_num)
                         {
                             int aa = Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Last().last_chat_num;
-                            aa = Convert.ToInt32(row["Key_num"]);
-                            aa = 1;
+                                int k = aa;
+                            int bb = Convert.ToInt32(row["Key_num"]);
+                                int kk = bb;
                             chatting_log_column new_chat_log = new chatting_log_column(false, this.Width, row["Log"].ToString(), row["Log"].ToString(), Convert.ToInt32(row["Key_num"]));
                             Main.Chatting_form.clicked_chatting_name_panel.collect_chatting_log.Add(new_chat_log);//채팅이 추가되었음으로 채팅로그를 추가해준다.
                             Main.Chatting_form.log.Controls.Add(new_chat_log);
@@ -68,7 +67,7 @@ namespace ERP_mobile_peristalsis
                             Main.Chatting_form.chatting_log_count++;//채팅 갯수를 세어주는 카운터
                             new_chat_log.Dock = DockStyle.Bottom;
                             Main.Chatting_form.log.Controls.SetChildIndex(new_chat_log, Main.Chatting_form.chatting_log_count);
-                            new_chat_log.last_chat_num = Convert.ToInt32(row["Key_num"]);                       
+                            last =Convert.ToInt32(row["Key_num"]);
                         }
                     }
                 }

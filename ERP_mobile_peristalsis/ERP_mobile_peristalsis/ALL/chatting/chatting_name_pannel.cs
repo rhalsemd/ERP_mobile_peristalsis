@@ -103,9 +103,9 @@ namespace ERP_mobile_peristalsis
             Main.Chatting_form.splitcontainer.Panel2.Controls.SetChildIndex(Main.Chatting_form.log, 0);
             //여기 아래부터는 for 를 통해서 자동 생성할 부분들 스크롤 처리 테스트한다고 미리 만들어둠
             //여기 하단부터 채팅 내역을 그대로 불러와서 넣는 작업이 필요하다.
-            Query query = new Query().Select("*").From("Personal_Chatting_Log").Where("Title='" + Main.Chatting_form.chatting_room_name+ "'");
-            DataTable dt_chatting_log = DB_Manager.getInstance().select(query.query+"order by Datetime desc");
-
+            Query query = new Query().Select("*").From("Personal_Chatting_Log").Where("Title='" + Main.Chatting_form.chatting_room_name+ "'"+ "order by Datetime desc");
+            DataTable dt_chatting_log = DB_Manager.getInstance().select(query.query);
+            string check_query = query.query;
             foreach (DataRow row in dt_chatting_log.Rows)//채팅 로그를 받아와서 생성하나 따로 리스트에 넣어 관리하지는 않는다 다만 카운터로 갯수를 세어주므로 생성가능
             {
                 if (row["Writter"].ToString() == Config_Manager.GetInstance().userid)
@@ -117,6 +117,7 @@ namespace ERP_mobile_peristalsis
                     for_add1.BorderStyle = BorderStyle.FixedSingle;
                     Main.Chatting_form.chatting_log_count++;//채팅 갯수를 세어주는 카운터 증가
                     for_add1.last_chat_num = Convert.ToInt32(row["Key_num"]);
+                    int check_for_num = for_add1.last_chat_num;
                     collect_chatting_log.Add(for_add1);
                 }
                 else
@@ -128,6 +129,7 @@ namespace ERP_mobile_peristalsis
                     for_add1.BorderStyle = BorderStyle.FixedSingle;
                     Main.Chatting_form.chatting_log_count++;//채팅 갯수를 세어주는 카운터 증가
                     for_add1.last_chat_num = Convert.ToInt32(row["Key_num"]);
+                    int check_for_num = for_add1.last_chat_num;
                     collect_chatting_log.Add(for_add1);
                 }
                 //st_count = row["count(*)"].ToString();
