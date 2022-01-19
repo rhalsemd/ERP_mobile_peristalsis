@@ -39,6 +39,7 @@ namespace ERP_mobile_peristalsis
             this.Main_category_label = new System.Windows.Forms.Label();
             this.Middle_category_label = new System.Windows.Forms.Label();
             this.Sub_category_label = new System.Windows.Forms.Label();
+            this.Search_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Work_add_gridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@ namespace ERP_mobile_peristalsis
             this.Work_add_gridview.Location = new System.Drawing.Point(157, 151);
             this.Work_add_gridview.Name = "Work_add_gridview";
             this.Work_add_gridview.RowTemplate.Height = 25;
+            this.Work_add_gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Work_add_gridview.Size = new System.Drawing.Size(651, 205);
             this.Work_add_gridview.TabIndex = 11;
             this.Work_add_gridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Work_add_gridview_CellClick);
@@ -88,7 +90,6 @@ namespace ERP_mobile_peristalsis
             this.Sub_category.Name = "Sub_category";
             this.Sub_category.Size = new System.Drawing.Size(121, 23);
             this.Sub_category.TabIndex = 12;
-            this.Sub_category.SelectedIndexChanged += new System.EventHandler(this.Sub_category_SelectedIndexChanged);
             // 
             // edit_button
             // 
@@ -137,11 +138,22 @@ namespace ERP_mobile_peristalsis
             this.Sub_category_label.TabIndex = 13;
             this.Sub_category_label.Text = "소분류";
             // 
+            // Search_button
+            // 
+            this.Search_button.Location = new System.Drawing.Point(644, 67);
+            this.Search_button.Name = "Search_button";
+            this.Search_button.Size = new System.Drawing.Size(75, 23);
+            this.Search_button.TabIndex = 14;
+            this.Search_button.Text = "조회";
+            this.Search_button.UseVisualStyleBackColor = true;
+            this.Search_button.Click += new System.EventHandler(this.Search_button_Click);
+            // 
             // Work_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 401);
+            this.Controls.Add(this.Search_button);
             this.Controls.Add(this.Sub_category_label);
             this.Controls.Add(this.Middle_category_label);
             this.Controls.Add(this.Main_category_label);
@@ -172,5 +184,6 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.Label Main_category_label;
         private System.Windows.Forms.Label Middle_category_label;
         private System.Windows.Forms.Label Sub_category_label;
+        private System.Windows.Forms.Button Search_button;
     }
 }

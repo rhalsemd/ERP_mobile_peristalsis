@@ -19,6 +19,7 @@ namespace ERP_mobile_peristalsis
         int load_ad = -1;
         DataTable Category_dt;
         string main_category_num = "";
+        int work_number = -1;
         public Work_Add(string userid, int admin)
         {
             InitializeComponent();
@@ -26,6 +27,8 @@ namespace ERP_mobile_peristalsis
             this.admin = admin;
             Query query = new Query().Select("*").From("cpp_project.Work_Category");
             Category_dt = DB_Manager.getInstance().select(query.query);
+            work_number = -1;
+            main_category_num = "";
             Middle_category.Items.Clear();
             Main_category.Items.Clear();
             Sub_category.Items.Clear();
@@ -44,7 +47,7 @@ namespace ERP_mobile_peristalsis
 
             Work_add_gridview.Columns.Clear();
             Work_add_gridview.Refresh();
-            query = new Query().Select("Main_Category, Middle_Category, Sub_Category").From("cpp_project.Work").Where("date_format(Work_Date, '%Y-%m-%d') = date_format(now(),'%Y-%m-%d')");
+            query = new Query().Select("NUMBER, Main_Category, Middle_Category, Sub_Category").From("cpp_project.Work").Where("date_format(Work_Date, '%Y-%m-%d') = date_format(now(),'%Y-%m-%d') and ID = '"+user_id+"'");
             DataTable dt = manager.DB_Manager.getInstance().select(query.query);
             Work_add_gridview.DataSource = dt;
             Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -58,41 +61,81 @@ namespace ERP_mobile_peristalsis
 
         private void Add_button_Click(object sender, EventArgs e)
         {
+            if (Main_category.Text == "" || Sub_category.Text == "" || Middle_category.Text == "")
+            {
+                MessageBox.Show("분류를 전부 정하였는지 확인하세요.");
+            }
+            else
+            {
+                manager.Query query = new manager.Query().Insert("cpp_project.Work(ID, Main_Category, Middle_Category, Sub_Category, Work_Date)").Values("'" + user_id + "','" + Main_category.Text + "','" + Middle_category.Text + "','"+Sub_category.Text+"', now()");
+                manager.DB_Manager.getInstance().insert(query.query);
+                MessageBox.Show("추가 되었습니다.");
 
+                Work_add_gridview.Columns.Clear();
+                Work_add_gridview.Refresh();
+                query = new Query().Select("NUMBER, Main_Category, Middle_Category, Sub_Category").From("cpp_project.Work").Where("date_format(Work_Date, '%Y-%m-%d') = date_format(now(),'%Y-%m-%d') and ID = '" + user_id + "'");
+                DataTable dt = manager.DB_Manager.getInstance().select(query.query);
+                Work_add_gridview.DataSource = dt;
+                Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
+            }
         }
 
         private void edit_button_Click(object sender, EventArgs e)
         {
+            if(work_number == -1)
+            {
+                string selected_num = Work_add_gridview.SelectedRows[0].Cells[0].Value.ToString();
+                work_number = Convert.ToInt32(selected_num);
+                manager.Query query = new manager.Query().Update("cpp_project.Work").Set("Main_Category='" + Main_category.Text + "', Middle_Category='" + Middle_category.Text + "', Sub_Category = '" + Sub_category.Text + "' where NUMBER='" + work_number + "'");
+                manager.DB_Manager.getInstance().update(query.query);
+                MessageBox.Show("변경 되었습니다.");
 
+                Work_add_gridview.Columns.Clear();
+                Work_add_gridview.Refresh();
+                query = new Query().Select("NUMBER, Main_Category, Middle_Category, Sub_Category").From("cpp_project.Work").Where("date_format(Work_Date, '%Y-%m-%d') = date_format(now(),'%Y-%m-%d') and ID = '" + user_id + "'");
+                DataTable dt = manager.DB_Manager.getInstance().select(query.query);
+                Work_add_gridview.DataSource = dt;
+                Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
+            }
+            else
+            {
+                MessageBox.Show("변경할 업무를 선택하지 않았습니다.");
+            }
         }
 
         private void remove_button_Click(object sender, EventArgs e)
         {
-
+            if(work_number == -1)
+            {
+                string selected_num = Work_add_gridview.SelectedRows[0].Cells[0].Value.ToString();
+                work_number = Convert.ToInt32(selected_num);
+                Query query = new manager.Query().Delete("cpp_project.Work").Where("ID='" + user_id + "' and NUMBER=" + work_number);
+                manager.DB_Manager.getInstance().delete(query.query);
+                MessageBox.Show("삭제 되었습니다.");
+                
+                Work_add_gridview.Columns.Clear();
+                Work_add_gridview.Refresh();
+                query = new Query().Select("NUMBER, Main_Category, Middle_Category, Sub_Category").From("cpp_project.Work").Where("date_format(Work_Date, '%Y-%m-%d') = date_format(now(),'%Y-%m-%d') and ID = '" + user_id + "'");
+                DataTable dt = manager.DB_Manager.getInstance().select(query.query);
+                Work_add_gridview.DataSource = dt;
+                Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
+            }
+            else
+            {
+                MessageBox.Show("삭제할 업무를 선택하지 않았습니다.");
+            }
         }
 
         private void Work_add_gridview_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (Main.form_switch[8] == false)
-                {
-                    Main.Work_list_check_form = new Work_list_check(user_id, admin);
-                    Main.Work_list_check_form.Show();
-                    Main.form_switch[8] = true;
-                }
-                else if (Main.form_switch[8] == true)
-                {
-                }
             }
             catch (NullReferenceException)
             {
-
-
             }
             catch (Exception)
             {
-
             }
         }
 
@@ -146,10 +189,15 @@ namespace ERP_mobile_peristalsis
                 }
             }
         }
-
-        private void Sub_category_SelectedIndexChanged(object sender, EventArgs e)
+        private void Search_button_Click(object sender, EventArgs e)
         {
-
+            Work_add_gridview.Columns.Clear();
+            Work_add_gridview.Refresh();
+            Query query = new Query().Select("NUMBER, Main_Category, Middle_Category, Sub_Category").From("cpp_project.Work").Where("date_format(Work_Date, '%Y-%m-%d') = date_format(now(),'%Y-%m-%d') and ID = '" + user_id + "'");
+            DataTable dt = manager.DB_Manager.getInstance().select(query.query);
+            Work_add_gridview.DataSource = dt;
+            Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
+            MessageBox.Show("조회되었습니다.");
         }
     }
 }
