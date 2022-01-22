@@ -22,7 +22,6 @@ namespace ERP_mobile_peristalsis
             InitializeComponent();
             user_id = userid;
             this.admin = admin;
-            selected_date = Work_list_check_datetimepicker.Value.ToString("yyyy-MM-dd");
             Work_list_gridview.Columns.Clear();
             Work_list_gridview.Refresh();
         }
@@ -77,6 +76,11 @@ namespace ERP_mobile_peristalsis
         private void Search_textBox_Click(object sender, EventArgs e)
         {
             Search_textBox.Text = "";
+        }
+
+        private void Work_list_check_datetimepicker_ValueChanged(object sender, EventArgs e)
+        {
+            selected_date = Work_list_check_datetimepicker.Value.ToString("yyyy-MM-dd");
         }
     }
 }

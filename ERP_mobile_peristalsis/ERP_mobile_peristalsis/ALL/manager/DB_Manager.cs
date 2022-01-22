@@ -109,22 +109,26 @@ namespace ERP_mobile_peristalsis.manager
                 ret = cmd.ExecuteNonQuery();
             }
         }
-        public void updatePhoto(string query, byte[] img)
+        public void insert_photo(string query, MemoryStream mss)
         {
-            Console.WriteLine(query);
-            int rdr = 0;
-            using (MySqlConnection conn = new MySqlConnection(strConn))
+            byte[] img = null;
+            try
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                query = "INSERT INTO mydb.user(Id, photo) VALUES(@Id,@Img)";
-                cmd.Parameters.Add("@Img", MySqlDbType.MediumBlob);
-                cmd.Parameters["@Img"].Value = img;
-                rdr = cmd.ExecuteNonQuery();
-                if (rdr == 1)
+                MemoryStream ms = new MemoryStream();
+                ms = mss;
+                img = ms.ToArray();
+                int ret = 0;
+                using (MySqlConnection conn = new MySqlConnection(strConn))
                 {
+                    conn.Open();
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.Add("@img", MySqlDbType.Blob);
+                    cmd.Parameters["@img"].Value = img;
+                    ret = cmd.ExecuteNonQuery();
                 }
             }
+            catch {}
         }
         public DataTable selectPhoto(string query)
         {

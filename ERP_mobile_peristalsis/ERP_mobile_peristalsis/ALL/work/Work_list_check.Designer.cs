@@ -74,6 +74,7 @@ namespace ERP_mobile_peristalsis
             this.Work_list_check_datetimepicker.Name = "Work_list_check_datetimepicker";
             this.Work_list_check_datetimepicker.Size = new System.Drawing.Size(200, 23);
             this.Work_list_check_datetimepicker.TabIndex = 12;
+            this.Work_list_check_datetimepicker.ValueChanged += new System.EventHandler(this.Work_list_check_datetimepicker_ValueChanged);
             // 
             // Work_list_check
             // 

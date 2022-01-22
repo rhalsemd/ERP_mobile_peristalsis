@@ -44,7 +44,6 @@ namespace ERP_mobile_peristalsis
 
                 }
             }
-
             Work_add_gridview.Columns.Clear();
             Work_add_gridview.Refresh();
             query = new Query().Select("NUMBER, Main_Category, Middle_Category, Sub_Category").From("cpp_project.Work").Where("date_format(Work_Date, '%Y-%m-%d') = date_format(now(),'%Y-%m-%d') and ID = '"+user_id+"'");
@@ -61,6 +60,7 @@ namespace ERP_mobile_peristalsis
 
         private void Add_button_Click(object sender, EventArgs e)
         {
+            int log_number = -1;
             if (Main_category.Text == "" || Sub_category.Text == "" || Middle_category.Text == "")
             {
                 MessageBox.Show("분류를 전부 정하였는지 확인하세요.");
@@ -77,16 +77,26 @@ namespace ERP_mobile_peristalsis
                 DataTable dt = manager.DB_Manager.getInstance().select(query.query);
                 Work_add_gridview.DataSource = dt;
                 Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
+                
+                query = new Query().Select("NUMBER").From("cpp_project.Work").Where("Work_Date IN (SELECT MAX(Work_Date) FROM cpp_project.Work)");
+                dt = manager.DB_Manager.getInstance().select(query.query);
+                foreach (DataRow row in dt.Rows)
+                {
+                    log_number = Convert.ToInt32(string.Format("{0}", row["NUMBER"]));
+                }
+                query = new Query().Insert("cpp_project.Work_log(ID, Work_NUMBER,Work_type, Log_Date)").Values("'" + user_id + "','" + log_number + "','추가', now()");
+                manager.DB_Manager.getInstance().insert(query.query);
             }
         }
 
         private void edit_button_Click(object sender, EventArgs e)
         {
-            if(work_number == -1)
+            int log_number = -1;
+            if (work_number == -1 || Main_category.Text == "" || Sub_category.Text == "" || Middle_category.Text == "")
             {
                 string selected_num = Work_add_gridview.SelectedRows[0].Cells[0].Value.ToString();
                 work_number = Convert.ToInt32(selected_num);
-                manager.Query query = new manager.Query().Update("cpp_project.Work").Set("Main_Category='" + Main_category.Text + "', Middle_Category='" + Middle_category.Text + "', Sub_Category = '" + Sub_category.Text + "' where NUMBER='" + work_number + "'");
+                manager.Query query = new manager.Query().Update("cpp_project.Work").Set("Main_Category='" + Main_category.Text + "', Middle_Category='" + Middle_category.Text + "', Sub_Category = '" + Sub_category.Text + "', Work_Date = now() where NUMBER='" + work_number + "'");
                 manager.DB_Manager.getInstance().update(query.query);
                 MessageBox.Show("변경 되었습니다.");
 
@@ -96,6 +106,16 @@ namespace ERP_mobile_peristalsis
                 DataTable dt = manager.DB_Manager.getInstance().select(query.query);
                 Work_add_gridview.DataSource = dt;
                 Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+                query = new Query().Select("NUMBER").From("cpp_project.Work").Where("Work_Date IN (SELECT MAX(Work_Date) FROM cpp_project.Work)");
+                dt = manager.DB_Manager.getInstance().select(query.query);
+                foreach (DataRow row in dt.Rows)
+                {
+                    log_number = Convert.ToInt32(string.Format("{0}", row["NUMBER"]));
+                }
+                query = new Query().Insert("cpp_project.Work_log(ID, Work_NUMBER,Work_type, Log_Date)").Values("'" + user_id + "','" + log_number + "','수정', now()");
+                manager.DB_Manager.getInstance().insert(query.query);
+                work_number = -1;
             }
             else
             {
@@ -105,6 +125,7 @@ namespace ERP_mobile_peristalsis
 
         private void remove_button_Click(object sender, EventArgs e)
         {
+            int log_number = -1;
             if(work_number == -1)
             {
                 string selected_num = Work_add_gridview.SelectedRows[0].Cells[0].Value.ToString();
@@ -119,6 +140,16 @@ namespace ERP_mobile_peristalsis
                 DataTable dt = manager.DB_Manager.getInstance().select(query.query);
                 Work_add_gridview.DataSource = dt;
                 Work_add_gridview.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+                query = new Query().Select("NUMBER").From("cpp_project.Work").Where("Work_Date IN (SELECT MAX(Work_Date) FROM cpp_project.Work)");
+                dt = manager.DB_Manager.getInstance().select(query.query);
+                foreach (DataRow row in dt.Rows)
+                {
+                    log_number = Convert.ToInt32(string.Format("{0}", row["NUMBER"]));
+                }
+                query = new Query().Insert("cpp_project.Work_log(ID, Work_NUMBER,Work_type, Log_Date)").Values("'" + user_id + "','" + log_number + "','삭제', now()");
+                manager.DB_Manager.getInstance().insert(query.query);
+                work_number = -1;
             }
             else
             {

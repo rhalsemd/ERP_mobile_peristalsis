@@ -21,6 +21,8 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
 
         private void login_log_button_Click(object sender, EventArgs e)
         {
+            log_dataGridView.Columns.Clear();
+            log_dataGridView.Refresh();
             manager.Query query = new manager.Query().Select("ID, Log_time, Login_type").From("Login_log");
             DataTable dt = manager.DB_Manager.getInstance().select(query.query);
             log_dataGridView.DataSource = dt;
@@ -36,7 +38,14 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
 
         private void Work_Add_log_button_Click(object sender, EventArgs e)
         {
-
+            log_dataGridView.Columns.Clear();
+            log_dataGridView.Refresh();
+            manager.Query query = new manager.Query().Select("ID, Work_NUMBER, Work_type, Log_Date").From("cpp_project.Work_log");
+            DataTable dt = manager.DB_Manager.getInstance().select(query.query);
+            log_dataGridView.DataSource = dt;
+            log_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            log_dataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            log_dataGridView.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void Approval_add_log_button_Click(object sender, EventArgs e)
@@ -44,9 +53,5 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
 
         }
 
-        private void Go_to_work_log_button_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

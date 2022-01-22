@@ -36,7 +36,6 @@ namespace ERP_mobile_peristalsis
             this.Middle_category = new System.Windows.Forms.ComboBox();
             this.Main_category = new System.Windows.Forms.ComboBox();
             this.remove_button = new System.Windows.Forms.Button();
-            this.edit_button = new System.Windows.Forms.Button();
             this.Add_button = new System.Windows.Forms.Button();
             this.Approval_add_dataGridView = new System.Windows.Forms.DataGridView();
             this.Approval_textbox = new System.Windows.Forms.TextBox();
@@ -44,7 +43,9 @@ namespace ERP_mobile_peristalsis
             this.upload_button = new System.Windows.Forms.Button();
             this.Upload_label = new System.Windows.Forms.Label();
             this.Approval_open_button = new System.Windows.Forms.Button();
+            this.Approval_add_pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Approval_add_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Sub_category_label
@@ -108,16 +109,6 @@ namespace ERP_mobile_peristalsis
             this.remove_button.UseVisualStyleBackColor = true;
             this.remove_button.Click += new System.EventHandler(this.remove_button_Click);
             // 
-            // edit_button
-            // 
-            this.edit_button.Location = new System.Drawing.Point(764, 76);
-            this.edit_button.Name = "edit_button";
-            this.edit_button.Size = new System.Drawing.Size(75, 23);
-            this.edit_button.TabIndex = 15;
-            this.edit_button.Text = "수정";
-            this.edit_button.UseVisualStyleBackColor = true;
-            this.edit_button.Click += new System.EventHandler(this.edit_button_Click);
-            // 
             // Add_button
             // 
             this.Add_button.Location = new System.Drawing.Point(764, 47);
@@ -130,12 +121,15 @@ namespace ERP_mobile_peristalsis
             // 
             // Approval_add_dataGridView
             // 
+            this.Approval_add_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Approval_add_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Approval_add_dataGridView.Location = new System.Drawing.Point(90, 175);
             this.Approval_add_dataGridView.Name = "Approval_add_dataGridView";
             this.Approval_add_dataGridView.RowTemplate.Height = 25;
+            this.Approval_add_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Approval_add_dataGridView.Size = new System.Drawing.Size(644, 205);
             this.Approval_add_dataGridView.TabIndex = 25;
+            this.Approval_add_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Approval_add_dataGridView_CellClick);
             // 
             // Approval_textbox
             // 
@@ -183,12 +177,22 @@ namespace ERP_mobile_peristalsis
             this.Approval_open_button.UseVisualStyleBackColor = true;
             this.Approval_open_button.Click += new System.EventHandler(this.Approval_open_button_Click);
             // 
+            // Approval_add_pictureBox
+            // 
+            this.Approval_add_pictureBox.Location = new System.Drawing.Point(740, 175);
+            this.Approval_add_pictureBox.Name = "Approval_add_pictureBox";
+            this.Approval_add_pictureBox.Size = new System.Drawing.Size(100, 167);
+            this.Approval_add_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Approval_add_pictureBox.TabIndex = 31;
+            this.Approval_add_pictureBox.TabStop = false;
+            // 
             // Approval_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(924, 424);
+            this.Controls.Add(this.Approval_add_pictureBox);
             this.Controls.Add(this.Approval_open_button);
             this.Controls.Add(this.Upload_label);
             this.Controls.Add(this.upload_button);
@@ -202,12 +206,12 @@ namespace ERP_mobile_peristalsis
             this.Controls.Add(this.Middle_category);
             this.Controls.Add(this.Main_category);
             this.Controls.Add(this.remove_button);
-            this.Controls.Add(this.edit_button);
             this.Controls.Add(this.Add_button);
             this.Name = "Approval_add";
             this.Text = "Approval";
             this.Load += new System.EventHandler(this.Approval_add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Approval_add_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Approval_add_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +226,6 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.ComboBox Middle_category;
         private System.Windows.Forms.ComboBox Main_category;
         private System.Windows.Forms.Button remove_button;
-        private System.Windows.Forms.Button edit_button;
         private System.Windows.Forms.Button Add_button;
         private System.Windows.Forms.DataGridView Approval_add_dataGridView;
         private System.Windows.Forms.TextBox Approval_textbox;
@@ -230,5 +233,6 @@ namespace ERP_mobile_peristalsis
         private System.Windows.Forms.Button upload_button;
         private System.Windows.Forms.Label Upload_label;
         private System.Windows.Forms.Button Approval_open_button;
+        private System.Windows.Forms.PictureBox Approval_add_pictureBox;
     }
 }

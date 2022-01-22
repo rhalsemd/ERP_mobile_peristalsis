@@ -74,7 +74,12 @@ namespace ERP_mobile_peristalsis
                 list_view_label.Text = list_data;
                 Query query = new Query().Select("Picture").From("cpp_project.User").Where("ID = '" + id + "'");
                 DataTable dt = DB_Manager.getInstance().select(query.query);
-
+                if (!(dt.Rows[0][0].Equals(DBNull.Value)))
+                {
+                    byte[] img = (byte[])dt.Rows[0][0];
+                    MemoryStream ms = new MemoryStream(img);
+                    Organization_chart_pictureBox.Image = Image.FromStream(ms);
+                }
             }
             catch(NullReferenceException) {
             

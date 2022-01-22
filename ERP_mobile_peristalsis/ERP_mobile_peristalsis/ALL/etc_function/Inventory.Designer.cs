@@ -53,6 +53,7 @@ namespace ERP_mobile_peristalsis
             this.Inventory_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Inventory_dataGridView.Size = new System.Drawing.Size(610, 284);
             this.Inventory_dataGridView.TabIndex = 21;
+            this.Inventory_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Inventory_dataGridView_CellClick);
             // 
             // count_button
             // 

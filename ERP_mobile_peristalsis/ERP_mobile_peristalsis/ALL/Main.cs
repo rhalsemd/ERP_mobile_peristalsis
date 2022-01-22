@@ -30,6 +30,7 @@ namespace ERP_mobile_peristalsis
         public static Work_Add Work_Add_form = new Work_Add(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Work_list_check Work_list_check_form = new Work_list_check(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin);
         public static Log log_form = new Log();
+        public static Approval approval = new Approval(Config_Manager.GetInstance().userid, Config_Manager.GetInstance().admin, -1);
         private SHA256Managed sha256Managed = new SHA256Managed();
         private RijndaelManaged aes = new RijndaelManaged();
         public static void level()
@@ -44,7 +45,7 @@ namespace ERP_mobile_peristalsis
             Work_list_check_form.TopLevel = false;
         }
         public static bool login_switch = false;
-        public static bool[] form_switch = new bool[10] { false, false, false, false, false, false, false, false, false, false}; //위의 approval_add부터 순서대로
+        public static bool[] form_switch = new bool[11] { false, false, false, false, false, false, false, false, false, false, false}; //위의 approval_add부터 순서대로
         public Main()
         {
             InitializeComponent();
@@ -491,6 +492,10 @@ namespace ERP_mobile_peristalsis
             {
                 log_form.Close();
             }
+            if (form_switch[10] == true)
+            {
+                approval.Close();
+            }
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -533,6 +538,7 @@ namespace ERP_mobile_peristalsis
             }
             Chatting_form.Close();
             log_form.Close();
+            approval.Close();
         }
 
         private void 로그관련ToolStripMenuItem_Click(object sender, EventArgs e)

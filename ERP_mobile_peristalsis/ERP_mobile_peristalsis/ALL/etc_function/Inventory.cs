@@ -70,5 +70,18 @@ namespace ERP_mobile_peristalsis
             load_id = user_id;
             load_ad = admin;
         }
+
+        private void Inventory_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+            }
+            catch (NullReferenceException)
+            {
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
