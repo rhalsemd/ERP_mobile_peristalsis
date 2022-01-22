@@ -50,8 +50,14 @@ namespace ERP_mobile_peristalsis.ALL.manager_form
 
         private void Approval_add_log_button_Click(object sender, EventArgs e)
         {
-
+            log_dataGridView.Columns.Clear();
+            log_dataGridView.Refresh();
+            manager.Query query = new manager.Query().Select("*").From("cpp_project.Approval_log");
+            DataTable dt = manager.DB_Manager.getInstance().select(query.query);
+            log_dataGridView.DataSource = dt;
+            log_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            log_dataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            log_dataGridView.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-
     }
 }

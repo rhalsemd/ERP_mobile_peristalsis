@@ -76,15 +76,19 @@ namespace ERP_mobile_peristalsis
         {
             if (progress == 0 && admin == 1 && Department == user_name)
             {
-                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 2 '" + Comment_textBox.Text + "' where NUMBER='" + approval_number + "'");
+                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 2, '" + Comment_textBox.Text + "', Add_date = now() where NUMBER='" + approval_number + "'");
                 manager.DB_Manager.getInstance().update(query.query);
                 MessageBox.Show("반려가 완료되었습니다.");
+                query = new manager.Query().Insert("cpp_project.Approval_log(ID, Approval_NUMBER, Approval_type, Progress, Log_Date").Values("'"+user_id+"', '"+approval_number+ "', 반려, 2,now()");
+                manager.DB_Manager.getInstance().update(query.query);
             }
             else if (progress == 1 && admin == 2)
             {
-                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 4, Reject = '"+Comment_textBox.Text+"' where NUMBER='" + approval_number + "'");
+                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 4, Reject = '"+Comment_textBox.Text+ "', Add_date = now() where NUMBER='" + approval_number + "'");
                 manager.DB_Manager.getInstance().update(query.query);
                 MessageBox.Show("반려가 완료되었습니다.");
+                query = new manager.Query().Insert("cpp_project.Approval_log(ID, Approval_NUMBER, Approval_type, Progress, Log_Date").Values("'" + user_id + "', '" + approval_number + "', 반려, 4,now()");
+                manager.DB_Manager.getInstance().update(query.query);
             }
             else
             {
@@ -96,14 +100,18 @@ namespace ERP_mobile_peristalsis
         {
             if (progress == 0 && admin == 1 && Department == user_name)
             {
-                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 1 where NUMBER='" + approval_number + "'");
+                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 1, Add_date = now() where NUMBER='" + approval_number + "'");
                 manager.DB_Manager.getInstance().update(query.query);
                 MessageBox.Show("결재가 완료되었습니다.");
+                query = new manager.Query().Insert("cpp_project.Approval_log(ID, Approval_NUMBER, Approval_type, Progress, Log_Date").Values("'" + user_id + "', '" + approval_number + "', 결재, 1,now()");
+                manager.DB_Manager.getInstance().update(query.query);
             }
             else if(progress == 1 && admin == 2){
-                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 3 where NUMBER='" + approval_number + "'");
+                manager.Query query = new manager.Query().Update("cpp_project.Approval").Set("Progress = 3, Add_date = now() where NUMBER='" + approval_number + "'");
                 manager.DB_Manager.getInstance().update(query.query);
                 MessageBox.Show("결재가 완료되었습니다.");
+                query = new manager.Query().Insert("cpp_project.Approval_log(ID, Approval_NUMBER, Approval_type, Progress, Log_Date").Values("'" + user_id + "', '" + approval_number + "', 결재, 3,now()");
+                manager.DB_Manager.getInstance().update(query.query);
             }
             else
             {

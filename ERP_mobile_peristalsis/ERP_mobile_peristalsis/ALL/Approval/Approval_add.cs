@@ -69,12 +69,15 @@ namespace ERP_mobile_peristalsis
                 manager.DB_Manager.getInstance().insert_photo(query.query, ms);
 
                 datagrid_update();
+                query = new manager.Query().Insert("cpp_project.Approval_log(ID, Approval_NUMBER, Approval_type, Progress, Log_Date").Values("'" + user_id + "', '" + approval_number + "', 추가, 0,now()");
+                manager.DB_Manager.getInstance().update(query.query);
+                approval_number = -1;
             }
         }
 
         private void remove_button_Click(object sender, EventArgs e)
         {
-            if (approval_number == -1 || Main_category.Text == "" || Sub_category.Text == "" || Middle_category.Text == "")
+            if (approval_number != -1)
             {
                 string selected_num = Approval_add_dataGridView.SelectedRows[0].Cells[0].Value.ToString();
                 approval_number = Convert.ToInt32(selected_num);
@@ -82,8 +85,10 @@ namespace ERP_mobile_peristalsis
                 manager.DB_Manager.getInstance().delete(query.query);
                 MessageBox.Show("삭제 되었습니다.");
 
-                approval_number = -1;
+                query = new manager.Query().Insert("cpp_project.Approval_log(ID, Approval_NUMBER, Approval_type, Progress, Log_Date").Values("'" + user_id + "', '" + approval_number + "', 삭제, 0, now()");
+                manager.DB_Manager.getInstance().update(query.query);
                 datagrid_update();
+                approval_number = -1;
             }
             else
             {
@@ -115,8 +120,6 @@ namespace ERP_mobile_peristalsis
 
         private void Approval_open_button_Click(object sender, EventArgs e)
         {
-            string selected_num = Approval_add_dataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            approval_number = Convert.ToInt32(selected_num);
             if (Main.form_switch[10] == false && approval_number != -1)
             {
                 Main.approval = new Approval(user_id, admin ,approval_number);
@@ -142,6 +145,8 @@ namespace ERP_mobile_peristalsis
         {
             try
             {
+                string selected_num = Approval_add_dataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                approval_number = Convert.ToInt32(selected_num);
             }
             catch (NullReferenceException)
             {

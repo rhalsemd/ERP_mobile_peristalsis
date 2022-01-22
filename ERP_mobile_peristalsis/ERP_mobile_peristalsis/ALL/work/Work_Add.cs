@@ -92,10 +92,8 @@ namespace ERP_mobile_peristalsis
         private void edit_button_Click(object sender, EventArgs e)
         {
             int log_number = -1;
-            if (work_number == -1 || Main_category.Text == "" || Sub_category.Text == "" || Middle_category.Text == "")
+            if (work_number != -1 || Main_category.Text == "" || Sub_category.Text == "" || Middle_category.Text == "")
             {
-                string selected_num = Work_add_gridview.SelectedRows[0].Cells[0].Value.ToString();
-                work_number = Convert.ToInt32(selected_num);
                 manager.Query query = new manager.Query().Update("cpp_project.Work").Set("Main_Category='" + Main_category.Text + "', Middle_Category='" + Middle_category.Text + "', Sub_Category = '" + Sub_category.Text + "', Work_Date = now() where NUMBER='" + work_number + "'");
                 manager.DB_Manager.getInstance().update(query.query);
                 MessageBox.Show("변경 되었습니다.");
@@ -126,10 +124,8 @@ namespace ERP_mobile_peristalsis
         private void remove_button_Click(object sender, EventArgs e)
         {
             int log_number = -1;
-            if(work_number == -1)
+            if(work_number != -1)
             {
-                string selected_num = Work_add_gridview.SelectedRows[0].Cells[0].Value.ToString();
-                work_number = Convert.ToInt32(selected_num);
                 Query query = new manager.Query().Delete("cpp_project.Work").Where("ID='" + user_id + "' and NUMBER=" + work_number);
                 manager.DB_Manager.getInstance().delete(query.query);
                 MessageBox.Show("삭제 되었습니다.");
@@ -161,6 +157,8 @@ namespace ERP_mobile_peristalsis
         {
             try
             {
+                string selected_num = Work_add_gridview.SelectedRows[0].Cells[0].Value.ToString();
+                work_number = Convert.ToInt32(selected_num);
             }
             catch (NullReferenceException)
             {
