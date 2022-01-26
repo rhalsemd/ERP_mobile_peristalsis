@@ -29,23 +29,7 @@ namespace ERP_mobile_peristalsis
             collect_chatting_log = new List<chatting_log_column>();
 
         }
-       /*
-        public void set_chatting_profile_image()
-        {
-            Bitmap image;
-            byte[] profile_image_byte;
-            Query query = new Query().Select("Picture").From("User").Where("Name='" + chat_partner + "'");
-            DB_Manager.getInstance().select(query.query);
-            profile_image_byte = DB_Manager.getInstance().Image_process(query.query);
-            
-            if(profile_image_byte!= null)
-            {
-                using (MemoryStream stream = new MemoryStream(profile_image_byte))
-                    image = new Bitmap(stream);
-                profile_image.Image = image;
-            }
 
-        }*/
         public void set_chatting_name_label_text()
         {
             
@@ -59,14 +43,6 @@ namespace ERP_mobile_peristalsis
             chatting_room_label.Font = new Font("맑은고딕", 20, FontStyle.Bold);
             this.Controls.Add(chatting_room_label);
             
-        }
-        private void chatting_name_pannel_MouseMove(object sender, MouseEventArgs e)
-        {
-            //this.BackColor = Color.FromArgb(192,192,192);
-        }
-        private void chatting_name_pannel_MouseLeave(object sender, EventArgs e)
-        {
-            //this.BackColor = Color.White;
         }
         public void chatting_namming_label_Click(object sender, EventArgs e)
         {

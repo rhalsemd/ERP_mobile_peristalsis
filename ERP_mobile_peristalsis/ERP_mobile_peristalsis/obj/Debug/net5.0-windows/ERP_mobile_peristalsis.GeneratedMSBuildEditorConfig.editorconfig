@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = ERP_mobile_peristalsis
-build_property.ProjectDir = E:\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\
+build_property.ProjectDir = D:\ERP_Project\ERP_mobile_peristalsis\ERP_mobile_peristalsis\ERP_mobile_peristalsis\

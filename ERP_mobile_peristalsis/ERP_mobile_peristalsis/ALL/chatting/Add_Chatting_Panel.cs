@@ -14,7 +14,6 @@ namespace ERP_mobile_peristalsis.chatting
     public partial class Add_Chatting_Panel : Form
     {
         Label[] add_chatting_label;
-
         public Add_Chatting_Panel()
         {
             InitializeComponent();
@@ -41,7 +40,6 @@ namespace ERP_mobile_peristalsis.chatting
                 }
                 if (check != true)//채팅방이 없다면
                     add_column(row);
-
             }
         }
         void add_column(DataRow row)
@@ -51,17 +49,7 @@ namespace ERP_mobile_peristalsis.chatting
             label_User_name.BackColor = Color.White;
             this.Controls.Add(label_User_name);
             label_User_name.Dock = DockStyle.Top;
-            // add_chatting_form[i] = new Label();
-            //add_chatting_form[i].BackColor = Color.White;
-
-            //this.Controls.Add(add_chatting_form[i]);
-
-
-            //add_chatting_form[i].Dock = DockStyle.Top;
-            //add_chatting_form[i].Click += new EventHandler(add_chatting_form_click);
             label_User_name.Click += new EventHandler(add_chatting_form_click);
-            // add_chatting_form[i++].Controls.Add(label_User_name);
-
         }
 
         public void add_chatting_form_click(object sender, EventArgs e)//채팅 추가 버튼 누른 후 유저 이름 클릭 시 이벤트

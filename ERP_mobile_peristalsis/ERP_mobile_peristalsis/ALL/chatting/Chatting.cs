@@ -40,7 +40,6 @@ namespace ERP_mobile_peristalsis
             Add_Chatting_Panel panel_add_chatting = new Add_Chatting_Panel();
             panel_add_chatting.ShowDialog() ;
         }
-
         private void Chatting_FormClosing(object sender, FormClosingEventArgs e)
         {
             Main.form_switch[2] = false;
@@ -49,7 +48,6 @@ namespace ERP_mobile_peristalsis
             splitcontainer = null;
             closed++;
         }
-        
         public void init()
         {
             int chatting_namming_count = 0;
@@ -61,7 +59,6 @@ namespace ERP_mobile_peristalsis
 
             Main.Chatting_form.Controls.Add(splitcontainer);
 
-            
             splitcontainer.Panel2.BackColor = Color.White;
             splitcontainer.Panel1.BackColor = Color.White;
             Query query_count = new Query().Select("count(*)").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userName + "' or User2 = '" + Config_Manager.GetInstance().userName + "'");
@@ -70,7 +67,6 @@ namespace ERP_mobile_peristalsis
             Query query = new Query().Select("Title").From("Personal_Chat_Meta").Where("User1 = '" + Config_Manager.GetInstance().userName + "' or User2 = '" + Config_Manager.GetInstance().userName + "'");
             string qwe = query.query;
             DataTable dt_chatting =  DB_Manager.getInstance().select(query.query);
-
 
             newpanel_class = null;
             newpanel_class = new chatting_name_pannel[count];
