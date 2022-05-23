@@ -1,7 +1,7 @@
 # ERP_mobile_peristalsis
 ERP를 C#과 모바일 2가지로 만들어보는 프로젝트
 
-C#과 Android kotlin을 활용해서 같은 서버를 사용하여 C# Winform과 Android APP을 통해 동시에 사용할 수 있도록 만드는 프로젝트입니다.
+C#과 Android kotlin을 활용해서 같은 서버(MySql)를 사용하여 C# Winform과 Android APP을 통해 동시에 사용할 수 있도록 만드는 프로젝트입니다.
 
 C#에서는 기능적인 부분들을 완성하였으며
 기능적인 부분들로는
